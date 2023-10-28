@@ -186,5 +186,20 @@
   <ItemGroup>
     <None Include="Resources\lblThongKe.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\desire22pro.jpg" />
+    <Content Include="img\edge30pro.jpg" />
+    <Content Include="img\findx5pro.jpg" />
+    <Content Include="img\g21.jpg" />
+    <Content Include="img\galaxys23.jpg" />
+    <Content Include="img\gtneo3.jpg" />
+    <Content Include="img\iphone14.jpg" />
+    <Content Include="img\matexs2.jpg" />
+    <Content Include="img\oneplus10pro.jpg" />
+    <Content Include="img\pixel7.jpg" />
+    <Content Include="img\redminote11tpro.jpg" />
+    <Content Include="img\rogphone6.jpg" />
+    <Content Include="img\x80pro.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
