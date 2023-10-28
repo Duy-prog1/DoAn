@@ -47,54 +47,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhapGUI.cs">
+    <Compile Include="Login_Signin\DangNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhapGUI.Designer.cs">
+    <Compile Include="Login_Signin\DangNhapGUI.Designer.cs">
       <DependentUpon>DangNhapGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangKyGUI.cs">
+    <Compile Include="Login_Signin\DangKyGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKyGUI.Designer.cs">
+    <Compile Include="Login_Signin\DangKyGUI.Designer.cs">
       <DependentUpon>DangKyGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Menu\MenuGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuGUI.Designer.cs">
+    <Compile Include="Menu\MenuGUI.Designer.cs">
       <DependentUpon>MenuGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuenMatKhauGUI.cs">
+    <Compile Include="Login_Signin\QuenMatKhauGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuenMatKhauGUI.Designer.cs">
+    <Compile Include="Login_Signin\QuenMatKhauGUI.Designer.cs">
       <DependentUpon>QuenMatKhauGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongKeGUI.cs">
+    <Compile Include="ThongKe\ThongKeGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKeGUI.Designer.cs">
+    <Compile Include="ThongKe\ThongKeGUI.Designer.cs">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKyGUI.resx">
+    <EmbeddedResource Include="Login_Signin\DangKyGUI.resx">
       <DependentUpon>DangKyGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhapGUI.resx">
+    <EmbeddedResource Include="Login_Signin\DangNhapGUI.resx">
       <DependentUpon>DangNhapGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuGUI.resx">
+    <EmbeddedResource Include="Menu\MenuGUI.resx">
       <DependentUpon>MenuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,10 +98,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuenMatKhauGUI.resx">
+    <EmbeddedResource Include="Login_Signin\QuenMatKhauGUI.resx">
       <DependentUpon>QuenMatKhauGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKeGUI.resx">
+    <EmbeddedResource Include="ThongKe\ThongKeGUI.resx">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
