@@ -72,37 +72,45 @@ namespace WindowsFormsApp1
 
             // Hiển thị form con tương ứng
             Form childFormToShow = null;
-            if (clickedPictureBox == pictureBox1)
+            //Home
+            if (clickedPictureBox == pictureBox1) 
             {
                 childFormToShow = new DangKyGUI();
             }
+            //Ban Hang
             else if (clickedPictureBox == pictureBox2)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //San Pham
             else if (clickedPictureBox == pictureBox3)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //Nhan Vien
             else if (clickedPictureBox == pictureBox4)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //khach hang
             else if (clickedPictureBox == pictureBox5)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //khuyen mai
             else if (clickedPictureBox == pictureBox6)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //nhap hang
             else if (clickedPictureBox == pictureBox7)
             {
                 childFormToShow = new DangNhapGUI();
             }
+            //thong ke
             else if (clickedPictureBox == pictureBox8)
             {
-                childFormToShow = new DangNhapGUI();
+                childFormToShow = new ThongKeGUI();
             }
 
             childFormToShow.Dock = DockStyle.Fill;
