@@ -9,6 +9,7 @@ namespace DAL
 {
     public class DatabaseConnect
     {
-        protected SqlConnection _conn = new SqlConnection("Data Source=LAPTOP-1A0D861M\\TRANQUANGTRUONG;Initial Catalog=cSharp;Integrated Security=True");
+      //  protected SqlConnection _conn = new SqlConnection("Data Source=LAPTOP-1A0D861M\\TRANQUANGTRUONG;Initial Catalog=cSharp;Integrated Security=True");
+        protected SqlConnection _conn = new SqlConnection("Data Source=localhost;Initial Catalog=QLCHBDT;Integrated Security=True");
     }
 }

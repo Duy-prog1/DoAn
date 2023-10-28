@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class TaiKhoanDTO
+    public class TaiKhoanDTO
     {
-        private string maNhanVien { get; set; }
-        private int maQuyen { get; set; }
-        private string tenDangNhap { get; set; }
-        private string matKhau { get; set; }
-        private int tinhTrang { get; set; }
-       
-        TaiKhoanDTO() { }
-        TaiKhoanDTO(string maNhanVien, int maQuyen, string tenDangNhap, string matKhau, int tinhTrang)
+        public string maNhanVien { get; set; }
+        public int maQuyen { get; set; }
+        public string tenDangNhap { get; set; }
+        public string matKhau { get; set; }
+        public int tinhTrang { get; set; }
+        public string email { get; set; }
+        public TaiKhoanDTO() { }
+        public TaiKhoanDTO(string tenDangNhap, string matKhau, string email)
+        {
+            this.tenDangNhap = tenDangNhap;
+            this.matKhau = matKhau;
+            this.email = email;
+        }
+        public TaiKhoanDTO(string maNhanVien, int maQuyen, string tenDangNhap, string matKhau, int tinhTrang)
         {
             this.maNhanVien = maNhanVien;
             this.maQuyen = maQuyen;

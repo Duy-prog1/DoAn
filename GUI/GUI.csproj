@@ -118,6 +118,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{eb9b6c36-ebfa-4ec7-9ce1-9ceac0db135e}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{4a7a39bd-0697-4fcc-92b7-65d046825c12}</Project>
       <Name>DTO</Name>
