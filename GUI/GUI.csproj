@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\BanHangGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\BanHangGUI.Designer.cs">
+      <DependentUpon>BanHangGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\FormThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\FormThanhToan.Designer.cs">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Signin\DangNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
     <Compile Include="ThongKe\ThongKeGUI.Designer.cs">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\BanHangGUI.resx">
+      <DependentUpon>BanHangGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\FormThanhToan.resx">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Signin\DangKyGUI.resx">
       <DependentUpon>DangKyGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,5 +214,6 @@
     <Content Include="img\rogphone6.jpg" />
     <Content Include="img\x80pro.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

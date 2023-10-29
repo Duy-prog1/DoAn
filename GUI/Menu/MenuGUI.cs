@@ -75,7 +75,8 @@ namespace WindowsFormsApp1
             //Home
             if (clickedPictureBox == pictureBox1) 
             {
-               
+                childFormToShow = new BanHangGUI();
+
             }
             //Ban Hang
             else if (clickedPictureBox == pictureBox2)
