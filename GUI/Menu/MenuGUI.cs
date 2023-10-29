@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
             {
                 childFormToShow = new ThongKeGUI();
             }
+          
 
             childFormToShow.Dock = DockStyle.Fill;
             // Thêm các else if tương ứng cho các PictureBox khác

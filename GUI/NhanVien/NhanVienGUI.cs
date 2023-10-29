@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         private void btnThem_Click(object sender, EventArgs e)
         {
             Form themSp = null;
-            themSp = new ThongTinNhanVienGUI(nvDto);
+            themSp = new ThongTinNhanVienGUI(this,dataGridView1);
             themSp.StartPosition = FormStartPosition.CenterScreen;
             themSp.ShowDialog();
         }
