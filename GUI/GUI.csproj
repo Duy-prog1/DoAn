@@ -103,6 +103,12 @@
     <Compile Include="Login_Signin\QuenMatKhauGUI.Designer.cs">
       <DependentUpon>QuenMatKhauGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVien\SuaThongTinNhanVienGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\SuaThongTinNhanVienGUI.Designer.cs">
+      <DependentUpon>SuaThongTinNhanVienGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKe\ThongKeGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Login_Signin\QuenMatKhauGUI.resx">
       <DependentUpon>QuenMatKhauGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\SuaThongTinNhanVienGUI.resx">
+      <DependentUpon>SuaThongTinNhanVienGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\ThongKeGUI.resx">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>

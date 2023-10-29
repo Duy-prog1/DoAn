@@ -66,7 +66,7 @@ namespace DAL
             using (SqlConnection connection = new SqlConnection(_conn.ConnectionString))
             {
                 connection.Open();
-                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh @key )";
+                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh LIKE @key )";
                 SqlDataAdapter da;
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
@@ -87,8 +87,10 @@ namespace DAL
                 // Ket noi
                 _conn.Open();
 
-                // Query string - vì mình để TV_ID là identity (giá trị tự tăng dần) nên ko cần fải insert ID
-                string SQL = string.Format("INSERT INTO nhanVien( maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh, tinhTrang) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", tv.maNv, tv.tenNv, tv.sdtNv, tv.chucVu, tv.ngaySinhNv, tv.gioiTinhNv, tv.trangThai);
+              
+                string SQL =
+                string.Format("INSERT INTO nhanVien( maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh, tinhTrang) VALUES ('{0}', N'{1}', '{2}', '{3}', N'{4}', '{5}', '{6}')"
+                , tv.maNv, tv.tenNv, tv.gioiTinhNv, tv.sdtNv, tv.chucVu, tv.ngaySinhNv, tv.trangThai);
 
                 // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
