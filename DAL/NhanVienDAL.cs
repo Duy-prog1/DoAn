@@ -66,7 +66,7 @@ namespace DAL
             using (SqlConnection connection = new SqlConnection(_conn.ConnectionString))
             {
                 connection.Open();
-                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh @key )";
+                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh LIKE @key )";
                 SqlDataAdapter da;
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

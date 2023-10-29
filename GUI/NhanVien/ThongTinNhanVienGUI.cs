@@ -53,6 +53,11 @@ namespace WindowsFormsApp1
 
             if (tbMaNv.Text != "" && tbTenNv.Text != "" && tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && (rbNam.Checked || rbNu.Checked) && maskedTextBox1.Text != "" && CheckPhoneNumber(tbSdt.Text)&& checkDate(maskedTextBox1.Text,lbNgaySinh))
             {
+                lbTenNv.Text = "";
+                lbSdt.Text = "";
+                lbNgaySinh.Text = "";
+                lbGioiTinh.Text = "";
+                lbChucVu.Text = "";
                 nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), tbSdt.Text, xuLychucVu(), xuLyNgaySinh(), true);
                 if (nvBus.themNhanVien(nvDto))
                 {
