@@ -59,6 +59,12 @@
     <Compile Include="BanHang\FormThanhToan.Designer.cs">
       <DependentUpon>FormThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Khachhang\KhachhangGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Khachhang\KhachhangGUI.Designer.cs">
+      <DependentUpon>KhachhangGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Signin\DangNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,18 @@
     </Compile>
     <Compile Include="Menu\MenuGUI.Designer.cs">
       <DependentUpon>MenuGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\NhanVienGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\NhanVienGUI.Designer.cs">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\ThongTinNhanVienGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\ThongTinNhanVienGUI.Designer.cs">
+      <DependentUpon>ThongTinNhanVienGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +115,9 @@
     <EmbeddedResource Include="BanHang\FormThanhToan.resx">
       <DependentUpon>FormThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Khachhang\KhachhangGUI.resx">
+      <DependentUpon>KhachhangGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Signin\DangKyGUI.resx">
       <DependentUpon>DangKyGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\MenuGUI.resx">
       <DependentUpon>MenuGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\NhanVienGUI.resx">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\ThongTinNhanVienGUI.resx">
+      <DependentUpon>ThongTinNhanVienGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

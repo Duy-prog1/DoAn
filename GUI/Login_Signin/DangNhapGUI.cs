@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         public DangNhapGUI()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         

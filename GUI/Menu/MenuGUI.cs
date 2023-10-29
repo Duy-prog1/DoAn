@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public MenuGUI()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void MenuGUI_Load(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace WindowsFormsApp1
             //Nhan Vien
             else if (clickedPictureBox == pictureBox4)
             {
-               
+                childFormToShow = new NhanVienGUI();
             }
             //khach hang
             else if (clickedPictureBox == pictureBox5)
