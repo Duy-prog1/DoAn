@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
             //khach hang
             else if (clickedPictureBox == pictureBox5)
             {
-                
+                childFormToShow = new KhachhangGUI();
             }
             //khuyen mai
             else if (clickedPictureBox == pictureBox6)
