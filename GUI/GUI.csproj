@@ -115,6 +115,12 @@
     <Compile Include="ThongKe\ThongKeGUI.Designer.cs">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Khachhang\ThongTinKhachHangGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Khachhang\ThongTinKhachHangGUI.Designer.cs">
+      <DependentUpon>ThongTinKhachHangGUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BanHang\BanHangGUI.resx">
       <DependentUpon>BanHangGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Khachhang\KhachhangGUI.resx">
       <DependentUpon>KhachhangGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Khachhang\ThongTinKhachHangGUI.resx">
+      <DependentUpon>ThongTinKhachHangGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Signin\DangKyGUI.resx">
       <DependentUpon>DangKyGUI.cs</DependentUpon>

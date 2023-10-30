@@ -73,10 +73,9 @@ namespace WindowsFormsApp1
                     nvDto.chucVu = row.Cells["cotChucVu"].Value.ToString();
                     nvDto.ngaySinhNv = row.Cells["cotNgaySinh"].Value.ToString();
                     nvDto.trangThai = true;
-                    Console.WriteLine(nvDto.ngaySinhNv);
                     thongTinNv = new SuaThongTinNhanVienGUI(nvDto, dataGridView1);
                     thongTinNv.StartPosition = FormStartPosition.CenterScreen;
-                    thongTinNv.Show();
+                    thongTinNv.ShowDialog();
 
 
                 }
