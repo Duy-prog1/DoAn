@@ -1,4 +1,5 @@
---create database cSharp;
+create database cSharp;
+go
 use cSharp
 create table loaiSP(
 	maLoai int not null primary key,
@@ -34,7 +35,6 @@ create table khachHang(
 	maKH int not null primary key,
 	tenKH nVarChar(30),
 	sdt char(10),
-	diaChi nVarChar(60),
 	tichDiem int,
 	tongChi float
 );
@@ -43,6 +43,7 @@ create table nhanVien(
 	tenNV nVarChar(30),
 	gioiTinh bit,
 	sdt char(10),
+	diaChi nVarChar(60),
 	chucVu nVarChar(10),
 	ngaySinh datetime,
 	tinhTrang bit
