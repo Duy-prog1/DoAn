@@ -36,17 +36,18 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cotMaNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotTenNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotSdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThem = new System.Windows.Forms.Button();
+            this.cotMaNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotTenNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotSdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -62,8 +63,9 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 499);
+            this.panel1.Size = new System.Drawing.Size(1099, 614);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -75,10 +77,11 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 499);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1099, 614);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -88,12 +91,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 493);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(871, 606);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -106,7 +110,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(653, 49);
+            this.label1.Size = new System.Drawing.Size(871, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lý nhân viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,22 +122,22 @@
             this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 51);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 62);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(649, 440);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(865, 542);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(2, 2);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(3, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 30);
+            this.textBox1.Size = new System.Drawing.Size(200, 36);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -155,65 +159,19 @@
             this.cotTenNv,
             this.cotGioiTinh,
             this.cotSdt,
+            this.cotDiaChi,
             this.cotChucVu,
             this.cotNgaySinh,
             this.cotXoa});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 41);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 404);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(857, 497);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
-            // 
-            // cotMaNv
-            // 
-            this.cotMaNv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotMaNv.DataPropertyName = "maNV";
-            this.cotMaNv.HeaderText = "Mã Nhân viên";
-            this.cotMaNv.Name = "cotMaNv";
-            // 
-            // cotTenNv
-            // 
-            this.cotTenNv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotTenNv.DataPropertyName = "tenNV";
-            this.cotTenNv.HeaderText = "Họ Tên Nhân Viên";
-            this.cotTenNv.Name = "cotTenNv";
-            // 
-            // cotGioiTinh
-            // 
-            this.cotGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotGioiTinh.DataPropertyName = "gioiTinh";
-            this.cotGioiTinh.HeaderText = "Giới Tính";
-            this.cotGioiTinh.Name = "cotGioiTinh";
-            // 
-            // cotSdt
-            // 
-            this.cotSdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotSdt.DataPropertyName = "sdt";
-            this.cotSdt.HeaderText = "Số Điện Thoại";
-            this.cotSdt.Name = "cotSdt";
-            // 
-            // cotChucVu
-            // 
-            this.cotChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotChucVu.DataPropertyName = "chucVu";
-            this.cotChucVu.HeaderText = "Chức Vụ";
-            this.cotChucVu.Name = "cotChucVu";
-            // 
-            // cotNgaySinh
-            // 
-            this.cotNgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cotNgaySinh.DataPropertyName = "ngaySinh";
-            this.cotNgaySinh.HeaderText = "Ngày Sinh";
-            this.cotNgaySinh.Name = "cotNgaySinh";
-            // 
-            // cotXoa
-            // 
-            this.cotXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cotXoa.HeaderText = "Xóa";
-            this.cotXoa.Name = "cotXoa";
-            this.cotXoa.Width = 32;
             // 
             // tableLayoutPanel3
             // 
@@ -222,12 +180,13 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(662, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(883, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(159, 493);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(212, 606);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // label2
@@ -240,7 +199,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 49);
+            this.label2.Size = new System.Drawing.Size(212, 60);
             this.label2.TabIndex = 1;
             this.label2.Text = "Chức năng";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,7 +210,8 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.btnThem, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 52);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 64);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 7;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -261,27 +221,93 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(153, 438);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(204, 538);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // btnThem
             // 
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(3, 3);
+            this.btnThem.Location = new System.Drawing.Point(4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(147, 42);
+            this.btnThem.Size = new System.Drawing.Size(196, 51);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm nhân viên";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // cotMaNv
+            // 
+            this.cotMaNv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotMaNv.DataPropertyName = "maNV";
+            this.cotMaNv.HeaderText = "Mã Nhân viên";
+            this.cotMaNv.MinimumWidth = 6;
+            this.cotMaNv.Name = "cotMaNv";
+            // 
+            // cotTenNv
+            // 
+            this.cotTenNv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotTenNv.DataPropertyName = "tenNV";
+            this.cotTenNv.HeaderText = "Họ Tên Nhân Viên";
+            this.cotTenNv.MinimumWidth = 6;
+            this.cotTenNv.Name = "cotTenNv";
+            // 
+            // cotGioiTinh
+            // 
+            this.cotGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotGioiTinh.DataPropertyName = "gioiTinh";
+            this.cotGioiTinh.HeaderText = "Giới Tính";
+            this.cotGioiTinh.MinimumWidth = 6;
+            this.cotGioiTinh.Name = "cotGioiTinh";
+            // 
+            // cotSdt
+            // 
+            this.cotSdt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotSdt.DataPropertyName = "sdt";
+            this.cotSdt.HeaderText = "Số Điện Thoại";
+            this.cotSdt.MinimumWidth = 6;
+            this.cotSdt.Name = "cotSdt";
+            // 
+            // cotDiaChi
+            // 
+            this.cotDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotDiaChi.DataPropertyName = "diaChi";
+            this.cotDiaChi.HeaderText = "Địa chỉ";
+            this.cotDiaChi.MinimumWidth = 6;
+            this.cotDiaChi.Name = "cotDiaChi";
+            // 
+            // cotChucVu
+            // 
+            this.cotChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotChucVu.DataPropertyName = "chucVu";
+            this.cotChucVu.HeaderText = "Chức Vụ";
+            this.cotChucVu.MinimumWidth = 6;
+            this.cotChucVu.Name = "cotChucVu";
+            // 
+            // cotNgaySinh
+            // 
+            this.cotNgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cotNgaySinh.DataPropertyName = "ngaySinh";
+            this.cotNgaySinh.HeaderText = "Ngày Sinh";
+            this.cotNgaySinh.MinimumWidth = 6;
+            this.cotNgaySinh.Name = "cotNgaySinh";
+            // 
+            // cotXoa
+            // 
+            this.cotXoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cotXoa.HeaderText = "Xóa";
+            this.cotXoa.MinimumWidth = 6;
+            this.cotXoa.Name = "cotXoa";
+            this.cotXoa.Width = 39;
+            // 
             // NhanVienGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 499);
+            this.ClientSize = new System.Drawing.Size(1099, 614);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NhanVienGUI";
             this.Text = "NhanVienGUI";
             this.Load += new System.EventHandler(this.NhanVienGUI_Load);
@@ -310,14 +336,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotMaNv;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotTenNv;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotSdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cotDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotNgaySinh;
         private System.Windows.Forms.DataGridViewButtonColumn cotXoa;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -10,18 +10,16 @@ namespace DTO
     {
         public int maKh { get; set; }
         public string tenKh { get; set; }
-        public string sdtKh { get; set; }       
-        public string diaChi { get; set; }
+        public string sdtKh { get; set; }            
         public int tichDiem { get; set; }
         public double tongChi { get; set; }
 
         public KhachHangDTO() { }
-        public KhachHangDTO(int maKh, string tenKh, string sdtKh, string diaChi, int tichDiem, double tongChi)
+        public KhachHangDTO(int maKh, string tenKh, string sdtKh, int tichDiem, double tongChi)
         {
             this.maKh = maKh;
             this.tenKh = tenKh;
-            this.sdtKh = sdtKh;
-            this.diaChi = diaChi;
+            this.sdtKh = sdtKh;          
             this.tichDiem = tichDiem;
             this.tongChi = tongChi;
         }

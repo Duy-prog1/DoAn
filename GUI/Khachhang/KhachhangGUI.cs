@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
                 khDto.maKh = int.Parse( row.Cells["cotMaKh"].Value.ToString());
                 khDto.tenKh = row.Cells["cotTenKh"].Value.ToString();             
                 khDto.sdtKh = row.Cells["cotSdt"].Value.ToString();
-                khDto.diaChi = row.Cells["cotDiaChi"].Value.ToString();
                 khDto.tichDiem = int.Parse(row.Cells["cotTichDiem"].Value.ToString());
                 khDto.tongChi = double.Parse(row.Cells["cotTongChi"].Value.ToString());
                 thongTinKhGui = new ThongTinKhachHangGUI(khDto);

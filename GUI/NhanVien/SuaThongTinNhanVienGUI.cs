@@ -59,6 +59,7 @@ namespace WindowsFormsApp1
             tbMaNv.Text = nvDto.maNv;
             tbTenNv.Text = nvDto.tenNv;
             tbSdt.Text = nvDto.sdtNv;
+            rtbDiaChi.Text = nvDto.diaChiNv;
         //    rbNam.Checked = true;
             if (cbChucVu.Items.Contains(nvDto.chucVu))
             {

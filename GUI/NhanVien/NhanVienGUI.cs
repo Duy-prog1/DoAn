@@ -70,6 +70,7 @@ namespace WindowsFormsApp1
                     nvDto.tenNv = row.Cells["cotTenNv"].Value.ToString();
                     nvDto.gioiTinhNv = bool.Parse(row.Cells["cotGioiTinh"].Value.ToString());
                     nvDto.sdtNv = row.Cells["cotSdt"].Value.ToString();
+                    nvDto.diaChiNv = row.Cells["cotDiaChi"].Value.ToString();
                     nvDto.chucVu = row.Cells["cotChucVu"].Value.ToString();
                     nvDto.ngaySinhNv = row.Cells["cotNgaySinh"].Value.ToString();
                     nvDto.trangThai = true;
