@@ -65,11 +65,11 @@ namespace WindowsFormsApp1
             {
                 cbChucVu.SelectedItem = nvDto.chucVu;
             }          
-            if (nvDto.gioiTinhNv)
+            if (nvDto.gioiTinhNv.Equals("Nam"))
             {
                 rbNam.Checked = true;
             }
-            else if (!nvDto.gioiTinhNv)
+            else if (!nvDto.gioiTinhNv.Equals("Nữ"))
             {
                 rbNu.Checked = true;
             }

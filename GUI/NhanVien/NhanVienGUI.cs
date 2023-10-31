@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                     nvDto.maNv = row.Cells["cotMaNv"].Value.ToString();
                     nvDto.tenNv = row.Cells["cotTenNv"].Value.ToString();
-                    nvDto.gioiTinhNv = bool.Parse(row.Cells["cotGioiTinh"].Value.ToString());
+                    nvDto.gioiTinhNv = row.Cells["cotGioiTinh"].Value.ToString();
                     nvDto.sdtNv = row.Cells["cotSdt"].Value.ToString();
                     nvDto.diaChiNv = row.Cells["cotDiaChi"].Value.ToString();
                     nvDto.chucVu = row.Cells["cotChucVu"].Value.ToString();

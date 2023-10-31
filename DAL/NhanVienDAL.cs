@@ -28,7 +28,7 @@ namespace DAL
                     NhanVienDTO nv = new NhanVienDTO();
                     nv.maNv = reader["maNV"].ToString();
                     nv.tenNv = reader["tenNV"].ToString();
-                    nv.gioiTinhNv = reader.GetBoolean(reader.GetOrdinal("gioiTinh"));
+                    nv.gioiTinhNv = reader["gioiTinh"].ToString();
                     nv.sdtNv = reader["sdt"].ToString();
                     nv.diaChiNv = reader["DIACHI"].ToString();
                     nv.chucVu = reader["chucVu"].ToString();

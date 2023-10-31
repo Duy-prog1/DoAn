@@ -10,7 +10,7 @@ namespace DTO
     {
         public string maNv { get; set; }
         public string tenNv { get; set; }
-        public bool gioiTinhNv { get; set; }    
+        public String gioiTinhNv { get; set; }    
         public string sdtNv { get; set; }
         public string diaChiNv { get; set; }
         public string chucVu { get; set; }       
@@ -19,7 +19,7 @@ namespace DTO
 
         public NhanVienDTO() { }
 
-        public NhanVienDTO(string maNv, string tenNv, bool gioiTinhNv, string sdtNv, string diaChiNv, string chucVu, string ngaySinhNv, bool trangThai)
+        public NhanVienDTO(string maNv, string tenNv, String gioiTinhNv, string sdtNv, string diaChiNv, string chucVu, string ngaySinhNv, bool trangThai)
         {
             this.maNv = maNv;
             this.tenNv = tenNv;

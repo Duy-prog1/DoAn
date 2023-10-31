@@ -93,16 +93,12 @@ namespace WindowsFormsApp1
         }
 
        
-        public bool XuLyGioiTinh()
+        public String XuLyGioiTinh()
         {
-            bool gioiTinh = false;
-            if (rbNam.Checked)
-            {             
-                gioiTinh = true;
-            }
-            else if(rbNu.Checked)
+            String gioiTinh = "Nam";
+            if(rbNu.Checked)
             {              
-                gioiTinh = false;
+                gioiTinh = "Nữ";
             }           
             return gioiTinh;
 
