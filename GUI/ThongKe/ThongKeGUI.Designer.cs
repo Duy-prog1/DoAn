@@ -64,30 +64,39 @@
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.buttonThongKe = new System.Windows.Forms.Button();
+            this.comboSP = new System.Windows.Forms.ComboBox();
+            this.comboThoiGian = new System.Windows.Forms.ComboBox();
+            this.comboDSSP = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelTongThu = new System.Windows.Forms.Label();
+            this.textBoxTongThu = new System.Windows.Forms.TextBox();
+            this.labelTongChi = new System.Windows.Forms.Label();
+            this.textBoxTongChi = new System.Windows.Forms.TextBox();
+            this.labelLoiNhuan = new System.Windows.Forms.Label();
+            this.textBoxLoiNhuan = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.chart2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 373);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -99,7 +108,7 @@
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(3, 169);
+            this.chart2.Location = new System.Drawing.Point(3, 149);
             this.chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
@@ -166,7 +175,7 @@
             this.chart2.Series.Add(series11);
             this.chart2.Series.Add(series12);
             this.chart2.Series.Add(series13);
-            this.chart2.Size = new System.Drawing.Size(594, 160);
+            this.chart2.Size = new System.Drawing.Size(594, 140);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
             title1.Name = "Title1";
@@ -247,7 +256,7 @@
             this.chart1.Series.Add(series24);
             this.chart1.Series.Add(series25);
             this.chart1.Series.Add(series26);
-            this.chart1.Size = new System.Drawing.Size(594, 160);
+            this.chart1.Size = new System.Drawing.Size(594, 140);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             title2.Name = "Title1";
@@ -261,36 +270,36 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonThongKe, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboSP, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboThoiGian, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboDSSP, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 335);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 295);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(594, 35);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(594, 34);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // button1
+            // buttonThongKe
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(477, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThongKe.Location = new System.Drawing.Point(477, 3);
+            this.buttonThongKe.Name = "buttonThongKe";
+            this.buttonThongKe.Size = new System.Drawing.Size(114, 29);
+            this.buttonThongKe.TabIndex = 0;
+            this.buttonThongKe.Text = "Thống kê";
+            this.buttonThongKe.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboSP
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSP.FormattingEnabled = true;
+            this.comboSP.Items.AddRange(new object[] {
             "Sản phẩm",
             "Iphone",
             "Samsung",
@@ -306,36 +315,104 @@
             "Nokia",
             "HTC",
             "Toàn bộ SP"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 24);
-            this.comboBox1.TabIndex = 1;
+            this.comboSP.Location = new System.Drawing.Point(3, 3);
+            this.comboSP.Name = "comboSP";
+            this.comboSP.Size = new System.Drawing.Size(114, 24);
+            this.comboSP.TabIndex = 1;
             // 
-            // comboBox2
+            // comboThoiGian
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboThoiGian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboThoiGian.FormattingEnabled = true;
+            this.comboThoiGian.Items.AddRange(new object[] {
             "Thời gian",
             "Theo tuần",
             "Theo tháng"});
-            this.comboBox2.Location = new System.Drawing.Point(123, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(114, 24);
-            this.comboBox2.TabIndex = 2;
+            this.comboThoiGian.Location = new System.Drawing.Point(123, 3);
+            this.comboThoiGian.Name = "comboThoiGian";
+            this.comboThoiGian.Size = new System.Drawing.Size(114, 24);
+            this.comboThoiGian.TabIndex = 2;
             // 
-            // comboBox3
+            // comboDSSP
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboDSSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboDSSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDSSP.FormattingEnabled = true;
+            this.comboDSSP.Items.AddRange(new object[] {
             "Danh mục SP (Chọn SP để hủy)"});
-            this.comboBox3.Location = new System.Drawing.Point(243, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(228, 24);
-            this.comboBox3.TabIndex = 3;
+            this.comboDSSP.Location = new System.Drawing.Point(243, 3);
+            this.comboDSSP.Name = "comboDSSP";
+            this.comboDSSP.Size = new System.Drawing.Size(228, 24);
+            this.comboDSSP.TabIndex = 3;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.labelTongThu);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxTongThu);
+            this.flowLayoutPanel1.Controls.Add(this.labelTongChi);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxTongChi);
+            this.flowLayoutPanel1.Controls.Add(this.labelLoiNhuan);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxLoiNhuan);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 335);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(594, 35);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // labelTongThu
+            // 
+            this.labelTongThu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelTongThu.AutoSize = true;
+            this.labelTongThu.Location = new System.Drawing.Point(3, 6);
+            this.labelTongThu.Name = "labelTongThu";
+            this.labelTongThu.Size = new System.Drawing.Size(50, 13);
+            this.labelTongThu.TabIndex = 0;
+            this.labelTongThu.Text = "Tổng thu";
+            // 
+            // textBoxTongThu
+            // 
+            this.textBoxTongThu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxTongThu.Location = new System.Drawing.Point(59, 3);
+            this.textBoxTongThu.Name = "textBoxTongThu";
+            this.textBoxTongThu.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTongThu.TabIndex = 1;
+            // 
+            // labelTongChi
+            // 
+            this.labelTongChi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelTongChi.AutoSize = true;
+            this.labelTongChi.Location = new System.Drawing.Point(165, 6);
+            this.labelTongChi.Name = "labelTongChi";
+            this.labelTongChi.Size = new System.Drawing.Size(49, 13);
+            this.labelTongChi.TabIndex = 2;
+            this.labelTongChi.Text = "Tổng chi";
+            // 
+            // textBoxTongChi
+            // 
+            this.textBoxTongChi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxTongChi.Location = new System.Drawing.Point(220, 3);
+            this.textBoxTongChi.Name = "textBoxTongChi";
+            this.textBoxTongChi.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTongChi.TabIndex = 3;
+            // 
+            // labelLoiNhuan
+            // 
+            this.labelLoiNhuan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelLoiNhuan.AutoSize = true;
+            this.labelLoiNhuan.Location = new System.Drawing.Point(326, 6);
+            this.labelLoiNhuan.Name = "labelLoiNhuan";
+            this.labelLoiNhuan.Size = new System.Drawing.Size(54, 13);
+            this.labelLoiNhuan.TabIndex = 4;
+            this.labelLoiNhuan.Text = "Lợi nhuận";
+            // 
+            // textBoxLoiNhuan
+            // 
+            this.textBoxLoiNhuan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxLoiNhuan.Location = new System.Drawing.Point(386, 3);
+            this.textBoxLoiNhuan.Name = "textBoxLoiNhuan";
+            this.textBoxLoiNhuan.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLoiNhuan.TabIndex = 5;
             // 
             // ThongKeGUI
             // 
@@ -349,6 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -359,9 +438,16 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button buttonThongKe;
+        private System.Windows.Forms.ComboBox comboSP;
+        private System.Windows.Forms.ComboBox comboThoiGian;
+        private System.Windows.Forms.ComboBox comboDSSP;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label labelTongThu;
+        private System.Windows.Forms.TextBox textBoxTongThu;
+        private System.Windows.Forms.Label labelTongChi;
+        private System.Windows.Forms.TextBox textBoxTongChi;
+        private System.Windows.Forms.Label labelLoiNhuan;
+        private System.Windows.Forms.TextBox textBoxLoiNhuan;
     }
 }
