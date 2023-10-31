@@ -77,12 +77,11 @@ namespace WindowsFormsApp1
             if (clickedPictureBox == pictureBox1) 
             {
                 childFormToShow = new BanHangGUI();
-
             }
             //Ban Hang
             else if (clickedPictureBox == pictureBox2)
             {
-              
+                childFormToShow = new BanHangGUI();
             }
             //San Pham
             else if (clickedPictureBox == pictureBox3)
