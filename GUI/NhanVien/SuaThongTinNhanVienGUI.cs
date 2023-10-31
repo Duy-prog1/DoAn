@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             {
                 rbNam.Checked = true;
             }
-            else if (!nvDto.gioiTinhNv.Equals("Nữ"))
+            else
             {
                 rbNu.Checked = true;
             }
