@@ -41,7 +41,7 @@ create table khachHang(
 create table nhanVien(
 	maNV nVarChar(10) not null primary key,
 	tenNV nVarChar(30),
-	gioiTinh bit,
+	gioiTinh nVarChar(3),
 	sdt char(10),
 	diaChi nVarChar(60),
 	chucVu nVarChar(10),

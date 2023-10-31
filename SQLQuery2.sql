@@ -74,16 +74,16 @@ INSERT INTO khachHang (maKH, tenKH, sdt, tichDiem, tongChi) VALUES
 	(16, N'Chu Thị Rành', '0987654314', 0, 0),
 	(17, N'Sơn Văn Sách', '0123456782', 0, 0);
 INSERT INTO nhanVien (maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh, tinhTrang) VALUES
-	('NV01', N'Nguyễn Văn Anh', 1, '0123456789', N'123 Đường Nguyễn Văn Trỗi, Phường 12, Quận Phú Nhuận', N'Quản lý', '1990-01-01', 1),
-	('NV02', N'Trần Thị Bảo', 0,'0987654321', N'456 Đường Lê Văn Sỹ, Phường 14, Quận 3', N'NV kho', '1991-02-02', 1),
-	('NV03', N'Lê Văn Chu', 1,'0129876543', N'789 Đường Nguyễn Đình Chiểu, Phường 3, Quận 1', N'Nhân viên', '1992-03-03', 1),
-	('NV04', N'Đinh Thị Duyên', 0,'0987654320', N'1011 Đường Võ Thị Sáu, Phường 7, Quận 3', N'Nhân viên', '1993-04-04', 1),
-	('NV05', N'Vũ Văn Ếch', 1,'0123456788', N'1213 Đường Nguyễn Thị Minh Khai, Phường Bến Nghé, Quận 1', N'Nhân viên', '1994-05-05', 1),
-	('NV06', N'Hoàng Thị Gánh', 0,'0987654319', N'789 Đường Điện Biên Phủ, Phường 15, Quận Bình Thạnh', N'Nhân viên', '1995-06-06', 1),
-	('NV07', N'Phạm Văn Hinh', 1,'0123456787', N'1011 Đường Phạm Văn Đồng, Phường 3, Quận Gò Vấp', N'Nhân viên', '1996-07-07', 1),
-	('NV08', N'Trương Thị Ích', 0,'0987654318', N'1213 Đường Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7', N'Nhân viên', '1997-08-08', 1),
-	('NV09', N'Bùi Văn Khải', 1,'0123456786', N'457 Đường Xa lộ Hà Nội, Phường Tam Hiệp, Quận 9', N'Nhân viên', '1998-09-09', 1),
-	('NV10', N'Nguyễn Thị Lài', 0,'0987654317', N'789 Đường Trường Chinh, Phường Tây Thạnh, Quận Tân Phú', N'Nhân viên', '1999-10-10', 1);
+	('NV01', N'Nguyễn Văn Anh', 'Nam', '0123456789', N'123 Đường Nguyễn Văn Trỗi, Phường 12, Quận Phú Nhuận', N'Quản lý', '1990-01-01', 1),
+	('NV02', N'Trần Thị Bảo', N'Nữ','0987654321', N'456 Đường Lê Văn Sỹ, Phường 14, Quận 3', N'NV kho', '1991-02-02', 1),
+	('NV03', N'Lê Văn Chu', 'Nam','0129876543', N'789 Đường Nguyễn Đình Chiểu, Phường 3, Quận 1', N'Nhân viên', '1992-03-03', 1),
+	('NV04', N'Đinh Thị Duyên', N'Nữ','0987654320', N'1011 Đường Võ Thị Sáu, Phường 7, Quận 3', N'Nhân viên', '1993-04-04', 1),
+	('NV05', N'Vũ Văn Ếch', 'Nam','0123456788', N'1213 Đường Nguyễn Thị Minh Khai, Phường Bến Nghé, Quận 1', N'Nhân viên', '1994-05-05', 1),
+	('NV06', N'Hoàng Thị Gánh', N'Nữ','0987654319', N'789 Đường Điện Biên Phủ, Phường 15, Quận Bình Thạnh', N'Nhân viên', '1995-06-06', 1),
+	('NV07', N'Phạm Văn Hinh', 'Nam','0123456787', N'1011 Đường Phạm Văn Đồng, Phường 3, Quận Gò Vấp', N'Nhân viên', '1996-07-07', 1),
+	('NV08', N'Trương Thị Ích', N'Nữ','0987654318', N'1213 Đường Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7', N'Nhân viên', '1997-08-08', 1),
+	('NV09', N'Bùi Văn Khải', 'Nam','0123456786', N'457 Đường Xa lộ Hà Nội, Phường Tam Hiệp, Quận 9', N'Nhân viên', '1998-09-09', 1),
+	('NV10', N'Nguyễn Thị Lài', N'Nữ','0987654317', N'789 Đường Trường Chinh, Phường Tây Thạnh, Quận Tân Phú', N'Nhân viên', '1999-10-10', 1);
 INSERT INTO phanQuyen (maQuyen, qLyNV, qLySP, qLyNH, qLyBH, qLyKH, xemThongKe) VALUES
 	(1, 1, 1, 1, 1, 0, 1),
 	(2, 0, 1, 0, 1, 1, 0),
