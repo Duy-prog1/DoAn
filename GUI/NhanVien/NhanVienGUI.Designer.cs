@@ -33,6 +33,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cotMaNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cotTenNv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +42,6 @@
             this.cotSdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cotChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cotNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cotXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -84,7 +86,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -109,6 +111,32 @@
             this.label1.Text = "Quản lý nhân viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 51);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(649, 440);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 30);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -129,13 +157,14 @@
             this.cotSdt,
             this.cotChucVu,
             this.cotNgaySinh,
-            this.cotSua,
             this.cotXoa});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(647, 438);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 404);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick_1);
             // 
             // cotMaNv
             // 
@@ -178,15 +207,6 @@
             this.cotNgaySinh.DataPropertyName = "ngaySinh";
             this.cotNgaySinh.HeaderText = "Ngày Sinh";
             this.cotNgaySinh.Name = "cotNgaySinh";
-            // 
-            // cotSua
-            // 
-            this.cotSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cotSua.HeaderText = "Sửa";
-            this.cotSua.Name = "cotSua";
-            this.cotSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cotSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cotSua.Width = 51;
             // 
             // cotXoa
             // 
@@ -269,6 +289,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -294,7 +316,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cotSdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotNgaySinh;
-        private System.Windows.Forms.DataGridViewButtonColumn cotSua;
         private System.Windows.Forms.DataGridViewButtonColumn cotXoa;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

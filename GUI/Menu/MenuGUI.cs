@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             //khach hang
             else if (clickedPictureBox == pictureBox5)
             {
-                
+                childFormToShow = new KhachhangGUI();
             }
             //khuyen mai
             else if (clickedPictureBox == pictureBox6)
@@ -113,6 +113,7 @@ namespace WindowsFormsApp1
             {
                 childFormToShow = new ThongKeGUI();
             }
+          
 
             childFormToShow.Dock = DockStyle.Fill;
             // Thêm các else if tương ứng cho các PictureBox khác
