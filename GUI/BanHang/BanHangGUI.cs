@@ -52,5 +52,10 @@ namespace WindowsFormsApp1
             FormThanhToan thanhToan = new FormThanhToan();
             thanhToan.ShowDialog();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
