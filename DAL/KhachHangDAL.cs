@@ -13,7 +13,7 @@ namespace DAL
     {
         public DataTable getKhachHang()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT maKH, tenKH, sdt, diaChi, tichDiem, tongChi FROM khachHang ", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT maKH, tenKH, sdt, tichDiem, tongChi FROM khachHang ", _conn);
             DataTable dtKhachHang = new DataTable();
 
             da.Fill(dtKhachHang);
@@ -26,7 +26,7 @@ namespace DAL
             using (SqlConnection connection = new SqlConnection(_conn.ConnectionString))
             {
                 connection.Open();
-                string sqlQuery = "SELECT   maKH, tenKH, sdt, diaChi, tichDiem, tongChi FROM khachHang Where maKH LIKE @key OR tenKH LIKE @key OR sdt LIKE @key OR tichDiem LIKE @key OR tongChi LIKE @key ";
+                string sqlQuery = "SELECT   maKH, tenKH, sdt, tichDiem, tongChi FROM khachHang Where maKH LIKE @key OR tenKH LIKE @key OR sdt LIKE @key OR tichDiem LIKE @key OR tongChi LIKE @key ";
                 SqlDataAdapter da;
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {

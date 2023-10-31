@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
                 lbNgaySinh.Text = "";
                 lbGioiTinh.Text = "";
                 lbChucVu.Text = "";
-                nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), tbSdt.Text, xuLychucVu(), xuLyNgaySinh(), true);
+                nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), tbSdt.Text, rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
                 if (nvBus.themNhanVien(nvDto))
                 {
                     MessageBox.Show("thêm thành công");
