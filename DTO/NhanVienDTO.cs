@@ -12,18 +12,20 @@ namespace DTO
         public string tenNv { get; set; }
         public bool gioiTinhNv { get; set; }    
         public string sdtNv { get; set; }
-        public string chucVu { get; set; }
-       // public string diaChiNv { get; set; }
+        public string diaChiNv { get; set; }
+        public string chucVu { get; set; }       
         public string ngaySinhNv { get; set; }
         public bool trangThai { get; set; }
 
         public NhanVienDTO() { }
-        public NhanVienDTO(string maNv, string tenNv, bool gioiTinhNv, string sdtNv, string chucVu, string ngaySinhNv, bool trangThai)
+
+        public NhanVienDTO(string maNv, string tenNv, bool gioiTinhNv, string sdtNv, string diaChiNv, string chucVu, string ngaySinhNv, bool trangThai)
         {
             this.maNv = maNv;
             this.tenNv = tenNv;
             this.gioiTinhNv = gioiTinhNv;
             this.sdtNv = sdtNv;
+            this.diaChiNv = diaChiNv;
             this.chucVu = chucVu;
             this.ngaySinhNv = ngaySinhNv;
             this.trangThai = trangThai;

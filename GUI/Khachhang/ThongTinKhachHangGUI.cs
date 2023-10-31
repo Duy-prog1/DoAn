@@ -28,14 +28,13 @@ namespace WindowsFormsApp1
             tbTichDiem.Enabled = false;
             tbTongChi.Enabled = false;
             tbSdt.Enabled = false;
-            rtbDiaChi.Enabled = false;
+//            rtbDiaChi.Enabled = false;
 
             tbMaKh.Text = khDto.maKh.ToString();
             tbTenKh.Text = khDto.tenKh;
             tbTichDiem.Text = khDto.tichDiem.ToString();
             tbTongChi.Text = khDto.tongChi.ToString();
             tbSdt.Text = khDto.sdtKh;
-            rtbDiaChi.Text = khDto.diaChi;
         }
     }
 }

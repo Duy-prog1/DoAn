@@ -30,7 +30,7 @@ namespace DAL
                     nv.tenNv = reader["tenNV"].ToString();
                     nv.gioiTinhNv = reader.GetBoolean(reader.GetOrdinal("gioiTinh"));
                     nv.sdtNv = reader["sdt"].ToString();
-                  //  nv.DIACHI = reader["DIACHI"].ToString();
+                    nv.diaChiNv = reader["DIACHI"].ToString();
                     nv.chucVu = reader["chucVu"].ToString();
                     nv.ngaySinhNv = reader["ngaySinh"].ToString();
                     nv.trangThai = reader.GetBoolean(reader.GetOrdinal("tinhTrang"));
@@ -53,7 +53,7 @@ namespace DAL
 
         public DataTable getNhanVien()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1", _conn);
             DataTable dtThanhvien = new DataTable();
 
             da.Fill(dtThanhvien);
@@ -66,7 +66,7 @@ namespace DAL
             using (SqlConnection connection = new SqlConnection(_conn.ConnectionString))
             {
                 connection.Open();
-                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh LIKE @key )";
+                string sqlQuery = "SELECT  maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh FROM nhanVien WHERE tinhTrang = 1 AND (maNV LIKE @key OR tenNV LIKE @key OR sdt LIKE @key OR chucVu LIKE @key OR ngaySinh LIKE @key )";
                 SqlDataAdapter da;
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
@@ -89,8 +89,8 @@ namespace DAL
 
               
                 string SQL =
-                string.Format("INSERT INTO nhanVien( maNV, tenNV, gioiTinh, sdt, chucVu, ngaySinh, tinhTrang) VALUES ('{0}', N'{1}', '{2}', '{3}', N'{4}', '{5}', '{6}')"
-                , tv.maNv, tv.tenNv, tv.gioiTinhNv, tv.sdtNv, tv.chucVu, tv.ngaySinhNv, tv.trangThai);
+                string.Format("INSERT INTO nhanVien( maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh, tinhTrang) VALUES ('{0}', N'{1}', '{2}', '{3}', N'{4}', N'{5}', '{6}', '{7}')"
+                , tv.maNv, tv.tenNv, tv.gioiTinhNv, tv.sdtNv, tv.diaChiNv, tv.chucVu, tv.ngaySinhNv, tv.trangThai);
 
                 // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
@@ -121,7 +121,7 @@ namespace DAL
                 _conn.Open();
 
                 // Query string to update the "tinhTrang" column to 'False' for the specified "maNV"
-                string SQL = string.Format("UPDATE nhanVien SET tenNV = @tenNV, gioiTinh = @gioiTinh, sdt = @sdt, chucVu =@chucVu, ngaySinh = @ngaySinh  WHERE maNV = @MaNV");
+                string SQL = string.Format("UPDATE nhanVien SET tenNV = @tenNV, gioiTinh = @gioiTinh, sdt = @sdt, diaChi = @diaChi, chucVu =@chucVu, ngaySinh = @ngaySinh  WHERE maNV = @MaNV");
 
                 // Create a SqlCommand object
                 using (SqlCommand cmd = new SqlCommand(SQL, _conn))
@@ -131,6 +131,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@tenNV", nv.tenNv);
                     cmd.Parameters.AddWithValue("@gioiTinh", nv.gioiTinhNv);
                     cmd.Parameters.AddWithValue("@sdt", nv.sdtNv);
+                    cmd.Parameters.AddWithValue("@diaChi", nv.diaChiNv);
                     cmd.Parameters.AddWithValue("@chucVu", nv.chucVu);
                     cmd.Parameters.AddWithValue("@ngaySinh", nv.ngaySinhNv);
                    
