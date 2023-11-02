@@ -36,5 +36,10 @@ namespace WindowsFormsApp1
             tbTongChi.Text = khDto.tongChi.ToString();
             tbSdt.Text = khDto.sdtKh;
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
