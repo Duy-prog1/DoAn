@@ -50,10 +50,11 @@ namespace WindowsFormsApp1
             tbMaNv.Enabled = false;
             tbTenNv.Enabled = false;
             tbSdt.Enabled = false;
-            maskedTextBox1.Enabled = false;
+            mtbNgaySinh.Enabled = false;
             rbNam.Enabled = false;
             rbNu.Enabled = false;
             cbChucVu.Enabled = false;
+            rtbDiaChi.Enabled = false;
 
 
             tbMaNv.Text = nvDto.maNv;
@@ -73,7 +74,7 @@ namespace WindowsFormsApp1
             {
                 rbNu.Checked = true;
             }
-            maskedTextBox1.Text = nvDto.ngaySinhNv;
+            mtbNgaySinh.Text = nvDto.ngaySinhNv;
                 
 
         }
@@ -83,6 +84,9 @@ namespace WindowsFormsApp1
             tbSdt.Enabled = true;      
             cbChucVu.Enabled = true;
             kichHoatSua = true;
+            tbTenNv.Enabled = true;
+            mtbNgaySinh.Enabled = true;
+            rtbDiaChi.Enabled = true;
 
         }
 
@@ -99,25 +103,55 @@ namespace WindowsFormsApp1
 
         public void suaThongTinNhanVien()
         {
-            if (tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && maskedTextBox1.Text != "" && CheckPhoneNumber(tbSdt.Text))
+            if (checkNgaySinhVaSdt())
             {
-                lbTenNv.Text = "";
-                lbSdt.Text = "";
-                lbNgaySinh.Text = "";
-                lbGioiTinh.Text = "";
-                lbChucVu.Text = "";
-                this.nvDto.ngaySinhNv = xuLyNgaySinh();
-                this.nvDto.sdtNv = tbSdt.Text;
-                this.nvDto.chucVu = xuLychucVu();
-                if (nvBus.suaNhanVien(nvDto))
+                if (tbTenNv.Text == "")
                 {
-                    tblNv.DataSource = nvBus.getNhanVien();
-                    MessageBox.Show("Sửa thành công!");
-                    this.Dispose();
+                    lbTenNv.Text = "Vui lòng nhập tên nhân viên!";
                 }
                 else
-                    MessageBox.Show("Sửa thất bại!");
+                    lbTenNv.Text = "";
+                if (rtbDiaChi.Text == "")
+                {
+                    lbDiaChi.Text = "Vui lòng nhập đia chỉ nhân viên!";
+                }
+                else
+                    lbDiaChi.Text = "";
+                if (cbChucVu.SelectedIndex == 0)
+                {
+                    lbChucVu.Text = "Vui lòng chọn chức vụ cho nhân viên!";
+                }
+                else
+                    lbChucVu.Text = "";
+                if (!rbNam.Checked && !rbNu.Checked)
+                {
+                    lbGioiTinh.Text = "Vui lòng chọn giới tính cho nhân viên!";
+                }
+                else
+                    lbGioiTinh.Text = "";
+                if (tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && mtbNgaySinh.Text != "" && CheckPhoneNumber(tbSdt.Text) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
+                {
+                    lbTenNv.Text = "";
+                    lbSdt.Text = "";
+                    lbNgaySinh.Text = "";
+                    lbGioiTinh.Text = "";
+                    lbChucVu.Text = "";
+                    this.nvDto.tenNv = tbTenNv.Text;
+                    this.nvDto.ngaySinhNv = xuLyNgaySinh();
+                    this.nvDto.sdtNv = tbSdt.Text;
+                    this.nvDto.chucVu = xuLychucVu();
+                    this.nvDto.diaChiNv = rtbDiaChi.Text;
+                    if (nvBus.suaNhanVien(nvDto))
+                    {
+                        tblNv.DataSource = nvBus.getNhanVien();
+                        MessageBox.Show("Sửa thành công!");
+                        this.Dispose();
+                    }
+                    else
+                        MessageBox.Show("Sửa thất bại!");
+                }
             }
+          
             else if (cbChucVu.SelectedIndex == 0)
             {
                 lbChucVu.Text = "Bạn chưa chọn chức vụ!";
@@ -126,6 +160,26 @@ namespace WindowsFormsApp1
             {
                 lbSdt.Text = "Vui lòng nhập thông tin vào!";
             }
+        }
+        public bool checkNgaySinhVaSdt()
+        {
+            if (CheckPhoneNumber(tbSdt.Text) && !checkDate(mtbNgaySinh.Text, lbNgaySinh))
+            {
+                return true;
+            }
+            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && !CheckPhoneNumber(tbSdt.Text))
+            {
+                return true;
+            }
+            if (CheckPhoneNumber(tbSdt.Text) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
+            {
+                return true;
+            }
+            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && CheckPhoneNumber(tbSdt.Text))
+            {
+                return true;
+            }
+            return false;
         }
         public string xuLychucVu()
         {
@@ -159,7 +213,11 @@ namespace WindowsFormsApp1
             // Kiểm tra trùng lặp với danh sách nhân viên
             foreach (NhanVienDTO nv in nvBus.getList())
             {
-                if (phoneNumber.Equals(nv.sdtNv))
+                if (tbMaNv.Text.Equals(nv.maNv) && phoneNumber.Equals(nv.sdtNv))
+                {
+                    return true;
+                }
+                if (!tbMaNv.Text.Equals(nv.maNv) && phoneNumber.Equals(nv.sdtNv))
                 {
                     lbSdt.Text = "Số điện thoại bị trùng";
                     return false;
@@ -172,13 +230,13 @@ namespace WindowsFormsApp1
                 lbSdt.Text = "Số điện thoại không đúng định dạng";
                 return false;
             }
-
+            lbSdt.Text = "";
             return true;
         }
         public string xuLyNgaySinh()
         {
             string ngaySinh = "";
-            string ngaySinhNv = maskedTextBox1.Text;
+            string ngaySinhNv = mtbNgaySinh.Text;
             DateTime ngayTrongMaskedTextBox;
 
             if (DateTime.TryParseExact(ngaySinhNv, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out ngayTrongMaskedTextBox))
@@ -206,6 +264,36 @@ namespace WindowsFormsApp1
             }
         }
 
+        public bool checkDate(string date, Label lbngaySinh)
+        {
+            DateTime ngayTrongMaskedTextBox;
+
+            if (DateTime.TryParseExact(date, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out ngayTrongMaskedTextBox))
+            {
+                DateTime ngayHienTai = DateTime.Now;
+
+                if (ngayHienTai > ngayTrongMaskedTextBox)
+                {
+                    lbngaySinh.Text = "";
+                    return true;
+
+                    //    Console.WriteLine("Ngày hiện tại lớn hơn ngày trong chuỗi.");
+                }
+                else if (ngayHienTai <= ngayTrongMaskedTextBox)
+                {
+                    lbngaySinh.Text = "Không được lớn hơn ngày hiện tại!";
+                    //      MessageBox.Show("ngày sinh lớn hơn ngày hiện tại " + ngayTrongMaskedTextBox.ToString());
+                    return false;
+                }
+
+            }
+            else
+            {
+                lbngaySinh.Text = "Ngày sinh không hợp lệ!";
+                return false;
+            }
+            return false;
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();

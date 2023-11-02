@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             this.nvGui = nvGui;
             this.tblNv = tblNv;
             this.tbMaNv.Text = capNhatId();
+            this.tbMaNv.Enabled = false;
             this.loadChucVu(cbChucVu);
             this.tblNv = tblNv;
         }
@@ -49,50 +50,104 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-
-            if (tbMaNv.Text != "" && tbTenNv.Text != "" && tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && (rbNam.Checked || rbNu.Checked) && maskedTextBox1.Text != "" && CheckPhoneNumber(tbSdt.Text)&& checkDate(maskedTextBox1.Text,lbNgaySinh))
+            if (checkNgaySinhVaSdt())
             {
-                lbTenNv.Text = "";
-                lbSdt.Text = "";
-                lbNgaySinh.Text = "";
-                lbGioiTinh.Text = "";
-                lbChucVu.Text = "";
-                nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), tbSdt.Text, rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
-                if (nvBus.themNhanVien(nvDto))
+                if (tbTenNv.Text == "")
                 {
-                    MessageBox.Show("thêm thành công");
-                    tblNv.DataSource = nvBus.getNhanVien();
-                    this.Dispose();
+                    lbTenNv.Text = "Vui lòng nhập tên nhân viên!";
                 }
                 else
-                    MessageBox.Show("thêm thất bại");
-            }
-            else if(tbTenNv.Text == "")
+                    lbTenNv.Text = "";
+                if (rtbDiaChi.Text == "")
+                {
+                    lbDiaChi.Text = "Vui lòng nhập đia chỉ nhân viên!";
+                }
+                else
+                    lbDiaChi.Text = "";
+                if (cbChucVu.SelectedIndex == 0)
+                {
+                    lbChucVu.Text = "Vui lòng chọn chức vụ cho nhân viên!";
+                }
+                else
+                    lbChucVu.Text = "";
+                if (!rbNam.Checked && !rbNu.Checked)
+                {
+                    lbGioiTinh.Text = "Vui lòng chọn giới tính cho nhân viên!";
+                }
+                else
+                    lbGioiTinh.Text = "";
+                if (tbTenNv.Text != "" && tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && (rbNam.Checked || rbNu.Checked) && maskedTextBox1.Text != "" && rtbDiaChi.Text != "" 
+                    && checkDate(maskedTextBox1.Text, lbNgaySinh) && CheckPhoneNumber(tbSdt.Text))
+                {
+                    lbDiaChi.Text = "";
+                    lbTenNv.Text = "";
+                    lbSdt.Text = "";
+                    lbNgaySinh.Text = "";
+                    lbGioiTinh.Text = "";
+                    lbChucVu.Text = "";
+                    nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), XuLySdt(), rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
+                    if (nvBus.themNhanVien(nvDto))
+                    {
+                        MessageBox.Show("thêm thành công");
+                        tblNv.DataSource = nvBus.getNhanVien();
+                        this.Dispose();
+                    }
+                    else
+                        MessageBox.Show("thêm thất bại");
+                }
+            }  
+            else
             {
-                lbTenNv.Text = "Vui lòng nhập thông tin vào!";
+                if (tbTenNv.Text == "")
+                {
+                    lbTenNv.Text = "Vui lòng nhập tên nhân viên!";
+                }
+                else
+                    lbTenNv.Text = "";
+                if (rtbDiaChi.Text == "")
+                {
+                    lbDiaChi.Text = "Vui lòng nhập đia chỉ nhân viên!";
+                }
+                else
+                    lbDiaChi.Text = "";
+                if (cbChucVu.SelectedIndex == 0)
+                {
+                    lbChucVu.Text = "Vui lòng chọn chức vụ cho nhân viên!";
+                }
+                else
+                    lbChucVu.Text = "";
+                if (!rbNam.Checked && !rbNu.Checked)
+                {
+                    lbGioiTinh.Text = "Vui lòng chọn giới tính cho nhân viên!";
+                }
+                else
+                    lbGioiTinh.Text = "";
             }
-            else if(cbChucVu.SelectedIndex == 0)
-            {
-                lbChucVu.Text = "Bạn chưa chọn chức vụ!";
-            }
-            else if(tbSdt.Text == "")
-            {
-                lbSdt.Text = "Vui lòng nhập thông tin vào!";
-            }
-            else if(!rbNam.Checked && !rbNu.Checked)
-            {
-                lbGioiTinh.Text = "Bạn chưa chọn giới tính!";
-            }
-            else 
-            {
-                MessageBox.Show("Chưa đủ thông tin!");
-            }
+            
                
 
         }
 
-       
+        public bool checkNgaySinhVaSdt()
+        {
+            if (CheckPhoneNumber(tbSdt.Text)&&!checkDate(maskedTextBox1.Text, lbNgaySinh))
+            {
+                return true;
+            }
+            if(checkDate(maskedTextBox1.Text, lbNgaySinh)&&!CheckPhoneNumber(tbSdt.Text))
+            {
+                return true;
+            }
+            if(CheckPhoneNumber(tbSdt.Text) && checkDate(maskedTextBox1.Text, lbNgaySinh))
+            {
+                return true;
+            }
+            if (checkDate(maskedTextBox1.Text, lbNgaySinh) && CheckPhoneNumber(tbSdt.Text) )
+            {
+                return true;
+            }
+            return false;
+        }       
         public String XuLyGioiTinh()
         {
             String gioiTinh = "Nam";
@@ -103,17 +158,24 @@ namespace WindowsFormsApp1
             return gioiTinh;
 
         }
-       
+        
+        public string XuLySdt()
+        {
+            string sdt ="";
+            if (checkSdt(tbSdt.Text))
+            {
+                sdt = tbSdt.Text;
+            }
+            return sdt;
+        }
          public bool checkSdt(string phoneNumber)
         {
             // Biểu thức chính quy kiểm tra số điện thoại với định dạng cụ thể (10 số và bắt đầu bằng số 0)
             string phonePattern = @"^0\d{9}$";
-            lbSdt.Text = "";
             foreach (NhanVienDTO nv in nvBus.getList())           
             {
                     if (phoneNumber.Equals(nv.sdtNv))
-                    {
-                        lbSdt.Text = "Số điện thoại bị trùng";
+                    {                    
                         return false;
                     }
             }
@@ -129,14 +191,14 @@ namespace WindowsFormsApp1
             // Kiểm tra đầu vào là null hoặc rỗng
             if (string.IsNullOrEmpty(phoneNumber))
             {
-                lbSdt.Text = "Số điện thoại không được để trống";
+                lbSdt.Text = "Số điện thoại không được để trống!";
                 return false;
             }
 
             // Kiểm tra độ dài của số điện thoại
             if (phoneNumber.Length != 10 || !phoneNumber.StartsWith("0"))
             {
-                lbSdt.Text = "Số điện thoại không hợp lệ";
+                lbSdt.Text = "Số điện thoại không hợp lệ!";
                 return false;
             }
 
@@ -145,7 +207,7 @@ namespace WindowsFormsApp1
             {
                 if (phoneNumber.Equals(nv.sdtNv))
                 {
-                    lbSdt.Text = "Số điện thoại bị trùng";
+                    lbSdt.Text = "Số điện thoại bị trùng!";
                     return false;
                 }
             }
@@ -153,10 +215,10 @@ namespace WindowsFormsApp1
             // Kiểm tra sự trùng khớp của số điện thoại với biểu thức chính quy
             if (!Regex.IsMatch(phoneNumber, phonePattern))
             {
-                lbSdt.Text = "Số điện thoại không đúng định dạng";
+                lbSdt.Text = "Số điện thoại không đúng định dạng!";
                 return false;
             }
-
+            lbSdt.Text = "";
             return true;
         }
 
