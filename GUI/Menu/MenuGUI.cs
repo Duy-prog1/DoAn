@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             //khuyen mai
             else if (clickedPictureBox == pictureBox6)
             {
-                
+                childFormToShow = new KhuyenMaiGUI();
             }
             //nhap hang
             else if (clickedPictureBox == pictureBox7)

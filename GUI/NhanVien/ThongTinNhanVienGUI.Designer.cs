@@ -57,10 +57,10 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.rtbDiaChi = new System.Windows.Forms.RichTextBox();
+            this.lbDiaChi = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.lbDiaChi = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -148,7 +148,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(634, 213);
             this.tableLayoutPanel3.TabIndex = 19;
             // 
@@ -211,7 +211,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(117, 28);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
@@ -307,7 +307,7 @@
             this.tbTenNv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbTenNv.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenNv.Location = new System.Drawing.Point(83, 70);
-            this.tbTenNv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTenNv.Margin = new System.Windows.Forms.Padding(2);
             this.tbTenNv.Name = "tbTenNv";
             this.tbTenNv.Size = new System.Drawing.Size(117, 27);
             this.tbTenNv.TabIndex = 15;
@@ -317,7 +317,7 @@
             this.tbMaNv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMaNv.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaNv.Location = new System.Drawing.Point(83, 2);
-            this.tbMaNv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMaNv.Margin = new System.Windows.Forms.Padding(2);
             this.tbMaNv.Name = "tbMaNv";
             this.tbMaNv.Size = new System.Drawing.Size(117, 27);
             this.tbMaNv.TabIndex = 10;
@@ -353,7 +353,7 @@
             this.tbSdt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbSdt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSdt.Location = new System.Drawing.Point(83, 138);
-            this.tbSdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSdt.Margin = new System.Windows.Forms.Padding(2);
             this.tbSdt.Name = "tbSdt";
             this.tbSdt.Size = new System.Drawing.Size(117, 27);
             this.tbSdt.TabIndex = 20;
@@ -448,6 +448,16 @@
             this.rtbDiaChi.TabIndex = 18;
             this.rtbDiaChi.Text = "";
             // 
+            // lbDiaChi
+            // 
+            this.lbDiaChi.AutoSize = true;
+            this.lbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDiaChi.ForeColor = System.Drawing.Color.Red;
+            this.lbDiaChi.Location = new System.Drawing.Point(57, 177);
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Size = new System.Drawing.Size(156, 30);
+            this.lbDiaChi.TabIndex = 19;
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 5;
@@ -491,16 +501,6 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lbDiaChi
-            // 
-            this.lbDiaChi.AutoSize = true;
-            this.lbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbDiaChi.ForeColor = System.Drawing.Color.Red;
-            this.lbDiaChi.Location = new System.Drawing.Point(57, 177);
-            this.lbDiaChi.Name = "lbDiaChi";
-            this.lbDiaChi.Size = new System.Drawing.Size(156, 30);
-            this.lbDiaChi.TabIndex = 19;
             // 
             // ThongTinNhanVienGUI
             // 
