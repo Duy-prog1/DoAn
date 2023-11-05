@@ -309,7 +309,7 @@ namespace WindowsFormsApp1
                     if (int.TryParse(discount, out discountValue))
                     {
                         float value = ctkmBus.getGiaBanByID(maSP);
-                        float result = value * (1 - (discountValue / 100.0f));
+                        float result = value * ((discountValue / 100.0f));
                         textBox6.Text = result.ToString("0");
                     }
                 }
