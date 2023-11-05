@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1
 {
@@ -19,6 +20,21 @@ namespace WindowsFormsApp1
 
         private void buttonThongKe_Click(object sender, EventArgs e)
         {
+            //get Series thống kê số lượng
+            Series series1 = new Series();
+            series1 =;
+            //get Series thống kê doanh thu
+
+
+            //lay listSP
+            List<String> listSP=new List<String>();
+            for(int i = 1; i < comboDSSP.Items.Count; i++)
+            {
+                listSP.Add(comboDSSP.Items[i].ToString());
+            }
+            //lay thoiGian
+            String thoiGian=comboThoiGian.SelectedItem.ToString().Substring(5);
+            //theo tuan,thang,quy
 
         }
 
@@ -78,5 +94,7 @@ namespace WindowsFormsApp1
             comboDSSP.SelectedIndex = 0;
             comboThoiGian.SelectedIndex = 0;
         }
+
+
     }
 }
