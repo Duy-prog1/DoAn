@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.NhapHang;
+using WindowsFormsApp1.SanPham;
 
 namespace WindowsFormsApp1
 {
@@ -86,7 +88,7 @@ namespace WindowsFormsApp1
             //San Pham
             else if (clickedPictureBox == pictureBox3)
             {
-               
+                childFormToShow = new SanPhamGUI();
             }
             //Nhan Vien
             else if (clickedPictureBox == pictureBox4)
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
             //nhap hang
             else if (clickedPictureBox == pictureBox7)
             {
-                
+                childFormToShow = new PhieuNhapGUI();
             }
             //thong ke
             else if (clickedPictureBox == pictureBox8)
