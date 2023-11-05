@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series105 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series106 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series107 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series108 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series109 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series110 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series111 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series112 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series113 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series114 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series115 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series116 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series117 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series118 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series119 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series120 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series121 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series122 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series123 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series124 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series125 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series126 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series127 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series128 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series129 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series130 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series49 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series51 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonThongKe = new System.Windows.Forms.Button();
             this.comboSP = new System.Windows.Forms.ComboBox();
             this.comboThoiGian = new System.Windows.Forms.ComboBox();
             this.comboDSSP = new System.Windows.Forms.ComboBox();
+            this.buttonThongKe = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelTongThu = new System.Windows.Forms.Label();
             this.textBoxTongThu = new System.Windows.Forms.TextBox();
@@ -75,10 +80,13 @@
             this.textBoxTongChi = new System.Windows.Forms.TextBox();
             this.labelLoiNhuan = new System.Windows.Forms.Label();
             this.textBoxLoiNhuan = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,208 +104,199 @@
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 373);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 373);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // chart2
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea9);
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Name = "Legend1";
-            this.chart2.Legends.Add(legend9);
-            this.chart2.Location = new System.Drawing.Point(3, 149);
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
+            this.chart2.Location = new System.Drawing.Point(3, 147);
             this.chart2.Name = "chart2";
-            series105.ChartArea = "ChartArea1";
-            series105.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series105.Legend = "Legend1";
-            series105.Name = "Iphone";
-            series106.ChartArea = "ChartArea1";
-            series106.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series106.Legend = "Legend1";
-            series106.Name = "Samsung";
-            series107.ChartArea = "ChartArea1";
-            series107.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series107.Legend = "Legend1";
-            series107.Name = "Google Pixel";
-            series108.ChartArea = "ChartArea1";
-            series108.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series108.Legend = "Legend1";
-            series108.Name = "Huawei";
-            series109.ChartArea = "ChartArea1";
-            series109.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series109.Legend = "Legend1";
-            series109.Name = "Xiaomi";
-            series110.ChartArea = "ChartArea1";
-            series110.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series110.Legend = "Legend1";
-            series110.Name = "Realme";
-            series111.ChartArea = "ChartArea1";
-            series111.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series111.Legend = "Legend1";
-            series111.Name = "OPPO";
-            series112.ChartArea = "ChartArea1";
-            series112.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series112.Legend = "Legend1";
-            series112.Name = "Vivo";
-            series113.ChartArea = "ChartArea1";
-            series113.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series113.Legend = "Legend1";
-            series113.Name = "OnePlus";
-            series114.ChartArea = "ChartArea1";
-            series114.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series114.Legend = "Legend1";
-            series114.Name = "Asus";
-            series115.ChartArea = "ChartArea1";
-            series115.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series115.Legend = "Legend1";
-            series115.Name = "Motorola";
-            series116.ChartArea = "ChartArea1";
-            series116.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series116.Legend = "Legend1";
-            series116.Name = "Nokia";
-            series117.ChartArea = "ChartArea1";
-            series117.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series117.Legend = "Legend1";
-            series117.Name = "HTC";
-            this.chart2.Series.Add(series105);
-            this.chart2.Series.Add(series106);
-            this.chart2.Series.Add(series107);
-            this.chart2.Series.Add(series108);
-            this.chart2.Series.Add(series109);
-            this.chart2.Series.Add(series110);
-            this.chart2.Series.Add(series111);
-            this.chart2.Series.Add(series112);
-            this.chart2.Series.Add(series113);
-            this.chart2.Series.Add(series114);
-            this.chart2.Series.Add(series115);
-            this.chart2.Series.Add(series116);
-            this.chart2.Series.Add(series117);
-            this.chart2.Size = new System.Drawing.Size(594, 140);
+            series27.ChartArea = "ChartArea1";
+            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series27.Legend = "Legend1";
+            series27.Name = "Iphone";
+            series28.ChartArea = "ChartArea1";
+            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series28.Legend = "Legend1";
+            series28.Name = "Samsung";
+            series29.ChartArea = "ChartArea1";
+            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series29.Legend = "Legend1";
+            series29.Name = "Google Pixel";
+            series30.ChartArea = "ChartArea1";
+            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series30.Legend = "Legend1";
+            series30.Name = "Huawei";
+            series31.ChartArea = "ChartArea1";
+            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series31.Legend = "Legend1";
+            series31.Name = "Xiaomi";
+            series32.ChartArea = "ChartArea1";
+            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series32.Legend = "Legend1";
+            series32.Name = "Realme";
+            series33.ChartArea = "ChartArea1";
+            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series33.Legend = "Legend1";
+            series33.Name = "OPPO";
+            series34.ChartArea = "ChartArea1";
+            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series34.Legend = "Legend1";
+            series34.Name = "Vivo";
+            series35.ChartArea = "ChartArea1";
+            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series35.Legend = "Legend1";
+            series35.Name = "OnePlus";
+            series36.ChartArea = "ChartArea1";
+            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series36.Legend = "Legend1";
+            series36.Name = "Asus";
+            series37.ChartArea = "ChartArea1";
+            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series37.Legend = "Legend1";
+            series37.Name = "Motorola";
+            series38.ChartArea = "ChartArea1";
+            series38.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series38.Legend = "Legend1";
+            series38.Name = "Nokia";
+            series39.ChartArea = "ChartArea1";
+            series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series39.Legend = "Legend1";
+            series39.Name = "HTC";
+            this.chart2.Series.Add(series27);
+            this.chart2.Series.Add(series28);
+            this.chart2.Series.Add(series29);
+            this.chart2.Series.Add(series30);
+            this.chart2.Series.Add(series31);
+            this.chart2.Series.Add(series32);
+            this.chart2.Series.Add(series33);
+            this.chart2.Series.Add(series34);
+            this.chart2.Series.Add(series35);
+            this.chart2.Series.Add(series36);
+            this.chart2.Series.Add(series37);
+            this.chart2.Series.Add(series38);
+            this.chart2.Series.Add(series39);
+            this.chart2.Size = new System.Drawing.Size(790, 138);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
-            title9.Name = "Title1";
-            title9.Text = "Thống kê doanh thu theo";
-            this.chart2.Titles.Add(title9);
+            title3.Name = "Title1";
+            title3.Text = "Thống kê doanh thu theo";
+            this.chart2.Titles.Add(title3);
             // 
             // chart1
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea10);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend10.Name = "Legend1";
-            this.chart1.Legends.Add(legend10);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
-            series118.ChartArea = "ChartArea1";
-            series118.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series118.Legend = "Legend1";
-            series118.Name = "Iphone";
-            series119.ChartArea = "ChartArea1";
-            series119.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series119.Legend = "Legend1";
-            series119.Name = "Samsung";
-            series120.ChartArea = "ChartArea1";
-            series120.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series120.Legend = "Legend1";
-            series120.Name = "Google Pixel";
-            series121.ChartArea = "ChartArea1";
-            series121.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series121.Legend = "Legend1";
-            series121.Name = "Huawei";
-            series122.ChartArea = "ChartArea1";
-            series122.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series122.Legend = "Legend1";
-            series122.Name = "Xiaomi";
-            series123.ChartArea = "ChartArea1";
-            series123.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series123.Legend = "Legend1";
-            series123.Name = "Realme";
-            series124.ChartArea = "ChartArea1";
-            series124.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series124.Legend = "Legend1";
-            series124.Name = "OPPO";
-            series125.ChartArea = "ChartArea1";
-            series125.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series125.Legend = "Legend1";
-            series125.Name = "Vivo";
-            series126.ChartArea = "ChartArea1";
-            series126.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series126.Legend = "Legend1";
-            series126.Name = "OnePlus";
-            series127.ChartArea = "ChartArea1";
-            series127.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series127.Legend = "Legend1";
-            series127.Name = "Asus";
-            series128.ChartArea = "ChartArea1";
-            series128.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series128.Legend = "Legend1";
-            series128.Name = "Motorola";
-            series129.ChartArea = "ChartArea1";
-            series129.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series129.Legend = "Legend1";
-            series129.Name = "Nokia";
-            series130.ChartArea = "ChartArea1";
-            series130.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series130.Legend = "Legend1";
-            series130.Name = "HTC";
-            this.chart1.Series.Add(series118);
-            this.chart1.Series.Add(series119);
-            this.chart1.Series.Add(series120);
-            this.chart1.Series.Add(series121);
-            this.chart1.Series.Add(series122);
-            this.chart1.Series.Add(series123);
-            this.chart1.Series.Add(series124);
-            this.chart1.Series.Add(series125);
-            this.chart1.Series.Add(series126);
-            this.chart1.Series.Add(series127);
-            this.chart1.Series.Add(series128);
-            this.chart1.Series.Add(series129);
-            this.chart1.Series.Add(series130);
-            this.chart1.Size = new System.Drawing.Size(594, 140);
+            series40.ChartArea = "ChartArea1";
+            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series40.Legend = "Legend1";
+            series40.Name = "Iphone";
+            series41.ChartArea = "ChartArea1";
+            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series41.Legend = "Legend1";
+            series41.Name = "Samsung";
+            series42.ChartArea = "ChartArea1";
+            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series42.Legend = "Legend1";
+            series42.Name = "Google Pixel";
+            series43.ChartArea = "ChartArea1";
+            series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series43.Legend = "Legend1";
+            series43.Name = "Huawei";
+            series44.ChartArea = "ChartArea1";
+            series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series44.Legend = "Legend1";
+            series44.Name = "Xiaomi";
+            series45.ChartArea = "ChartArea1";
+            series45.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series45.Legend = "Legend1";
+            series45.Name = "Realme";
+            series46.ChartArea = "ChartArea1";
+            series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series46.Legend = "Legend1";
+            series46.Name = "OPPO";
+            series47.ChartArea = "ChartArea1";
+            series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series47.Legend = "Legend1";
+            series47.Name = "Vivo";
+            series48.ChartArea = "ChartArea1";
+            series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series48.Legend = "Legend1";
+            series48.Name = "OnePlus";
+            series49.ChartArea = "ChartArea1";
+            series49.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series49.Legend = "Legend1";
+            series49.Name = "Asus";
+            series50.ChartArea = "ChartArea1";
+            series50.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series50.Legend = "Legend1";
+            series50.Name = "Motorola";
+            series51.ChartArea = "ChartArea1";
+            series51.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series51.Legend = "Legend1";
+            series51.Name = "Nokia";
+            series52.ChartArea = "ChartArea1";
+            series52.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series52.Legend = "Legend1";
+            series52.Name = "HTC";
+            this.chart1.Series.Add(series40);
+            this.chart1.Series.Add(series41);
+            this.chart1.Series.Add(series42);
+            this.chart1.Series.Add(series43);
+            this.chart1.Series.Add(series44);
+            this.chart1.Series.Add(series45);
+            this.chart1.Series.Add(series46);
+            this.chart1.Series.Add(series47);
+            this.chart1.Series.Add(series48);
+            this.chart1.Series.Add(series49);
+            this.chart1.Series.Add(series50);
+            this.chart1.Series.Add(series51);
+            this.chart1.Series.Add(series52);
+            this.chart1.Size = new System.Drawing.Size(790, 138);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            title10.Name = "Title1";
-            title10.Text = "Thống kê sản phẩm theo";
-            this.chart1.Titles.Add(title10);
+            title4.Name = "Title1";
+            title4.Text = "Thống kê sản phẩm theo";
+            this.chart1.Titles.Add(title4);
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonThongKe, 3, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Controls.Add(this.comboSP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboThoiGian, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboDSSP, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonThongKe, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 295);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 291);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(594, 34);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(790, 39);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // buttonThongKe
-            // 
-            this.buttonThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThongKe.Location = new System.Drawing.Point(477, 3);
-            this.buttonThongKe.Name = "buttonThongKe";
-            this.buttonThongKe.Size = new System.Drawing.Size(114, 29);
-            this.buttonThongKe.TabIndex = 0;
-            this.buttonThongKe.Text = "Thống kê";
-            this.buttonThongKe.UseVisualStyleBackColor = true;
-            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
             // 
             // comboSP
             // 
-            this.comboSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboSP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSP.FormattingEnabled = true;
             this.comboSP.Items.AddRange(new object[] {
@@ -316,7 +315,7 @@
             "Nokia",
             "HTC",
             "Toàn bộ SP"});
-            this.comboSP.Location = new System.Drawing.Point(3, 3);
+            this.comboSP.Location = new System.Drawing.Point(3, 7);
             this.comboSP.Name = "comboSP";
             this.comboSP.Size = new System.Drawing.Size(114, 24);
             this.comboSP.TabIndex = 1;
@@ -324,30 +323,91 @@
             // 
             // comboThoiGian
             // 
-            this.comboThoiGian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboThoiGian.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboThoiGian.FormattingEnabled = true;
             this.comboThoiGian.Items.AddRange(new object[] {
             "Thời gian",
             "Theo tuần",
             "Theo tháng"});
-            this.comboThoiGian.Location = new System.Drawing.Point(123, 3);
+            this.comboThoiGian.Location = new System.Drawing.Point(123, 7);
             this.comboThoiGian.Name = "comboThoiGian";
             this.comboThoiGian.Size = new System.Drawing.Size(114, 24);
             this.comboThoiGian.TabIndex = 2;
             // 
             // comboDSSP
             // 
-            this.comboDSSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboDSSP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboDSSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboDSSP.FormattingEnabled = true;
             this.comboDSSP.Items.AddRange(new object[] {
             "Danh mục SP (Chọn SP để hủy)"});
-            this.comboDSSP.Location = new System.Drawing.Point(243, 3);
+            this.comboDSSP.Location = new System.Drawing.Point(243, 7);
             this.comboDSSP.Name = "comboDSSP";
-            this.comboDSSP.Size = new System.Drawing.Size(228, 24);
+            this.comboDSSP.Size = new System.Drawing.Size(224, 24);
             this.comboDSSP.TabIndex = 3;
             this.comboDSSP.SelectedIndexChanged += new System.EventHandler(this.comboDSSP_SelectedIndexChanged);
+            // 
+            // buttonThongKe
+            // 
+            this.buttonThongKe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThongKe.Location = new System.Drawing.Point(672, 5);
+            this.buttonThongKe.Name = "buttonThongKe";
+            this.buttonThongKe.Size = new System.Drawing.Size(114, 28);
+            this.buttonThongKe.TabIndex = 0;
+            this.buttonThongKe.Text = "Thống kê";
+            this.buttonThongKe.UseVisualStyleBackColor = true;
+            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker1);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(470, 0);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(99, 39);
+            this.flowLayoutPanel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ngày bắt đầu";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 13);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label2);
+            this.flowLayoutPanel3.Controls.Add(this.dateTimePicker2);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(569, 0);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(99, 39);
+            this.flowLayoutPanel3.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ngày kết thúc";
             // 
             // flowLayoutPanel1
             // 
@@ -358,9 +418,9 @@
             this.flowLayoutPanel1.Controls.Add(this.labelLoiNhuan);
             this.flowLayoutPanel1.Controls.Add(this.textBoxLoiNhuan);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 335);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 336);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(594, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 34);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // labelTongThu
@@ -417,11 +477,20 @@
             this.textBoxLoiNhuan.Size = new System.Drawing.Size(100, 20);
             this.textBoxLoiNhuan.TabIndex = 5;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(0, 13);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(95, 20);
+            this.dateTimePicker2.TabIndex = 5;
+            // 
             // ThongKeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 373);
+            this.ClientSize = new System.Drawing.Size(796, 373);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ThongKeGUI";
             this.Text = "ThongKe";
@@ -430,6 +499,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -453,5 +526,11 @@
         private System.Windows.Forms.TextBox textBoxTongChi;
         private System.Windows.Forms.Label labelLoiNhuan;
         private System.Windows.Forms.TextBox textBoxLoiNhuan;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
