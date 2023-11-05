@@ -65,6 +65,12 @@
     <Compile Include="Khachhang\KhachhangGUI.Designer.cs">
       <DependentUpon>KhachhangGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhuyenMai\KhuyenMaiGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhuyenMai\KhuyenMaiGUI.Designer.cs">
+      <DependentUpon>KhuyenMaiGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Signin\DangNhapGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Khachhang\ThongTinKhachHangGUI.resx">
       <DependentUpon>ThongTinKhachHangGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhuyenMai\KhuyenMaiGUI.resx">
+      <DependentUpon>KhuyenMaiGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Signin\DangKyGUI.resx">
       <DependentUpon>DangKyGUI.cs</DependentUpon>
@@ -258,6 +267,11 @@
     <Content Include="img\redminote11tpro.jpg" />
     <Content Include="img\rogphone6.jpg" />
     <Content Include="img\x80pro.jpg" />
+    <None Include="Resources\xoa1.png" />
+    <None Include="Resources\sua.png" />
+    <None Include="Resources\xoa.png" />
+    <None Include="Resources\them1.png" />
+    <None Include="Resources\them.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
