@@ -22,10 +22,22 @@ namespace WindowsFormsApp1
 
         private void buttonThongKe_Click(object sender, EventArgs e)
         {
-            /*series1.ChartArea = "ChartArea1";
-            series1.ChartType = SeriesChartType.StackedColumn;
-            series1.Legend = "Legend1";
-            series1.Name = "Iphone";*/
+            //loaiBo default
+            int numOfSeries = chart1.Series.Count;
+            for (int i= 0;i < numOfSeries;i++)
+            {
+                chart1.Series.RemoveAt(0);
+            }
+            for (int i= 0; i < numOfSeries; i++)
+            {
+                chart2.Series.RemoveAt(0);
+            }
+            /*
+             cần có trong thống kê:
+                Series SP
+                Thời gian
+             */
+
             //lay ds loai SP
             List<String> danhSachLoaiSP = thongKeBUS.getDSLoaiSP();
             //get Series thống kê số lượng
@@ -45,7 +57,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < danhSachLoaiSP.Count; i++)
             {
                 series2.Insert(i, new Series());
-                series2[i].ChartArea = "ChartArea2";
+                series2[i].ChartArea = "ChartArea1";
                 series2[i].ChartType = SeriesChartType.Line;
                 series2[i].Legend = "Legend1";
                 series2[i].Name = danhSachLoaiSP[i];
@@ -60,9 +72,19 @@ namespace WindowsFormsApp1
                 listSP.Add(comboDSSP.Items[i].ToString());
             }
             //lay thoiGian
-            String thoiGian=comboThoiGian.SelectedItem.ToString().Substring(5);
-            //theo tuan,thang,quy
+            String thoiGian = comboThoiGian.SelectedItem.ToString().Substring(5); //theo tuan,thang,quy
+            //lay begin va end
+            DateTime batDau = dateTimePicker1.Value;
+            DateTime ketThuc = dateTimePicker2.Value;
 
+            List<DataPoint> dataPoints1 = new List<DataPoint>();
+            dataPoints1 = thongKeBUS.getPointTKSoLuong(listSP,thoiGian,batDau,ketThuc);
+            List<DataPoint> dataPoints2=new List<DataPoint>();
+            dataPoints2 = thongKeBUS.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc);
+
+            String tongThu = thongKeBUS.getTongThu(listSP, thoiGian, batDau, ketThuc);
+            String tongChi = thongKeBUS.getTongChi(listSP, thoiGian, batDau, ketThuc);
+            String loiNhuan=thongKeBUS.getLoiNhuan(listSP, thoiGian, batDau, ketThuc);
         }
 
         private void comboSP_SelectedIndexChanged(object sender, EventArgs e)
