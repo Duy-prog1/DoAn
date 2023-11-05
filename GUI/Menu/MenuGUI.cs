@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             //San Pham
             else if (clickedPictureBox == pictureBox3)
             {
-               
+                childFormToShow = new SanPham.SanPhamGUI();
             }
             //Nhan Vien
             else if (clickedPictureBox == pictureBox4)
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
             //nhap hang
             else if (clickedPictureBox == pictureBox7)
             {
-                
+                childFormToShow = new NhapHang.PhieuNhapGUI();
             }
             //thong ke
             else if (clickedPictureBox == pictureBox8)
