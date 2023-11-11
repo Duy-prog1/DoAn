@@ -1,3 +1,4 @@
+using BUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class MenuGUI : Form
     {
+       
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
         public MenuGUI()
         {
@@ -77,6 +79,7 @@ namespace WindowsFormsApp1
             if (clickedPictureBox == pictureBox1) 
             {
                 childFormToShow = new BanHangGUI();
+              
             }
             //Ban Hang
             else if (clickedPictureBox == pictureBox2)

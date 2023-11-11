@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class SanPhamDTO
+    public class SanPhamDTO
     {
-        private string maSanPham { get; set; }
-        private string tenSanPham { get; set; }
-        private float giaBan { get; set; }
-        private int soLuong { get; set; }
-        private string img { get; set; }
-        private int thoiGianBaoHanh { get; set; }
-        private int tinhTrang { get; set; }
-        private int maLoai { get; set; }
+        public string maSanPham { get; set; }
+        public string tenSanPham { get; set; }
+        public float giaBan { get; set; }
+        public int soLuong { get; set; }
+        public string img { get; set; }
+        public int thoiGianBaoHanh { get; set; }
+        public bool tinhTrang { get; set; }
+        public int maLoai { get; set; }
         public SanPhamDTO() { }
-        public SanPhamDTO(string maSanPham, string tenSanPham, float giaBan, int soLuong, string img, int thoiGianBaoHanh, int tinhTrang, int maLoai)
+        public SanPhamDTO(string maSanPham, string tenSanPham, float giaBan, int soLuong, string img, int thoiGianBaoHanh, bool tinhTrang, int maLoai)
         {
             this.maSanPham = maSanPham;
             this.tenSanPham = tenSanPham;

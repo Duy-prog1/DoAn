@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHangDAL.cs" />
+    <Compile Include="ChiTietHoaDonDAL.cs" />
     <Compile Include="ChiTietKhuyenMaiDAL.cs" />
     <Compile Include="DangNhapDAL.cs" />
     <Compile Include="DatabaseConnect.cs" />
+    <Compile Include="HoaDonDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="KhuyenMaiDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
