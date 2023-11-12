@@ -24,13 +24,13 @@ namespace BUS
             return thongKeDAL.getDSLoaiSP();
         }
 
-        public List<DataPoint> getPointTKSoLuong(List<String> listSP,String thoiGian,DateTime batDau, DateTime ketThuc)
+        public List<DataPoint> getPointTKSoLuong(List<String> listSP,String thoiGian,DateTime batDau, DateTime ketThuc,List<Series> series)
         {
-            return thongKeDAL.getPointTKSoLuong(listSP, thoiGian, batDau, ketThuc);
+            return thongKeDAL.getPointTKSoLuong(listSP, thoiGian, batDau, ketThuc,series);
         }
-        public List<DataPoint> getPointTKDoanhThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
+        public List<DataPoint> getPointTKDoanhThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc,List<Series> series)
         {
-            return thongKeDAL.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc);
+            return thongKeDAL.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc,series);
         }
         public String getTongThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {
