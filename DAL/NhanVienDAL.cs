@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.IO;
+using System.Windows.Forms;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 
 namespace DAL
 {
@@ -191,6 +195,80 @@ namespace DAL
             return false;
         }
 
-        
+        public int ThemDS()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel files (*.xlsx; *.xls)|*.xlsx; *.xls";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string fileName = openFileDialog.FileName;
+                    FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+
+                    XSSFWorkbook workbook = new XSSFWorkbook(file);
+                    XSSFSheet sheet = (XSSFSheet)workbook.GetSheetAt(0);
+                    _conn.Open();
+
+
+                    string sql = "MERGE INTO nhanVien AS target "
+                               + "USING (VALUES (@maNV, @tenNV, @gioiTinh ,@sdt, @diaChi, @chucVu, @ngaySinh, @tinhTrang)) AS source (maNV, tenNV, gioiTinh, sdt, diaChi, chucVu,  ngaySinh, tinhTrang) "
+                               + "ON (target.maNV = source.maNV) "
+                               + "WHEN MATCHED THEN "
+                               + "    UPDATE SET target.tenNV = source.tenNV, "
+                               + "               target.gioiTinh = source.gioiTinh, "
+                               + "               target.sdt = source.sdt, "
+                               + "               target.diaChi = source.diaChi, "
+                               + "               target.chucVu = source.chucVu, "
+                               + "               target.ngaySinh = source.ngaySinh, "
+                               + "               target.tinhTrang = source.tinhTrang "
+                               + "WHEN NOT MATCHED THEN "
+                               + "    INSERT (maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh, tinhTrang) "
+                               + "    VALUES (source.maNV, source.tenNV, source.gioiTinh, source.sdt, source.diaChi, source.chucVu, source.ngaySinh, source.tinhTrang);";
+
+                    SqlCommand command = new SqlCommand(sql, _conn);
+
+                    for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
+                    {
+                        IRow row = sheet.GetRow(i);
+                        if (row == null)
+                        {
+                            continue;
+                        }
+
+                        command.Parameters.AddWithValue("@maNV", row.GetCell(1).StringCellValue);
+                        command.Parameters.AddWithValue("@tenNV", row.GetCell(2).StringCellValue);
+                        command.Parameters.AddWithValue("@gioiTinh", row.GetCell(3).StringCellValue);
+                        command.Parameters.AddWithValue("@sdt", row.GetCell(4).StringCellValue);
+                        command.Parameters.AddWithValue("@diaChi", row.GetCell(5).StringCellValue);
+                        command.Parameters.AddWithValue("@chucVu", row.GetCell(6).StringCellValue);                    
+                        DateTime ngaySinh = DateTime.Parse(row.GetCell(7).StringCellValue);
+                        command.Parameters.AddWithValue("@ngaySinh", ngaySinh);
+                        command.Parameters.AddWithValue("@tinhTrang", true);
+
+                        command.ExecuteNonQuery();
+                        command.Parameters.Clear();
+                    }
+
+                    // Đóng tất cả tài nguyên
+                    command.Dispose();
+                    _conn.Close();
+                    workbook.Close();
+                    file.Close();
+
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm thất bại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            return 0;
+        }
+
+
+
     }
 }

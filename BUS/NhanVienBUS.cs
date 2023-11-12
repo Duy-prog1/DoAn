@@ -41,5 +41,10 @@ namespace BUS
             return dalNhanVien.xoaNhanVien(maNV);
         }
 
+        public int ThemDS()
+        {
+            return dalNhanVien.ThemDS();
+        }
+
     }
 }
