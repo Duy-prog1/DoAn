@@ -89,6 +89,12 @@ namespace WindowsFormsApp1
 
             dataGridView1.DataSource = nvBus.getFindThanhVien(key);
         }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            nvBus.ThemDS();
+            dataGridView1.DataSource = nvBus.getNhanVien();
+        }
     }
 
 }
