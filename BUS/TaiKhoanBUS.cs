@@ -27,7 +27,17 @@ namespace BUS
         {
             return dAL.KiemTraDangNhap(tenDangNhap, matKhau);
         }
-
+        // lấy mã nhân viên
+        // lấy mã nhân viên
+        public string LayMaNhanVien(string tenDangNhap, string matKhau)
+        {
+            return dal.LayMaNhanVien(tenDangNhap, matKhau);
+        }
+        // lấy tên đăng nhập theo mã nhân viên
+        public string LayTenNhanVien(string tenDangNhap,string matKhau)
+        {
+            return dal.LayTenNhanVien(tenDangNhap,matKhau);
+        }
 
     }
 }

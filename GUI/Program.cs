@@ -17,7 +17,6 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Console.WriteLine("a.CompareTo(b) = " + "a".CompareTo("b"));
             Application.Run(new MenuGUI());
         }
     }

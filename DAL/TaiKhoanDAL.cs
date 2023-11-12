@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -59,5 +60,73 @@ namespace DAL
             }
             return false;
         }
+   
+
+        // lấy mã nhân viên
+        public string LayMaNhanVien(string tenDangNhap, string matKhau)
+        {
+            string maNV = null;
+
+            try
+            {
+                _conn.Open();
+
+                using (var cmd = new SqlCommand("SELECT maNV FROM taiKhoan WHERE tenDangNhap = @tenDangNhap AND matKhau = @matKhau", _conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
+                    cmd.Parameters.AddWithValue("@matKhau", matKhau);
+
+                    var result = cmd.ExecuteScalar();
+                    maNV = result != null ? result.ToString() : null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+                // Xử lý ngoại lệ theo cách phù hợp, ví dụ: ghi log hoặc ném lại ngoại lệ
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return maNV;
+        }
+        // lấy  tên nhân viên
+        // Lấy tên nhân viên
+        public string LayTenNhanVien(string tenDangNhap, string matKhau)
+        {
+            string tenNV = null;
+
+            try
+            {
+                _conn.Open();
+
+                // Sử dụng JOIN để lấy tên nhân viên từ bảng nhanVien
+                using (var cmd = new SqlCommand("SELECT n.tenNV FROM taiKhoan AS tk JOIN nhanVien AS n ON tk.maNV = n.maNV WHERE tk.tenDangNhap = @tenDangNhap AND tk.matKhau = @matKhau", _conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenDangNhap", tenDangNhap);
+                    cmd.Parameters.AddWithValue("@matKhau", matKhau);
+
+                    var result = cmd.ExecuteScalar();
+                    tenNV = result != null ? result.ToString() : null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+                // Xử lý ngoại lệ theo cách phù hợp, ví dụ: ghi log hoặc ném lại ngoại lệ
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return tenNV;
+        }
+
+
+
     }
 }
+
