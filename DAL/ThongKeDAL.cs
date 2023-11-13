@@ -88,7 +88,7 @@ namespace DAL
             return list;
         }
 
-        public void getPointAllTK(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc, List<Series> series)
+        public void getPointAllTK(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc, List<Series> series1, List<Series> series2)
         {
             _conn.Open();
             if (_conn.State == ConnectionState.Closed)
@@ -135,62 +135,72 @@ namespace DAL
                     break;
             }
 
-
             //bat dau vong lap de tao dataPoint
             for (DateTime i = batDau; i <=  ketThuc;){
-                bool breakTemp = false;
-                sSql = "select tenLoai,sum(cthd.soluong) as soLuong\r\nfrom hoaDon as hd join CT_HoaDon as cthd on hd.maHD=cthd.maHD\r\n\t\t\t\tjoin sanPham as sp on cthd.maSP=sp.maSP\r\n\t\t\t\tjoin loaiSP as lsp on lsp.maLoai=sp.maLoai\r\nwhere ngayLap > @begin and ngayLap < @end\r\ngroup by tenLoai\r\norder by tenLoai";
-                command.CommandText = sSql;
+                { //tinh tong soLuong
+                    bool breakTemp = false;
+                    sSql = "select tenLoai,sum(cthd.soluong) as soLuong\r\nfrom hoaDon as hd join CT_HoaDon as cthd on hd.maHD=cthd.maHD\r\n\t\t\t\tjoin sanPham as sp on cthd.maSP=sp.maSP\r\n\t\t\t\tjoin loaiSP as lsp on lsp.maLoai=sp.maLoai\r\nwhere ngayLap > @begin and ngayLap < @end\r\ngroup by tenLoai\r\norder by tenLoai";
+                    command.CommandText = sSql;
 
-                command.Parameters.Add("@begin", SqlDbType.DateTime).Value = i;
-                command.Parameters.Add("@end", SqlDbType.DateTime).Value = dateTempEnd;
+                    command.Parameters.Add("@begin", SqlDbType.DateTime).Value = i;
+                    command.Parameters.Add("@end", SqlDbType.DateTime).Value = dateTempEnd;
 
-                reader = command.ExecuteReader();
-               
-                          //ex:  List    reader
-                          //      a         b
-                          //      b         d
-                          //      c
-                          //      d
-                
-                while (reader.Read()) //da order by nên chỉ cần quan tâm từ trên xuống dưới
-                {
-                    while (!listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString()))
+                    reader = command.ExecuteReader();
+
+                    //ex:  List    reader
+                    //      a         b
+                    //      b         d
+                    //      c
+                    //      d
+
+                    while (reader.Read()) //da order by nên chỉ cần quan tâm từ trên xuống dưới
                     {
-                        if (listSP[countSPInColumn - 1].CompareTo(reader.GetString(0)) < 0)
-                            countSPInColumn = (countSPInColumn % listSP.Count) + 1; //count tu 1->listSP.Count, soLuongSP trong 1 column
-                        else
+                        while (!listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString()))
                         {
-                            if (!reader.Read())
+                            if (listSP[countSPInColumn - 1].CompareTo(reader.GetString(0)) < 0)
+                                countSPInColumn = (countSPInColumn % listSP.Count) + 1; //count tu 1->listSP.Count, soLuongSP trong 1 column
+                            else
                             {
-                                breakTemp = true;
-                                break;
+                                if (!reader.Read())
+                                {
+                                    breakTemp = true;
+                                    break;
+                                }
                             }
+
                         }
 
+                        if (breakTemp)
+                        {
+                            break;
+                        }
+
+
+                        if (listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString())) //nếu listSP trùng với listData thì thêm vào point; listSP bắt đầu=0, còn countThoiGian bắt đầu=1
+                        {
+                            Int32 sumSoLuong = reader.GetInt32(1);    //bat buộc get int32 ########
+
+                            DataPoint temp = new DataPoint(countThoiGian, sumSoLuong);
+                            temp.Label = "(" + countSPInColumn.ToString() + ")";
+                            series1[countSPInColumn - 1].Points.Add(temp);
+                        }
                     }
 
-                    if (breakTemp)
-                    {
-                        break;
-                    }
+                    reader.Close();
 
 
-                    if (listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString())) //nếu listSP trùng với listData thì thêm vào point; listSP bắt đầu=0, còn countThoiGian bắt đầu=1
-                    {
-                        Int32 sumSoLuong = reader.GetInt32(1);    //bat buộc get int32 ########
 
-                        DataPoint temp = new DataPoint(countThoiGian, sumSoLuong);
-                        temp.Label = "(" + countSPInColumn.ToString() + ")";
-                        series[countSPInColumn - 1].Points.Add(temp);
-                    }
+
                 }
 
-                reader.Close();
+                { //tinh doanhThu
+                    bool breakTemp = false;
+                    sSql = "select tenLoai,sum(cthd.soluong) as soLuong\r\nfrom hoaDon as hd join CT_HoaDon as cthd on hd.maHD=cthd.maHD\r\n\t\t\t\tjoin sanPham as sp on cthd.maSP=sp.maSP\r\n\t\t\t\tjoin loaiSP as lsp on lsp.maLoai=sp.maLoai\r\nwhere ngayLap > @begin and ngayLap < @end\r\ngroup by tenLoai\r\norder by tenLoai";
+                    command.CommandText = sSql;
+                }
 
                 command.Parameters.RemoveAt(0);
                 command.Parameters.RemoveAt(0);
-
 
                 //quy doi thoiGian ra int
                 switch (thoiGian)
@@ -224,8 +234,7 @@ namespace DAL
                         }
                         break;
                 }
-
-                countThoiGian++; 
+                countThoiGian++;
             }
             _conn.Close();
         }
