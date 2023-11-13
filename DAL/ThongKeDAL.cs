@@ -88,13 +88,13 @@ namespace DAL
             return list;
         }
 
-        public List<DataPoint> getPointTKSoLuong(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc, List<Series> series)
+        public void getPointAllTK(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc, List<Series> series)
         {
             _conn.Open();
             if (_conn.State == ConnectionState.Closed)
             {
                 MessageBox.Show("Không thể kết nối DATABASE");
-                return null;
+                return;
             }
             SqlCommand command = _conn.CreateCommand();
             String sSql;
@@ -103,7 +103,6 @@ namespace DAL
             //bien dem tang theo tuan hoac thang hoac quy
             int countThoiGian = 1; //cotThuN
             int countSPInColumn = 1; //dongThuN
-
             //tao bien tempEnd de chay vong lap co begin va end
             DateTime dateTempEnd;
 
@@ -229,12 +228,6 @@ namespace DAL
                 countThoiGian++; 
             }
             _conn.Close();
-            return output;
-        }
-        public List<DataPoint> getPointTKDoanhThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc, List<Series> series)
-        {
-
-            return null;
         }
         public String getTongThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {

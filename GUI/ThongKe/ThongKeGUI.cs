@@ -69,32 +69,28 @@ namespace WindowsFormsApp1
             DateTime batDau = dateTimePicker1.Value.Date;
             DateTime ketThuc = dateTimePicker2.Value.Date;
 
+            //get Series thống kê doanh thu
             List<Series> series1 = new List<Series>();
+            List<Series> series2 = new List<Series>();
+
             for (int i = 0; i < listSP.Count; i++)
             {
+                //series1
                 series1.Insert(i, new Series());
                 series1[i].ChartArea = "ChartArea1";
                 series1[i].ChartType = SeriesChartType.Column;
                 series1[i].Legend = "Legend1";
                 series1[i].Name = listSP[i] + "(" + (i+1).ToString() + ")";
-            }
-            //add point trước khi thêm vào chart
-            List<DataPoint> dataPoints1 = new List<DataPoint>();
-            dataPoints1 = thongKeBUS.getPointTKSoLuong(listSP, thoiGian, batDau, ketThuc,series1);
-
-            //get Series thống kê doanh thu
-            List<Series> series2 = new List<Series>();
-            for (int i = 0; i < listSP.Count; i++)
-            {
+                //series2
                 series2.Insert(i, new Series());
                 series2[i].ChartArea = "ChartArea1";
                 series2[i].ChartType = SeriesChartType.Line;
                 series2[i].Legend = "Legend1";
-                series2[i].Name = listSP[i] + "(" + (i+1).ToString() + ")";
+                series2[i].Name = listSP[i] + "(" + (i + 1).ToString() + ")";
             }
+
             //add point trước khi thêm vào chart
-            List<DataPoint> dataPoints2 = new List<DataPoint>();
-            dataPoints2 = thongKeBUS.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc,series2);
+            thongKeBUS.getPointAllTK(listSP, thoiGian, batDau, ketThuc, series1, series2);
 
             for (int i = 0; i < listSP.Count; i++)
             {

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -24,13 +22,9 @@ namespace BUS
             return thongKeDAL.getDSLoaiSP();
         }
 
-        public List<DataPoint> getPointTKSoLuong(List<String> listSP,String thoiGian,DateTime batDau, DateTime ketThuc,List<Series> series)
+        public void getPointAllTK(List<String> listSP,String thoiGian,DateTime batDau, DateTime ketThuc,List<Series> series1, List<Series> series2)
         {
-            return thongKeDAL.getPointTKSoLuong(listSP, thoiGian, batDau, ketThuc,series);
-        }
-        public List<DataPoint> getPointTKDoanhThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc,List<Series> series)
-        {
-            return thongKeDAL.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc,series);
+            thongKeDAL.getPointAllTK(listSP, thoiGian, batDau, ketThuc,series1,series2);
         }
         public String getTongThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {
