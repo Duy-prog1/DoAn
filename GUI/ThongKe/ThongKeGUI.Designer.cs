@@ -204,6 +204,7 @@
             series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series14.Legend = "Legend1";
             series14.Name = "Iphone";
+            dataPoint1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataPoint1.Label = "okk";
             dataPoint1.LabelAngle = 0;
             series14.Points.Add(dataPoint1);

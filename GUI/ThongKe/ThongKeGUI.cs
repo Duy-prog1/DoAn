@@ -96,6 +96,7 @@ namespace WindowsFormsApp1
             {
                 //them vao chart1
                 chart1.Series.Add(series1[i]);
+
                 //them vao chart2
                 chart2.Series.Add(series2[i]);
             }
