@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +41,7 @@ namespace DAL
                         tenSanPham = reader["tenSP"].ToString(),
                         giaBan = (float)reader["giaBan"],
                         soLuong = Convert.ToInt32(reader["soLuong"]),
-                        img = reader["img"].ToString(),
+                        img = (byte[])reader["img"],
                         thoiGianBaoHanh = Convert.ToInt32(reader["thoiGianBaoHanh"]),
                         tinhTrang = Convert.ToBoolean(reader["tinhTrang"]),
                         maLoai = Convert.ToInt32(reader["maLoai"])

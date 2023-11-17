@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbb_TGBH = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_GiaBan = new System.Windows.Forms.TextBox();
@@ -36,14 +38,12 @@
             this.btn_Huy = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.tb_ThoiGian = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.tb_MaSanPham = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.cbb_TGBH);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_Sua);
             this.panel1.Controls.Add(this.label4);
@@ -59,7 +60,6 @@
             this.panel1.Controls.Add(this.btn_Huy);
             this.panel1.Controls.Add(this.btn_Luu);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tb_ThoiGian);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tb_TenSanPham);
@@ -70,6 +70,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(782, 327);
             this.panel1.TabIndex = 6;
+            // 
+            // cbb_TGBH
+            // 
+            this.cbb_TGBH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_TGBH.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TGBH.FormattingEnabled = true;
+            this.cbb_TGBH.Location = new System.Drawing.Point(272, 127);
+            this.cbb_TGBH.Name = "cbb_TGBH";
+            this.cbb_TGBH.Size = new System.Drawing.Size(106, 39);
+            this.cbb_TGBH.TabIndex = 104;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(503, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 103;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Sua
             // 
@@ -82,6 +103,7 @@
             this.btn_Sua.TabIndex = 5;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // label4
             // 
@@ -148,24 +170,15 @@
             this.label3.TabIndex = 100;
             this.label3.Text = "Giá bán";
             // 
-            // tb_ThoiGian
-            // 
-            this.tb_ThoiGian.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_ThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ThoiGian.Location = new System.Drawing.Point(178, 127);
-            this.tb_ThoiGian.Name = "tb_ThoiGian";
-            this.tb_ThoiGian.Size = new System.Drawing.Size(200, 38);
-            this.tb_ThoiGian.TabIndex = 3;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(40, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 32);
+            this.label5.Size = new System.Drawing.Size(226, 32);
             this.label5.TabIndex = 100;
-            this.label5.Text = "Thời gian";
+            this.label5.Text = "Bảo hành(tháng)";
             // 
             // label6
             // 
@@ -217,14 +230,6 @@
             this.label1.TabIndex = 100;
             this.label1.Text = "Mã SP";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(503, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 160);
-            this.pictureBox1.TabIndex = 103;
-            this.pictureBox1.TabStop = false;
-            // 
             // SuaSanPhamGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,6 +241,7 @@
             this.Name = "SuaSanPhamGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sửa Sản Phẩm";
+            this.Load += new System.EventHandler(this.SuaSanPhamGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -253,7 +259,6 @@
         private System.Windows.Forms.Button btn_Huy;
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_ThoiGian;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_TenSanPham;
@@ -261,5 +266,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbb_TGBH;
     }
 }

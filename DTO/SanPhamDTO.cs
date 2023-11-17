@@ -12,12 +12,12 @@ namespace DTO
         public string tenSanPham { get; set; }
         public float giaBan { get; set; }
         public int soLuong { get; set; }
-        public string img { get; set; }
+        public byte[] img { get; set; }
         public int thoiGianBaoHanh { get; set; }
         public bool tinhTrang { get; set; }
         public int maLoai { get; set; }
         public SanPhamDTO() { }
-        public SanPhamDTO(string maSanPham, string tenSanPham, float giaBan, int soLuong, string img, int thoiGianBaoHanh, bool tinhTrang, int maLoai)
+        public SanPhamDTO(string maSanPham, string tenSanPham, float giaBan, int soLuong, byte[] img, int thoiGianBaoHanh, bool tinhTrang, int maLoai)
         {
             this.maSanPham = maSanPham;
             this.tenSanPham = tenSanPham;
