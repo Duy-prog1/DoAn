@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,7 +100,6 @@ namespace DAL
             SqlCommand command = _conn.CreateCommand();
             String sSql;
             SqlDataReader reader;
-            List<DataPoint> output = new List<DataPoint>();
             //bien dem tang theo tuan hoac thang hoac quy
             int countThoiGian = 1; //cotThuN
             int countSPInColumn = 1; //dongThuN
@@ -147,11 +147,11 @@ namespace DAL
 
                     reader = command.ExecuteReader();
 
-                    //ex:  List    reader
-                    //      a         b
-                    //      b         d
-                    //      c
-                    //      d
+                    //ex:  List    reader           or List reader
+                    //      a         b                 c      a  
+                    //      b         d                 d      b
+                    //      c                                  c
+                    //      d                                  d
 
                     while (reader.Read()) //da order by nên chỉ cần quan tâm từ trên xuống dưới
                     {
@@ -163,6 +163,7 @@ namespace DAL
                             {
                                 if (!reader.Read())
                                 {
+                                    countSPInColumn = 1; //neu da het reader, tra ve 1
                                     breakTemp = true;
                                     break;
                                 }
@@ -181,7 +182,8 @@ namespace DAL
                             Int32 sumSoLuong = reader.GetInt32(1);    //bat buộc get int32 ########
 
                             DataPoint temp = new DataPoint(countThoiGian, sumSoLuong);
-                            temp.Label = "(" + countSPInColumn.ToString() + ")";
+                            temp.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                            temp.Label = countSPInColumn.ToString();
                             series1[countSPInColumn - 1].Points.Add(temp);
                         }
                     }
@@ -192,11 +194,49 @@ namespace DAL
 
 
                 }
-
+                countSPInColumn = 1;
                 { //tinh doanhThu
                     bool breakTemp = false;
-                    sSql = "select tenLoai,sum(cthd.soluong) as soLuong\r\nfrom hoaDon as hd join CT_HoaDon as cthd on hd.maHD=cthd.maHD\r\n\t\t\t\tjoin sanPham as sp on cthd.maSP=sp.maSP\r\n\t\t\t\tjoin loaiSP as lsp on lsp.maLoai=sp.maLoai\r\nwhere ngayLap > @begin and ngayLap < @end\r\ngroup by tenLoai\r\norder by tenLoai";
+                    sSql = "select tenLoai,sum(cthd.tongTien) as tongTien\r\nfrom hoaDon as hd join CT_HoaDon as cthd on hd.maHD=cthd.maHD\r\n\tjoin sanPham as sp on cthd.maSP=sp.maSP\r\n\tjoin loaiSP as lsp on lsp.maLoai=sp.maLoai\r\nwhere ngayLap > @begin and ngayLap < @end \r\ngroup by tenLoai\r\norder by tenLoai";
                     command.CommandText = sSql;
+
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read()) //da order by nên chỉ cần quan tâm từ trên xuống dưới
+                    {
+                        while (!listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString()))
+                        {
+                            if (listSP[countSPInColumn - 1].CompareTo(reader.GetString(0)) < 0)
+                                countSPInColumn = (countSPInColumn % listSP.Count) + 1; //count tu 1->listSP.Count, soLuongSP trong 1 column
+                            else
+                            {
+                                if (!reader.Read())
+                                {
+                                    countSPInColumn = 1; //neu da het reader, tra ve 1
+                                    breakTemp = true;
+                                    break;
+                                }
+                            }
+
+                        }
+
+                        if (breakTemp)
+                        {
+                            break;
+                        }
+
+
+                        if (listSP[countSPInColumn - 1].ToString().Equals(reader.GetString(0).ToString())) //nếu listSP trùng với listData thì thêm vào point; listSP bắt đầu=0, còn countThoiGian bắt đầu=1
+                        {
+                            double sumTongTien =  Convert.ToDouble(reader.GetDouble(1));    //get float
+
+                            DataPoint temp = new DataPoint(countThoiGian, sumTongTien);
+                            temp.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                            temp.Label = countSPInColumn.ToString() + "---";
+                            series2[countSPInColumn - 1].Points.Add(temp);
+                        }
+                    }
+                    reader.Close();
                 }
 
                 command.Parameters.RemoveAt(0);
