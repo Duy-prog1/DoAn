@@ -73,12 +73,6 @@ namespace WindowsFormsApp1.SanPham
             open.Filter = "Ảnh (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                FileInfo fileInfo = new FileInfo(open.FileName);
-                if (fileInfo.Length > 10240)
-                {
-                    MessageBox.Show("File ảnh quá lớn. Vui lòng chọn một file ảnh có kích thước nhỏ hơn 10KB.");
-                    return;
-                }
                 pictureBox1.Image = Image.FromFile(open.FileName);
                 pictureBox1.BackColor = Color.Azure;
             }
