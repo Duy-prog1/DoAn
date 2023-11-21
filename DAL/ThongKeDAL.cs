@@ -297,6 +297,8 @@ namespace DAL
             {
                 tongThu=reader.GetDouble(0);
             }
+            reader.Close();
+            _conn.Close();
             return tongThu.ToString();
         }
         public String getTongChi(string tongThu, DateTime batDau, DateTime ketThuc)

@@ -499,7 +499,7 @@ namespace WindowsFormsApp1
                                 {
                                     string maSP = row["MaSP"].ToString();
                                     string tenSP = row["TenSP"].ToString();
-                                  //  int maKM = (row["KhuyenMai"] != DBNull.Value) ? Convert.ToInt32(row["KhuyenMai"]) : -1;
+                                    int maKM = (row["KhuyenMai"] != DBNull.Value) ? Convert.ToInt32(row["KhuyenMai"]) : -1;
 
                                     int soLuong = Convert.ToInt32(row["SoLuong"]);
                                     decimal giaBan = Convert.ToDecimal(row["GiaBan"]);
@@ -510,6 +510,14 @@ namespace WindowsFormsApp1
                                         return;
                                     }
 
+
+                                    //lay maSP,maKM,soLuong => chi tiet KM
+                                    //lay donViGiam,giaTriGiam
+                                    //if (donViGiam == 0)
+                                    //{
+                                    //    tongTien -= giaTriGiam*soLuong
+                                    //}
+
                                     ChiTietHoaDonDTO chiTietHoaDon = new ChiTietHoaDonDTO
                                     {
                                         maHD = maHoaDon,
@@ -517,7 +525,7 @@ namespace WindowsFormsApp1
                                         giaBan = (float)giaBan,
                                         soLuong = soLuong,
                                         tongTien = (float)(soLuong * giaBan),
-                                       // maKM = maKM,
+                                        maKM = maKM,
                                     };
 
                                     if (!chiTietHoaDonBUS.ThemChiTietHoaDon(chiTietHoaDon))
