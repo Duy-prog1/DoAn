@@ -140,5 +140,7 @@ namespace DAL
             }
             return false;
         }
+        // get ma chi tiet khuyen mai
+        
     }
 }

@@ -34,5 +34,17 @@ namespace BUS
         {
             return dal.CapNhatSoLuongSPTrongDB(maSP,soLuongCapNhat);
         }
+        public DataTable getkhuyenMaiBanhang()
+        {
+            return dal.getkhuyenMaiBanhang();
+        }
+        public DataTable LayMaKhuyenMai(string tenSanPham)
+        {
+            return dal.LayMaKhuyenMai(tenSanPham);
+        }
+        public DataTable LayMaSP()
+        {
+            return dal.LayMaSP();
+        }
     }
 }

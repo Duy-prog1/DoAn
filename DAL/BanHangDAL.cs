@@ -112,6 +112,71 @@ namespace DAL
                 _conn.Close();
             }
         }
+        public DataTable getkhuyenMaiBanhang()
+        {
+            DataTable dtKhuyenMai = new DataTable();
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT KM.maKM, KM.tenKM, KM.ngayBD, KM.ngayKT, CTKM.donViGiam FROM khuyenMai KM JOIN CT_KhuyenMai CTKM ON KM.maKM = CTKM.maKM", _conn))
+            {
+                adapter.Fill(dtKhuyenMai);
+            }
+
+            return dtKhuyenMai;
+        }
+        // lấy mã khuyến mãi
+
+        public DataTable LayMaKhuyenMai(string tenSanPham)
+        {
+            DataTable dtMaKhuyenMai = new DataTable();
+            try
+            {
+                _conn.Open();
+                string SQL = "SELECT KM.maKM, KM.donViGiam, kk.tenKM,KK.ngayBD,KK.ngayKT FROM sanPham SP JOIN CT_KhuyenMai KM ON SP.maSP = KM.maSP\r\nJOIN khuyenMai KK ON KM.maKM = KK.maKM WHERE SP.tenSP = @TenSanPham";
+                using (SqlCommand command = new SqlCommand(SQL, _conn))
+                {
+                    command.Parameters.AddWithValue("@TenSanPham", tenSanPham);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dtMaKhuyenMai);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu cần
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return dtMaKhuyenMai;
+        }
+        public DataTable LayMaSP()
+        {
+            DataTable dtMaSanPham = new DataTable();
+            try
+            {
+                _conn.Open();
+                string SQL = "SELECT maSP FROM sanPham";
+
+                using (SqlCommand command = new SqlCommand(SQL, _conn))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dtMaSanPham);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return dtMaSanPham;
+        }
 
 
 
