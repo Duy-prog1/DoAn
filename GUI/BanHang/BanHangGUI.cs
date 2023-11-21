@@ -133,6 +133,9 @@ namespace WindowsFormsApp1
                 string maLoai = selectedRow.Cells["Column3"].Value.ToString();
                 soLuongSPTrongDB = decimal.Parse(selectedRow.Cells["Column22"].Value.ToString());
                 string anh = selectedRow.Cells["Column5"].Value.ToString();
+               // MemoryStream stream = new MemoryStream((byte[])dataGridView1.SelectedRows[0].Cells[4].Value);
+               // Image img = Image.FromStream(stream);
+
                 textBox3.Text = maSP;
                 textBox2.Text = tenSP;
                 textBox5.Text = giaBan.ToString();
