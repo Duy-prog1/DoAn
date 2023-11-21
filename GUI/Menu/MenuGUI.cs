@@ -8,30 +8,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.NhapHang;
+using WindowsFormsApp1.SanPham;
 
 namespace WindowsFormsApp1
 {
     public partial class MenuGUI : Form
     {
-       
+        private BanHangGUI banHangGUI=new BanHangGUI();
+        private SanPhamGUI sanPhamGUI = new SanPhamGUI();
+        private NhanVienGUI nhanVienGUI=new NhanVienGUI();
+        private KhachhangGUI khachhangGUI=new KhachhangGUI();
+        private KhuyenMaiGUI khuyenMaiGUI=new KhuyenMaiGUI();
+        private PhieuNhapGUI phieuNhapGUI=new PhieuNhapGUI();
+        private ThongKeGUI thongKeGUI =new ThongKeGUI();
+
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
-        public MenuGUI()
+        int maQuyen; //maQuyen=1 (Quanly), maQuyen=2 (NhanVienBanHang) , maQuyen=3 (NhanVienKho)
+        public MenuGUI(int maQuyen)
         {
             InitializeComponent();
+            pictureBoxes.Add(pictureBox1);
+            pictureBoxes.Add(pictureBox2);
+            pictureBoxes.Add(pictureBox3);
+            pictureBoxes.Add(pictureBox5);
+            if (maQuyen == 2)
+            {
+                tableLayoutPanel3.Controls.RemoveAt(6); //8
+                tableLayoutPanel3.Controls.RemoveAt(5); //7
+                tableLayoutPanel3.Controls.RemoveAt(4); //6
+                tableLayoutPanel3.Controls.RemoveAt(2); //4
+            }
+            pictureBoxes.Add(pictureBox6);
+            pictureBoxes.Add(pictureBox7);
+            if (maQuyen == 3)
+            {
+                tableLayoutPanel3.Controls.RemoveAt(6); //8
+                tableLayoutPanel3.Controls.RemoveAt(3); //5
+                tableLayoutPanel3.Controls.RemoveAt(2); //4
+                tableLayoutPanel3.Controls.RemoveAt(1); //3
+                tableLayoutPanel3.Controls.RemoveAt(0); //2
+
+            }
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.maQuyen = maQuyen;
         }
 
         private void MenuGUI_Load(object sender, EventArgs e)
         {
             // Thêm tất cả các PictureBox vào danh sách và gán sự kiện Click
-            pictureBoxes.Add(pictureBox1);
-            pictureBoxes.Add(pictureBox2);
-            pictureBoxes.Add(pictureBox3);
-            pictureBoxes.Add(pictureBox4);
-            pictureBoxes.Add(pictureBox5);
-            pictureBoxes.Add(pictureBox6);
-            pictureBoxes.Add(pictureBox7);
-            pictureBoxes.Add(pictureBox8);
+            if (maQuyen == 1) //QuanLy
+            {
+                pictureBoxes.Add(pictureBox1); //banHang
+                pictureBoxes.Add(pictureBox2); //Home
+                pictureBoxes.Add(pictureBox3);//sanPham
+                pictureBoxes.Add(pictureBox4);  //nhanVien
+                pictureBoxes.Add(pictureBox5); //khachHang
+                pictureBoxes.Add(pictureBox6);//khuyenMai
+                pictureBoxes.Add(pictureBox7);  //nhapHang
+                pictureBoxes.Add(pictureBox8);  //ThongKe
+            }
+            if (maQuyen == 2) //BanHang
+            {
+                pictureBoxes.Add(pictureBox1);
+                pictureBoxes.Add(pictureBox2);
+                pictureBoxes.Add(pictureBox3);
+                pictureBoxes.Add(pictureBox5);
+            }
+            if (maQuyen == 3) //Kho
+            {
+                pictureBoxes.Add(pictureBox2);
+                pictureBoxes.Add(pictureBox6);
+                pictureBoxes.Add(pictureBox7);
+            }
 
             foreach (PictureBox pictureBox in pictureBoxes)
             {
@@ -44,7 +93,7 @@ namespace WindowsFormsApp1
         {
             if (container.Controls.Count > 0)
             {
-                container.Controls[0].Dispose(); // Loại bỏ form con hiện tại (nếu có)
+                container.Controls.Remove(container.Controls[0]); // Loại bỏ form con hiện tại (nếu có)
             }
 
             childForm.TopLevel = false;
@@ -75,46 +124,45 @@ namespace WindowsFormsApp1
 
             // Hiển thị form con tương ứng
             Form childFormToShow = null;
-            //Home
             if (clickedPictureBox == pictureBox1) 
             {
-                childFormToShow = new BanHangGUI();
+                childFormToShow = banHangGUI;
               
             }
-            //Ban Hang
+            //Home
             else if (clickedPictureBox == pictureBox2)
             {
-                childFormToShow = new BanHangGUI();
+                childFormToShow = (Form)tableLayoutPanel5.Controls[0];
             }
             //San Pham
             else if (clickedPictureBox == pictureBox3)
             {
-                childFormToShow = new SanPham.SanPhamGUI();
+                childFormToShow = sanPhamGUI;
             }
             //Nhan Vien
             else if (clickedPictureBox == pictureBox4)
             {
-                childFormToShow = new NhanVienGUI();
+                childFormToShow = nhanVienGUI;
             }
             //khach hang
             else if (clickedPictureBox == pictureBox5)
             {
-                childFormToShow = new KhachhangGUI();
+                childFormToShow = khachhangGUI;
             }
             //khuyen mai
             else if (clickedPictureBox == pictureBox6)
             {
-                childFormToShow = new KhuyenMaiGUI();
+                childFormToShow = khuyenMaiGUI;
             }
             //nhap hang
             else if (clickedPictureBox == pictureBox7)
             {
-                childFormToShow = new NhapHang.PhieuNhapGUI();
+                childFormToShow = phieuNhapGUI;
             }
             //thong ke
             else if (clickedPictureBox == pictureBox8)
             {
-                childFormToShow = new ThongKeGUI();
+                childFormToShow = thongKeGUI;
             }
           
 

@@ -103,6 +103,7 @@ namespace WindowsFormsApp1
 
 
             String tongThu = thongKeBUS.getTongThu(listSP, thoiGian, batDau, ketThuc);
+            textBoxTongThu.Text = tongThu;
             String tongChi = thongKeBUS.getTongChi(listSP, thoiGian, batDau, ketThuc);
             String loiNhuan=thongKeBUS.getLoiNhuan(listSP, thoiGian, batDau, ketThuc);
         }

@@ -280,8 +280,24 @@ namespace DAL
         }
         public String getTongThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {
-            return null;
-
+            double tongThu=0;
+            _conn.Open();
+            if (_conn.State == ConnectionState.Closed)
+            {
+                MessageBox.Show("Không thể kết nối DATABASE");
+                return null;
+            }
+            String sSql = "select sum(tongTien)\r\nfrom hoaDon\r\nwhere ngayLap >= @begin and ngayLap < @end";
+            SqlCommand cmd = _conn.CreateCommand();
+            cmd.CommandText = sSql;
+            cmd.Parameters.Add("@begin", SqlDbType.DateTime).Value = batDau;
+            cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = ketThuc;
+            SqlDataReader reader=cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                tongThu=reader.GetDouble(0);
+            }
+            return tongThu.ToString();
         }
         public String getTongChi(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {
