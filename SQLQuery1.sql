@@ -11,7 +11,7 @@ create table sanPham(
 	tenSP nVarChar(40),
 	giaBan float,
 	soLuong int,
-	img nVarChar(50),
+	img image,
 	thoiGian int, --thoiGian bảo hành 1donVi=1thang
 	tinhTrang bit,
 	maLoai int foreign key references loaiSP(maLoai)

@@ -32,6 +32,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grid_SanPham = new System.Windows.Forms.DataGridView();
+            this.CotmaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CottenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CotgiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CotsoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cotimg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CotthoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CotmaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
@@ -43,6 +50,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.grid_LoaiSanPham = new System.Windows.Forms.DataGridView();
+            this.CotmaLoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CottenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Sua2 = new System.Windows.Forms.Button();
             this.btn_Xoa2 = new System.Windows.Forms.Button();
@@ -51,8 +60,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_Tim2 = new System.Windows.Forms.TextBox();
-            this.btn_Reload = new System.Windows.Forms.Button();
-            this.btn_Reload2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -97,28 +104,36 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel1.Controls.Add(this.grid_SanPham, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btn_Reload, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.grid_SanPham, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1192, 662);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grid_SanPham
             // 
-            this.grid_SanPham.BackgroundColor = System.Drawing.Color.Azure;
+            this.grid_SanPham.AllowUserToAddRows = false;
+            this.grid_SanPham.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grid_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_SanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CotmaSP,
+            this.CottenSP,
+            this.CotgiaBan,
+            this.CotsoLuong,
+            this.Cotimg,
+            this.CotthoiGian,
+            this.CotmaLoai});
             this.tableLayoutPanel1.SetColumnSpan(this.grid_SanPham, 2);
             this.grid_SanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_SanPham.Location = new System.Drawing.Point(0, 197);
+            this.grid_SanPham.Location = new System.Drawing.Point(0, 145);
             this.grid_SanPham.Margin = new System.Windows.Forms.Padding(0);
             this.grid_SanPham.Name = "grid_SanPham";
             this.grid_SanPham.ReadOnly = true;
@@ -126,11 +141,80 @@
             this.grid_SanPham.RowHeadersWidth = 51;
             this.grid_SanPham.RowTemplate.Height = 24;
             this.grid_SanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_SanPham.Size = new System.Drawing.Size(1192, 465);
+            this.grid_SanPham.Size = new System.Drawing.Size(1192, 517);
             this.grid_SanPham.TabIndex = 113;
+            // 
+            // CotmaSP
+            // 
+            this.CotmaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotmaSP.DataPropertyName = "maSP";
+            this.CotmaSP.FillWeight = 150F;
+            this.CotmaSP.HeaderText = "Mã Sản Phẩm";
+            this.CotmaSP.MinimumWidth = 6;
+            this.CotmaSP.Name = "CotmaSP";
+            this.CotmaSP.ReadOnly = true;
+            // 
+            // CottenSP
+            // 
+            this.CottenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CottenSP.DataPropertyName = "tenSP";
+            this.CottenSP.FillWeight = 280F;
+            this.CottenSP.HeaderText = "Tên Sản Phẩm";
+            this.CottenSP.MinimumWidth = 6;
+            this.CottenSP.Name = "CottenSP";
+            this.CottenSP.ReadOnly = true;
+            // 
+            // CotgiaBan
+            // 
+            this.CotgiaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotgiaBan.DataPropertyName = "giaBan";
+            this.CotgiaBan.FillWeight = 150F;
+            this.CotgiaBan.HeaderText = "Giá Bán";
+            this.CotgiaBan.MinimumWidth = 6;
+            this.CotgiaBan.Name = "CotgiaBan";
+            this.CotgiaBan.ReadOnly = true;
+            // 
+            // CotsoLuong
+            // 
+            this.CotsoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotsoLuong.DataPropertyName = "soLuong";
+            this.CotsoLuong.HeaderText = "Số Lượng";
+            this.CotsoLuong.MinimumWidth = 6;
+            this.CotsoLuong.Name = "CotsoLuong";
+            this.CotsoLuong.ReadOnly = true;
+            // 
+            // Cotimg
+            // 
+            this.Cotimg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cotimg.DataPropertyName = "img";
+            this.Cotimg.FillWeight = 150F;
+            this.Cotimg.HeaderText = "Hình Ảnh";
+            this.Cotimg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Cotimg.MinimumWidth = 6;
+            this.Cotimg.Name = "Cotimg";
+            this.Cotimg.ReadOnly = true;
+            // 
+            // CotthoiGian
+            // 
+            this.CotthoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotthoiGian.DataPropertyName = "thoiGian";
+            this.CotthoiGian.HeaderText = "Bảo Hành (tháng)";
+            this.CotthoiGian.MinimumWidth = 6;
+            this.CotthoiGian.Name = "CotthoiGian";
+            this.CotthoiGian.ReadOnly = true;
+            // 
+            // CotmaLoai
+            // 
+            this.CotmaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotmaLoai.DataPropertyName = "maLoai";
+            this.CotmaLoai.HeaderText = "Mã Loại";
+            this.CotmaLoai.MinimumWidth = 6;
+            this.CotmaLoai.Name = "CotmaLoai";
+            this.CotmaLoai.ReadOnly = true;
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -175,6 +259,7 @@
             this.btn_Xoa.TabIndex = 3;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_ThemSanPham
             // 
@@ -194,7 +279,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Azure;
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -250,6 +335,7 @@
             this.tb_Tim.Name = "tb_Tim";
             this.tb_Tim.Size = new System.Drawing.Size(399, 38);
             this.tb_Tim.TabIndex = 0;
+            this.tb_Tim.TextChanged += new System.EventHandler(this.tb_Tim_TextChanged);
             // 
             // tabPage2
             // 
@@ -268,28 +354,31 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel4.Controls.Add(this.grid_LoaiSanPham, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.btn_Reload2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.grid_LoaiSanPham, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1192, 662);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // grid_LoaiSanPham
             // 
-            this.grid_LoaiSanPham.BackgroundColor = System.Drawing.Color.Azure;
+            this.grid_LoaiSanPham.AllowUserToAddRows = false;
+            this.grid_LoaiSanPham.BackgroundColor = System.Drawing.SystemColors.Control;
             this.grid_LoaiSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_LoaiSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CotmaLoaiSP,
+            this.CottenLoai});
             this.tableLayoutPanel4.SetColumnSpan(this.grid_LoaiSanPham, 2);
             this.grid_LoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_LoaiSanPham.Location = new System.Drawing.Point(0, 197);
+            this.grid_LoaiSanPham.Location = new System.Drawing.Point(0, 145);
             this.grid_LoaiSanPham.Margin = new System.Windows.Forms.Padding(0);
             this.grid_LoaiSanPham.Name = "grid_LoaiSanPham";
             this.grid_LoaiSanPham.ReadOnly = true;
@@ -297,11 +386,31 @@
             this.grid_LoaiSanPham.RowHeadersWidth = 51;
             this.grid_LoaiSanPham.RowTemplate.Height = 24;
             this.grid_LoaiSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_LoaiSanPham.Size = new System.Drawing.Size(1192, 465);
+            this.grid_LoaiSanPham.Size = new System.Drawing.Size(1192, 517);
             this.grid_LoaiSanPham.TabIndex = 113;
+            // 
+            // CotmaLoaiSP
+            // 
+            this.CotmaLoaiSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CotmaLoaiSP.DataPropertyName = "maLoai";
+            this.CotmaLoaiSP.HeaderText = "Mã Loại";
+            this.CotmaLoaiSP.MinimumWidth = 6;
+            this.CotmaLoaiSP.Name = "CotmaLoaiSP";
+            this.CotmaLoaiSP.ReadOnly = true;
+            // 
+            // CottenLoai
+            // 
+            this.CottenLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CottenLoai.DataPropertyName = "tenLoai";
+            this.CottenLoai.FillWeight = 400F;
+            this.CottenLoai.HeaderText = "Tên Loại";
+            this.CottenLoai.MinimumWidth = 6;
+            this.CottenLoai.Name = "CottenLoai";
+            this.CottenLoai.ReadOnly = true;
             // 
             // tableLayoutPanel6
             // 
+            this.tableLayoutPanel6.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -346,6 +455,7 @@
             this.btn_Xoa2.TabIndex = 3;
             this.btn_Xoa2.Text = "Xóa";
             this.btn_Xoa2.UseVisualStyleBackColor = false;
+            this.btn_Xoa2.Click += new System.EventHandler(this.btn_Xoa2_Click);
             // 
             // btn_ThemLoaiSanPham
             // 
@@ -365,7 +475,7 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Azure;
+            this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -421,32 +531,7 @@
             this.tb_Tim2.Name = "tb_Tim2";
             this.tb_Tim2.Size = new System.Drawing.Size(399, 38);
             this.tb_Tim2.TabIndex = 0;
-            // 
-            // btn_Reload
-            // 
-            this.btn_Reload.BackColor = System.Drawing.Color.Azure;
-            this.btn_Reload.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reload.Image = global::WindowsFormsApp1.Properties.Resources.reload;
-            this.btn_Reload.Location = new System.Drawing.Point(1092, 145);
-            this.btn_Reload.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Reload.Name = "btn_Reload";
-            this.btn_Reload.Size = new System.Drawing.Size(100, 52);
-            this.btn_Reload.TabIndex = 4;
-            this.btn_Reload.UseVisualStyleBackColor = false;
-            // 
-            // btn_Reload2
-            // 
-            this.btn_Reload2.BackColor = System.Drawing.Color.Azure;
-            this.btn_Reload2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Reload2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reload2.Image = global::WindowsFormsApp1.Properties.Resources.reload;
-            this.btn_Reload2.Location = new System.Drawing.Point(1092, 145);
-            this.btn_Reload2.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Reload2.Name = "btn_Reload2";
-            this.btn_Reload2.Size = new System.Drawing.Size(100, 52);
-            this.btn_Reload2.TabIndex = 4;
-            this.btn_Reload2.UseVisualStyleBackColor = false;
+            this.tb_Tim2.TextChanged += new System.EventHandler(this.tb_Tim2_TextChanged);
             // 
             // SanPhamGUI
             // 
@@ -457,6 +542,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "SanPhamGUI";
             this.Text = "SanPhamGUI";
+            this.Load += new System.EventHandler(this.SanPhamGUI_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -481,7 +567,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView grid_SanPham;
-        private System.Windows.Forms.Button btn_Reload;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_Sua;
@@ -492,7 +577,6 @@
         private System.Windows.Forms.TextBox tb_Tim;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataGridView grid_LoaiSanPham;
-        private System.Windows.Forms.Button btn_Reload2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btn_Sua2;
         private System.Windows.Forms.Button btn_Xoa2;
@@ -501,5 +585,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tb_Tim2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotmaLoaiSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CottenLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotmaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CottenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotgiaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotsoLuong;
+        private System.Windows.Forms.DataGridViewImageColumn Cotimg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotthoiGian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CotmaLoai;
     }
 }

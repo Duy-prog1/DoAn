@@ -109,6 +109,8 @@
     <Compile Include="BanHangDAL.cs" />
     <Compile Include="ChiTietHoaDonDAL.cs" />
     <Compile Include="ChiTietKhuyenMaiDAL.cs" />
+    <Compile Include="LoaiSanPhamDAL.cs" />
+    <Compile Include="SanPhamDAL.cs" />
     <Compile Include="DangNhapDAL.cs" />
     <Compile Include="DatabaseConnect.cs" />
     <Compile Include="HoaDonDAL.cs" />
