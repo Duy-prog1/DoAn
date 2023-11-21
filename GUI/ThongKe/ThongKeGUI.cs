@@ -22,6 +22,13 @@ namespace WindowsFormsApp1
 
         private void buttonThongKe_Click(object sender, EventArgs e)
         {
+            //kiem tra da chon cac truong chưa
+            if(comboDSSP.Items.Count==1 || comboThoiGian.SelectedIndex == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm để thống kê và thời gian thống kê");
+                return;
+            }
+
             //loaiBo default
             int numOfSeries = chart1.Series.Count;
             for (int i= 0;i < numOfSeries;i++)
@@ -34,55 +41,69 @@ namespace WindowsFormsApp1
             }
             /*
              cần có trong thống kê:
+                points
                 Series SP
                 Thời gian
              */
 
             //lay ds loai SP
-            List<String> danhSachLoaiSP = thongKeBUS.getDSLoaiSP();
-            //get Series thống kê số lượng
-            List<Series> series1 = new List<Series>();
-            for(int i = 0; i < danhSachLoaiSP.Count; i++)
+            //List<String> danhSachLoaiSP = thongKeBUS.getDSLoaiSP();
+
+            //lay listSP
+            List<String> listSP = new List<String>();
+            for (int i = 1; i < comboDSSP.Items.Count; i++)
             {
-                series1.Insert(i, new Series());
-                series1[i].ChartArea= "ChartArea1";
-                series1[i].ChartType = SeriesChartType.StackedColumn;
-                series1[i].Legend = "Legend1";
-                series1[i].Name = danhSachLoaiSP[i];
-                //them vao chart1
-                chart1.Series.Add(series1[i]);
+                listSP.Add(comboDSSP.Items[i].ToString());
             }
-            //get Series thống kê doanh thu
-            List<Series> series2 = new List<Series>();
-            for (int i = 0; i < danhSachLoaiSP.Count; i++)
+            //sort lai list SP
+            listSP.Sort();
+            for(int i = 0; i < listSP.Count; i++)
             {
+                Console.WriteLine(listSP[i]);
+            }
+            Console.WriteLine("guiok");
+
+            //lay thoiGian
+            String thoiGian = comboThoiGian.SelectedItem.ToString().Substring(5); //theo tuan,thang,quy
+            //lay begin va end
+            DateTime batDau = dateTimePicker1.Value.Date;
+            DateTime ketThuc = dateTimePicker2.Value.Date;
+
+            //get Series thống kê doanh thu
+            List<Series> series1 = new List<Series>();
+            List<Series> series2 = new List<Series>();
+
+            for (int i = 0; i < listSP.Count; i++)
+            {
+                //series1
+                series1.Insert(i, new Series());
+                series1[i].ChartArea = "ChartArea1";
+                series1[i].ChartType = SeriesChartType.Column;
+                series1[i].Legend = "Legend1";
+                series1[i].Name = listSP[i] + "(" + (i+1).ToString() + ")";
+                //series2
                 series2.Insert(i, new Series());
                 series2[i].ChartArea = "ChartArea1";
                 series2[i].ChartType = SeriesChartType.Line;
                 series2[i].Legend = "Legend1";
-                series2[i].Name = danhSachLoaiSP[i];
+                series2[i].Name = listSP[i] + "(" + (i + 1).ToString() + ")";
+            }
+
+            //add point trước khi thêm vào chart
+            thongKeBUS.getPointAllTK(listSP, thoiGian, batDau, ketThuc, series1, series2);
+
+            for (int i = 0; i < listSP.Count; i++)
+            {
+                //them vao chart1
+                chart1.Series.Add(series1[i]);
+
                 //them vao chart2
                 chart2.Series.Add(series2[i]);
             }
 
-            //lay listSP
-            List<String> listSP=new List<String>();
-            for(int i = 1; i < comboDSSP.Items.Count; i++)
-            {
-                listSP.Add(comboDSSP.Items[i].ToString());
-            }
-            //lay thoiGian
-            String thoiGian = comboThoiGian.SelectedItem.ToString().Substring(5); //theo tuan,thang,quy
-            //lay begin va end
-            DateTime batDau = dateTimePicker1.Value;
-            DateTime ketThuc = dateTimePicker2.Value;
-
-            List<DataPoint> dataPoints1 = new List<DataPoint>();
-            dataPoints1 = thongKeBUS.getPointTKSoLuong(listSP,thoiGian,batDau,ketThuc);
-            List<DataPoint> dataPoints2=new List<DataPoint>();
-            dataPoints2 = thongKeBUS.getPointTKDoanhThu(listSP, thoiGian, batDau, ketThuc);
 
             String tongThu = thongKeBUS.getTongThu(listSP, thoiGian, batDau, ketThuc);
+            textBoxTongThu.Text = tongThu;
             String tongChi = thongKeBUS.getTongChi(listSP, thoiGian, batDau, ketThuc);
             String loiNhuan=thongKeBUS.getLoiNhuan(listSP, thoiGian, batDau, ketThuc);
         }
@@ -101,7 +122,6 @@ namespace WindowsFormsApp1
                         //move value to danh sach sp
                         comboSP.Items.RemoveAt(i);
                         comboDSSP.Items.Add(temp);
-                        Console.WriteLine(comboSP.Items.Count - 1);
                     }
                 }
                 else
@@ -138,6 +158,21 @@ namespace WindowsFormsApp1
 
         private void ThongKeGUI_Load(object sender, EventArgs e)
         {
+            int tempCount = comboSP.Items.Count;
+            for(int i=0;i<tempCount;i++)
+            {
+                comboSP.Items.RemoveAt(0);
+            }
+
+            comboSP.Items.Add("Sản phẩm");
+            List<String> tempList = thongKeBUS.getDSLoaiSP();
+            for(int i=0;i< tempList.Count;i++)
+            {
+                comboSP.Items.Add(tempList[i]);
+            }
+            comboSP.Items.Add("Toàn bộ SP");
+
+
             //select default combobox
             comboSP.SelectedIndex = 0;
             comboDSSP.SelectedIndex = 0;

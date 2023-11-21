@@ -63,6 +63,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(170, 37);
             this.textBox1.Name = "textBox1";
@@ -93,6 +94,7 @@
             this.btn_Them.TabIndex = 2;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // label2
             // 
@@ -127,6 +129,7 @@
             this.Name = "ThemLoaiSanPhamGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm Loại Sản Phẩm";
+            this.Load += new System.EventHandler(this.ThemLoaiSanPhamGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

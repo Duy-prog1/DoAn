@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.nvGui = nvGui;
             this.tblNv = tblNv;
-            this.tbMaNv.Text = capNhatId();
+            this.tbMaNv.Text = capNhatId2();
             this.tbMaNv.Enabled = false;
             this.loadChucVu(cbChucVu);
             this.tblNv = tblNv;
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
                     lbNgaySinh.Text = "";
                     lbGioiTinh.Text = "";
                     lbChucVu.Text = "";
-                    nvDto = new NhanVienDTO(capNhatId(), tbTenNv.Text, XuLyGioiTinh(), XuLySdt(), rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
+                    nvDto = new NhanVienDTO(capNhatId2(), tbTenNv.Text, XuLyGioiTinh(), XuLySdt(), rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
                     if (nvBus.themNhanVien(nvDto))
                     {
                         MessageBox.Show("thêm thành công");
@@ -291,6 +291,19 @@ namespace WindowsFormsApp1
                 return "Ngày giờ không hợp lệ";
             }
         }
+        public string capNhatId2()
+        {
+            String maNv = "";
+            int soMaNv = nvBus.getList().Count + 1;
+            if (soMaNv >= 10)
+            {
+                maNv = "NV" + soMaNv;
+            }
+            else
+                maNv = "NV0" + soMaNv;
+            return maNv;
+        }
+        /*
         public string capNhatId()
         {
             String maNv = "";
@@ -314,7 +327,7 @@ namespace WindowsFormsApp1
                 maNv = "NV0" + soMaNv;
             return maNv;
         }
-
+        */
         private void button2_Click(object sender, EventArgs e)
         {
 

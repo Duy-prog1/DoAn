@@ -45,6 +45,8 @@
     <Compile Include="BanHangBUS.cs" />
     <Compile Include="ChiTietHoaDonBUS.cs" />
     <Compile Include="ChiTietKhuyenMaiBUS.cs" />
+    <Compile Include="LoaiSanPhamBUS.cs" />
+    <Compile Include="SanPhamBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KhuyenMaiBUS.cs" />
@@ -62,6 +64,9 @@
       <Project>{baad0982-e0e2-4f86-b1c5-3e9e3b64c661}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

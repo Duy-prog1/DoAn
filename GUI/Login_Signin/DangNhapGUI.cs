@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
                 BanHangGUI banHangGUI = new BanHangGUI();
                
 
-                MenuGUI menu = new MenuGUI();
+                MenuGUI menu = new MenuGUI(1);
                 menu.Show();
                 this.Hide();
             }
@@ -128,13 +128,18 @@ namespace WindowsFormsApp1
             {
                 e.SuppressKeyPress = true;
                 dangNhap();
-                MenuGUI menu = new MenuGUI();
+                MenuGUI menu = new MenuGUI(1);
                 menu.Show();
                 this.Hide();
             }
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
