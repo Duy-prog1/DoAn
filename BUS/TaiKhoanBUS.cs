@@ -39,5 +39,15 @@ namespace BUS
             return dal.LayTenNhanVien(tenDangNhap,matKhau);
         }
 
+        public TaiKhoanDTO getTk(string maNv)
+        {
+            return dal.getTk(maNv);
+        }
+
+        public bool xoaNhanVien(string maNv)
+        {
+            return dal.xoaNhanVien(maNv);
+        }
+
     }
 }
