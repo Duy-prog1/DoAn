@@ -203,7 +203,7 @@
             this.cbChucVu.Location = new System.Drawing.Point(382, 4);
             this.cbChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.cbChucVu.Name = "cbChucVu";
-            this.cbChucVu.Size = new System.Drawing.Size(155, 33);
+            this.cbChucVu.Size = new System.Drawing.Size(155, 28);
             this.cbChucVu.TabIndex = 20;
             // 
             // tableLayoutPanel4
@@ -257,7 +257,7 @@
             this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(155, 32);
+            this.maskedTextBox1.Size = new System.Drawing.Size(155, 27);
             this.maskedTextBox1.TabIndex = 14;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
@@ -316,7 +316,7 @@
             this.tbTenNv.Location = new System.Drawing.Point(111, 86);
             this.tbTenNv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenNv.Name = "tbTenNv";
-            this.tbTenNv.Size = new System.Drawing.Size(156, 32);
+            this.tbTenNv.Size = new System.Drawing.Size(156, 27);
             this.tbTenNv.TabIndex = 15;
             // 
             // tbMaNv
@@ -326,7 +326,7 @@
             this.tbMaNv.Location = new System.Drawing.Point(111, 2);
             this.tbMaNv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaNv.Name = "tbMaNv";
-            this.tbMaNv.Size = new System.Drawing.Size(156, 32);
+            this.tbMaNv.Size = new System.Drawing.Size(156, 27);
             this.tbMaNv.TabIndex = 10;
             // 
             // label3
@@ -360,7 +360,7 @@
             this.tbSdt.Location = new System.Drawing.Point(111, 170);
             this.tbSdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSdt.Name = "tbSdt";
-            this.tbSdt.Size = new System.Drawing.Size(156, 32);
+            this.tbSdt.Size = new System.Drawing.Size(156, 27);
             this.tbSdt.TabIndex = 20;
             // 
             // lbTenNv

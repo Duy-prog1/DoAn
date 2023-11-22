@@ -15,14 +15,15 @@ namespace WindowsFormsApp1
 {
     public partial class DangNhapGUI : Form
     {
-       
-        TaiKhoanDTO dto=new TaiKhoanDTO();
+           
         TaiKhoanBUS bus=new TaiKhoanBUS();
+       
         public static string tenDangNhap;
         public static string matKhau;
 
         public string MaNhanVien = new TaiKhoanBUS().LayMaNhanVien(tenDangNhap, matKhau);
         public string TenNhanVien = new TaiKhoanBUS().LayTenNhanVien(tenDangNhap, matKhau);
+        TaiKhoanDTO dto = new TaiKhoanDTO();
         public DangNhapGUI()
         {
             InitializeComponent();
@@ -73,9 +74,10 @@ namespace WindowsFormsApp1
         // đăng nhập
         public void dangNhap()
         {
-           tenDangNhap = textBox1.Text;
-             matKhau= textBox2.Text;
-          
+            tenDangNhap = textBox1.Text;
+            matKhau= textBox2.Text;
+            string maNV = bus.LayMaNhanVien(tenDangNhap, matKhau);           
+            dto = bus.getTk(maNV);
             if (string.IsNullOrEmpty(tenDangNhap))
             {
                 MessageBox.Show("tên đăng nhập không được bỏ trống");
@@ -86,7 +88,7 @@ namespace WindowsFormsApp1
                 return;
             }
             bool result=bus.dangNhap(tenDangNhap, matKhau);
-            if(result)
+            if(result&&!maNV.Equals(""))
 
             {
                 MessageBox.Show("đăng nhập thành công");
@@ -95,7 +97,7 @@ namespace WindowsFormsApp1
                 BanHangGUI banHangGUI = new BanHangGUI();
                
 
-                MenuGUI menu = new MenuGUI(1);
+                MenuGUI menu = new MenuGUI(dto.maQuyen);
                 menu.Show();
                 this.Hide();
             }
