@@ -1,6 +1,7 @@
 using BUS;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -25,28 +26,28 @@ namespace WindowsFormsApp1
 
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
         int maQuyen; //maQuyen=1 (Quanly), maQuyen=2 (NhanVienBanHang) , maQuyen=3 (NhanVienKho)
-        public MenuGUI(int maQuyen)
+        public MenuGUI(int maQuyen,List<bool> listQuyen)
         {
             InitializeComponent();
+            for (int i = listQuyen.Count - 1; i >= 0; i--)
+            {
+                Console.WriteLine(listQuyen[i]);
+                if (listQuyen[i] == false)
+                {
+                    tableLayoutPanel3.Controls.RemoveAt(i);
+                }
+            }
             if (maQuyen == 2) //ban hang
             {
                 banHangGUI = new BanHangGUI();
                 sanPhamGUI = new SanPhamGUI();
                 khachhangGUI = new KhachhangGUI();
-                tableLayoutPanel3.Controls.RemoveAt(6); //8
-                tableLayoutPanel3.Controls.RemoveAt(5); //7
-                tableLayoutPanel3.Controls.RemoveAt(4); //6
-                tableLayoutPanel3.Controls.RemoveAt(2); //4
+                
             }
             else if (maQuyen == 3)
             {
                 khuyenMaiGUI = new KhuyenMaiGUI();
                 phieuNhapGUI = new PhieuNhapGUI();
-                tableLayoutPanel3.Controls.RemoveAt(6); //8
-                tableLayoutPanel3.Controls.RemoveAt(3); //5
-                tableLayoutPanel3.Controls.RemoveAt(2); //4
-                tableLayoutPanel3.Controls.RemoveAt(1); //3
-                tableLayoutPanel3.Controls.RemoveAt(0); //2
             }
             else
             {
@@ -121,7 +122,6 @@ namespace WindowsFormsApp1
             container.Tag = childForm; // Lưu trữ form con cho việc loại bỏ sau này
             childForm.Show();
         }
-
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
@@ -237,6 +237,16 @@ namespace WindowsFormsApp1
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuGUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to exit?", "Thoát", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                new DangNhapGUI().Visible=true;
+                this.Dispose();
+            }
         }
     }
 }

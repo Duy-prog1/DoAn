@@ -75,29 +75,29 @@ namespace WindowsFormsApp1
         public void dangNhap()
         {
             tenDangNhap = textBox1.Text;
-            matKhau= textBox2.Text;
-            string maNV = bus.LayMaNhanVien(tenDangNhap, matKhau);           
-            dto = bus.getTk(maNV);
-            if (string.IsNullOrEmpty(tenDangNhap))
+            matKhau= textBox2.Text; if (string.IsNullOrEmpty(tenDangNhap))
             {
                 MessageBox.Show("tên đăng nhập không được bỏ trống");
                 return;
-            }  
-            if(string.IsNullOrEmpty(matKhau)) {
+            }
+            if (string.IsNullOrEmpty(matKhau))
+            {
                 MessageBox.Show("mật khẩu không được bỏ trống");
                 return;
             }
+
+            string maNV = bus.LayMaNhanVien(tenDangNhap, matKhau);           
+            dto = bus.getTk(maNV);
+
             bool result=bus.dangNhap(tenDangNhap, matKhau);
-            if(result&&!maNV.Equals(""))
+            if(result && !maNV.Equals(""))
 
             {
                 MessageBox.Show("đăng nhập thành công");
-              
-                
-                BanHangGUI banHangGUI = new BanHangGUI();
-               
+                List<bool> listQuyen = new List<bool>();
+                listQuyen = bus.getDSQuyen(dto.maQuyen);
 
-                MenuGUI menu = new MenuGUI(dto.maQuyen);
+                MenuGUI menu = new MenuGUI(dto.maQuyen,listQuyen);
                 menu.Show();
                 this.Hide();
             }
@@ -130,8 +130,6 @@ namespace WindowsFormsApp1
             {
                 e.SuppressKeyPress = true;
                 dangNhap();
-                MenuGUI menu = new MenuGUI(1);
-                menu.Show();
                 this.Hide();
             }
         }

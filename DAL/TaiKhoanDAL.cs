@@ -200,6 +200,40 @@ namespace DAL
             return false;
         }
 
+        public List<bool> getDSQuyen(int maQuyen)
+        {
+            List<bool> list = new List<bool>();
+            try
+            {
+                _conn.Open();
+
+                using (var cmd = new SqlCommand("select *\r\nfrom phanQuyen\r\nwhere maQuyen=@maQuyen", _conn))
+                {
+                    cmd.Parameters.AddWithValue("@maQuyen", maQuyen);
+
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        for(int i=1;i<reader.FieldCount;i++)
+                        {
+                            list.Add(reader.GetBoolean(i));
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+                // Xử lý ngoại lệ theo cách phù hợp, ví dụ: ghi log hoặc ném lại ngoại lệ
+            }
+            finally
+            {
+                _conn.Close();
+            }
+
+            return list;
+        }
 
     }
 }

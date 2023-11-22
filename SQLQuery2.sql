@@ -110,10 +110,10 @@ INSERT INTO nhanVien (maNV, tenNV, gioiTinh, sdt, diaChi, chucVu, ngaySinh, tinh
 	('NV08', N'Trương Thị Ích', N'Nữ','0987654318', N'1213 Đường Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7', N'Nhân viên', '1997-08-08', 1),
 	('NV09', N'Bùi Văn Khải', 'Nam','0123456786', N'457 Đường Xa lộ Hà Nội, Phường Tam Hiệp, Quận 9', N'Nhân viên', '1998-09-09', 1),
 	('NV10', N'Nguyễn Thị Lài', N'Nữ','0987654317', N'789 Đường Trường Chinh, Phường Tây Thạnh, Quận Tân Phú', N'Nhân viên', '1999-10-10', 1);
-INSERT INTO phanQuyen (maQuyen, qLyNV, qLySP, qLyNH, qLyBH, qLyKH, xemThongKe) VALUES
-	(1, 1, 1, 1, 1, 0, 1),
-	(2, 0, 1, 0, 1, 1, 0),
-	(3, 0, 1, 1, 0, 0, 0);
+INSERT INTO phanQuyen (maQuyen, qLyBH, qLySP, qLyNV, qLyKH, qLyKM, qLyNH, xemThongKe) VALUES
+	(1, 1, 1, 1, 1, 1, 1, 1),
+	(2, 1, 1, 0, 1, 0, 0, 0),
+	(3, 0, 0, 0, 0, 1, 1, 0);
 INSERT INTO taiKhoan (maNV, maQuyen, tenDangNhap, matKhau, tinhTrang) VALUES
   ('NV01', 1, 'nhanvien1', 'nhanvien1', 1),
   ('NV02', 2, 'nhanvien2', 'nhanvien2', 1),
@@ -224,7 +224,7 @@ INSERT INTO CT_HoaDon(maHD, maSP, giaBan, soLuong, tongTien, maKM) VALUES
 	(8, 'samsung-01', 20000000, 2, 39000000, 2),
 	(9, 'vivo-01', 25000000, 1, 25000000, NULL),
 	(10, 'xiaomi-01', 15000000, 1, 15000000, NULL);
-INSERT INTO baoHanh (maBH,maHD,maSP,ngayBD,ngayKT,soLan,chiPhi,trangThai) VALUES
+INSERT INTO baoHanh (maBH,maHD,maSP,ngayBD,ngayKT,soLan,tongChiPhi,trangThai) VALUES
   (1, 1, 'asus-01', '2023-11-01 00:00:00.000', '2024-11-01 00:00:00.000', 1, 1000000, 1),
   (2, 1, 'htc-01', '2023-11-01 00:00:00.000', '2025-11-01 00:00:00.000', 2, 2000000, 1),
   (3, 2, 'huawei-01', '2023-11-02 00:00:00.000', '2024-11-02 00:00:00.000', 1, 1500000, 1),

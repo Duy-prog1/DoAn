@@ -49,5 +49,10 @@ namespace BUS
             return dal.xoaNhanVien(maNv);
         }
 
+        public List<bool> getDSQuyen(int maQuyen)
+        {
+            return dal.getDSQuyen(maQuyen);
+        }
+
     }
 }

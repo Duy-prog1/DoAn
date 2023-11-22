@@ -279,6 +279,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MenuGUI";
             this.Text = "MenuGUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuGUI_FormClosing);
             this.Load += new System.EventHandler(this.MenuGUI_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

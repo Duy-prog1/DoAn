@@ -50,11 +50,12 @@ create table nhanVien(
 );
 create table phanQuyen(
 	maQuyen int not null primary key,
-	qLyNV bit,
-	qLySP bit,
-	qLyNH bit,
 	qLyBH bit,
+	qLySP bit,
+	qLyNV bit,
 	qLyKH bit,
+	qLyKM bit,
+	qLyNH bit,
 	xemThongKe bit
 );
 create table taiKhoan(
