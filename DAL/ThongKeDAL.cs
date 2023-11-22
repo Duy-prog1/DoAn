@@ -295,7 +295,10 @@ namespace DAL
             SqlDataReader reader=cmd.ExecuteReader();
             if (reader.Read())
             {
-                tongThu=reader.GetDouble(0);
+                if (reader.GetValue(0) != DBNull.Value)
+                {
+                    tongThu += reader.GetDouble(0);
+                }
             }
             reader.Close();
             _conn.Close();
@@ -318,8 +321,13 @@ namespace DAL
             SqlDataReader reader=cmd.ExecuteReader();
             if (reader.Read())
             {
-                tongChi+=reader.GetDouble(0);
+                if (reader.GetValue(0) != DBNull.Value)
+                {
+                    tongChi += reader.GetDouble(0);
+                }
             }
+            reader.Close();
+            _conn.Close();
             return tongChi.ToString();
         }
         public String getLoiNhuan(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
