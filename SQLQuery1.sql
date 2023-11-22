@@ -8,7 +8,7 @@ create table loaiSP(
 );
 create table sanPham(
 	maSP nVarChar(20) not null primary key,
-	tenSP nVarChar(40),
+	tenSP nVarChar(130),
 	giaBan float,
 	soLuong int,
 	img image,
@@ -18,7 +18,7 @@ create table sanPham(
 );
 create table khuyenMai(
 	maKM int not null primary key,
-	tenKM nVarChar(70),
+	tenKM nVarChar(130),
 	ngayBD datetime,
 	ngayKT datetime,
 	tinhTrang bit
@@ -34,17 +34,17 @@ create table CT_KhuyenMai(
 create table khachHang(
 	maKH int not null primary key,
 	tenKH nVarChar(30),
-	sdt char(10),
+	sdt char(13),
 	tichDiem int,
 	tongChi float
 );
 create table nhanVien(
-	maNV nVarChar(10) not null primary key,
+	maNV nVarChar(13) not null primary key,
 	tenNV nVarChar(30),
 	gioiTinh nVarChar(3),
-	sdt char(10),
-	diaChi nVarChar(60),
-	chucVu nVarChar(10),
+	sdt char(13),
+	diaChi nVarChar(130),
+	chucVu nVarChar(13),
 	ngaySinh datetime,
 	tinhTrang bit
 );
@@ -59,7 +59,7 @@ create table phanQuyen(
 	xemThongKe bit
 );
 create table taiKhoan(
-	maNV nVarChar(10) foreign key references nhanVien(maNV),
+	maNV nVarChar(13) foreign key references nhanVien(maNV),
 	maQuyen int foreign key references phanQuyen(maQuyen),
 	tenDangNhap nVarChar(20),
 	matKhau nVarChar(20),
@@ -67,14 +67,14 @@ create table taiKhoan(
 );
 create table ncc(
 	maNCC int not null primary key,
-	tenNCC nVarChar(50),
-	sdt char(10),
-	diaChi nVarChar(90),
+	tenNCC nVarChar(130),
+	sdt char(13),
+	diaChi nVarChar(130),
 	tinhTrang bit
 );
 create table phieuNhap(
 	maPN int not null primary key,
-	maNV nVarChar(10) foreign key references nhanVien(maNV),
+	maNV nVarChar(13) foreign key references nhanVien(maNV),
 	maNCC int foreign key references ncc(maNCC),
 	ngayLap datetime,
 	tongTien float,
@@ -90,7 +90,7 @@ create table CT_PhieuNhap(
 );
 create table hoaDon(
 	maHD int not null primary key,
-	maNV nVarChar(10) foreign key references nhanVien(maNV),
+	maNV nVarChar(13) foreign key references nhanVien(maNV),
 	maKH int foreign key references khachHang(maKH),
 	ngayLap datetime,
 	tongTien float,
@@ -112,9 +112,15 @@ create table baoHanh(
 	ngayBD datetime,
 	ngayKT datetime,
 	soLan int,
-	chiPhi float,
+	tongChiPhi float,
 	trangThai bit
 );
+create table CT_BaoHanh(
+	maBH int foreign key references baoHanh(maBH),
+	ngayBH datetime,
+	chiPhi int,
+	trangThai bit
+)
 --loai sp
 --san pham
 --khuyen mai
