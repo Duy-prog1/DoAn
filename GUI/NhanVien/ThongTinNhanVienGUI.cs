@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
                     string mk = "nhanvien" + maSo;
                     if (nvBus.themNhanVien(nvDto))
                     {
-                        if(taoTk(lbChucVu.Text.Trim(), nvDto.maNv, tenDn, mk))
+                        if(taoTk(nvDto.chucVu, nvDto.maNv, tenDn, mk))
                         {
                             MessageBox.Show("thêm thành công");
                             tblNv.DataSource = nvBus.getNhanVien();
@@ -268,7 +268,7 @@ namespace WindowsFormsApp1
             string chucVu = "";
             if (cbChucVu.SelectedIndex != 0)
             {
-                chucVu = cbChucVu.SelectedItem.ToString();
+                chucVu = cbChucVu.SelectedItem.ToString().Trim();
             }        
             return chucVu;
         }

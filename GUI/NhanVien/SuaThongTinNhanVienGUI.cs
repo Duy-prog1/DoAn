@@ -18,12 +18,15 @@ namespace WindowsFormsApp1
     {
         NhanVienDTO nvDto;
         NhanVienBUS nvBus = new NhanVienBUS();
+        TaiKhoanDTO tkDto;
+        TaiKhoanBUS tkBus = new TaiKhoanBUS();
         DataGridView tblNv;
         bool kichHoatSua = false;
-        public SuaThongTinNhanVienGUI(NhanVienDTO nvDto, DataGridView tblNv)
+        public SuaThongTinNhanVienGUI(NhanVienDTO nvDto, DataGridView tblNv, TaiKhoanDTO tkDto)
         {
             InitializeComponent();
             this.nvDto = nvDto;
+            this.tkDto = tkDto;
             this.tblNv = tblNv;
             this.loadChucVu(cbChucVu);
             showThongTin();
@@ -129,7 +132,7 @@ namespace WindowsFormsApp1
                 }
                 else
                     lbGioiTinh.Text = "";
-                if (tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && mtbNgaySinh.Text != "" && CheckPhoneNumber(tbSdt.Text) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
+                if (tbSdt.Text != "" && cbChucVu.SelectedIndex != 0 && mtbNgaySinh.Text != "" && CheckPhoneNumber(tbSdt.Text.Trim()) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
                 {
                     lbTenNv.Text = "";
                     lbSdt.Text = "";
@@ -138,10 +141,11 @@ namespace WindowsFormsApp1
                     lbChucVu.Text = "";
                     this.nvDto.tenNv = tbTenNv.Text;
                     this.nvDto.ngaySinhNv = xuLyNgaySinh();
-                    this.nvDto.sdtNv = tbSdt.Text;
+                    this.nvDto.sdtNv = tbSdt.Text.Trim();
                     this.nvDto.chucVu = xuLychucVu();
                     this.nvDto.diaChiNv = rtbDiaChi.Text;
-                    if (nvBus.suaNhanVien(nvDto))
+                    updatePhanQuyen(nvDto.chucVu);
+                    if (nvBus.suaNhanVien(nvDto)&&tkBus.suaTk(tkDto))
                     {
                         tblNv.DataSource = nvBus.getNhanVien();
                         MessageBox.Show("Sửa thành công!");
@@ -161,13 +165,32 @@ namespace WindowsFormsApp1
                 lbSdt.Text = "Vui lòng nhập thông tin vào!";
             }
         }
+        
+        public void updatePhanQuyen(string chucVu)
+        {
+            int maQuyen = 0;
+            if (chucVu.Equals("Quản lý"))
+            {
+                maQuyen = 1;
+            }
+            else if (chucVu.Equals("NV kho"))
+            {
+                maQuyen = 3;
+            }
+            else
+            {
+                maQuyen = 2;
+            }
+            tkDto.maQuyen = maQuyen;
+        }
+
         public bool checkNgaySinhVaSdt()
         {
             if (CheckPhoneNumber(tbSdt.Text.Trim()) && !checkDate(mtbNgaySinh.Text, lbNgaySinh))
             {
                 return true;
             }
-            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && !CheckPhoneNumber(tbSdt.Text))
+            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && !CheckPhoneNumber(tbSdt.Text.Trim()))
             {
                 return true;
             }
@@ -175,7 +198,7 @@ namespace WindowsFormsApp1
             {
                 return true;
             }
-            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && CheckPhoneNumber(tbSdt.Text))
+            if (checkDate(mtbNgaySinh.Text, lbNgaySinh) && CheckPhoneNumber(tbSdt.Text.Trim()))
             {
                 return true;
             }
@@ -186,7 +209,7 @@ namespace WindowsFormsApp1
             string chucVu = "";
             if (cbChucVu.SelectedIndex != 0)
             {
-                chucVu = cbChucVu.SelectedItem.ToString();
+                chucVu = cbChucVu.SelectedItem.ToString().Trim();
             }
             return chucVu;
         }

@@ -54,5 +54,9 @@ namespace BUS
             return dal.getDSQuyen(maQuyen);
         }
 
+        public bool suaTk(TaiKhoanDTO tk)
+        {
+            return dal.suaTk(tk);
+        }
     }
 }

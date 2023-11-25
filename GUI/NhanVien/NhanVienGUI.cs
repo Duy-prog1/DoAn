@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         NhanVienBUS nvBus = new NhanVienBUS();
         TaiKhoanBUS tkBus = new TaiKhoanBUS();
         NhanVienDTO nvDto = new NhanVienDTO();
+        TaiKhoanDTO tkDto = new TaiKhoanDTO();
         public NhanVienGUI()
         {
             InitializeComponent();
@@ -75,7 +76,8 @@ namespace WindowsFormsApp1
                     nvDto.chucVu = row.Cells["cotChucVu"].Value.ToString();
                     nvDto.ngaySinhNv = row.Cells["cotNgaySinh"].Value.ToString();
                     nvDto.trangThai = true;
-                    thongTinNv = new SuaThongTinNhanVienGUI(nvDto, dataGridView1);
+                    tkDto = tkBus.getTk(nvDto.maNv);
+                    thongTinNv = new SuaThongTinNhanVienGUI(nvDto, dataGridView1, tkDto);
                     thongTinNv.StartPosition = FormStartPosition.CenterScreen;
                     thongTinNv.ShowDialog();
 

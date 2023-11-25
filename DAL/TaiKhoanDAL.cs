@@ -236,6 +236,45 @@ namespace DAL
             return list;
         }
 
+        public bool suaTk(TaiKhoanDTO tk)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                // Query string to update the "tinhTrang" column to 'False' for the specified "maNV"
+                string SQL = string.Format("UPDATE taiKhoan SET maQuyen = @maQuyen, tenDangNhap = @tenDangNhap, matKhau = @matKhau WHERE maNV = @MaNV");
+
+                // Create a SqlCommand object
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    // Use parameters to safely pass values into the SQL statement
+                    cmd.Parameters.AddWithValue("@MaNV", tk.maNhanVien);
+                    cmd.Parameters.AddWithValue("@maQuyen", tk.maQuyen);
+                    cmd.Parameters.AddWithValue("@tenDangNhap", tk.tenDangNhap);
+                    cmd.Parameters.AddWithValue("@matKhau", tk.matKhau);                  
+
+                    // Execute the SQL UPDATE statement
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        return true;
+                }
+            }
+            catch (Exception e)
+            {
+                // Handle the exception here or log it.
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+
+            return false;
+        }
+
     }
 }
 
