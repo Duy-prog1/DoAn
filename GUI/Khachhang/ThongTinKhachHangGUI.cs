@@ -41,5 +41,17 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tbTenKh.Enabled = true;
+            tbSdt.Enabled = true;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
