@@ -163,7 +163,7 @@ namespace WindowsFormsApp1
         }
         public bool checkNgaySinhVaSdt()
         {
-            if (CheckPhoneNumber(tbSdt.Text) && !checkDate(mtbNgaySinh.Text, lbNgaySinh))
+            if (CheckPhoneNumber(tbSdt.Text.Trim()) && !checkDate(mtbNgaySinh.Text, lbNgaySinh))
             {
                 return true;
             }
@@ -171,7 +171,7 @@ namespace WindowsFormsApp1
             {
                 return true;
             }
-            if (CheckPhoneNumber(tbSdt.Text) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
+            if (CheckPhoneNumber(tbSdt.Text.Trim()) && checkDate(mtbNgaySinh.Text, lbNgaySinh))
             {
                 return true;
             }

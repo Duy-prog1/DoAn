@@ -20,6 +20,41 @@ namespace DAL
             return dtKhachHang;
         }
 
+        public List<KhachHangDTO> getList()
+        {
+            try
+            {
+                _conn.Open();
+                string sql = "select * from khachHang";
+                List<KhachHangDTO> list = new List<KhachHangDTO>();
+                SqlCommand cmd = new SqlCommand(sql, _conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    KhachHangDTO kh = new KhachHangDTO();
+                    kh.maKh = reader.GetInt32(reader.GetOrdinal("maKH"));
+                    kh.tenKh = reader["tenKH"].ToString();
+                    kh.sdtKh = reader["sdt"].ToString();
+                    kh.tichDiem = reader.GetInt32(reader.GetOrdinal("tichDiem"));
+                    kh.tongChi = reader.GetDouble(reader.GetOrdinal("tongChi"));                
+                    list.Add(kh);
+                }
+
+                reader.Close();
+                _conn.Close();
+                return list;
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+
+        }
+
         public DataTable getFindKhachHang(string key)
         {
             DataTable dtKhachHang = new DataTable();
@@ -38,6 +73,45 @@ namespace DAL
             }
 
             return dtKhachHang;
+        }
+
+        public bool suakhachHang(KhachHangDTO kh)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                // Query string to update the "tinhTrang" column to 'False' for the specified "maNV"
+                string SQL = string.Format("UPDATE khachHang SET tenKH = @tenKH, sdt = @sdt, tichDiem = @tichDiem, tongChi = @tongChi  WHERE maKH = @maKH");
+
+                // Create a SqlCommand object
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    // Use parameters to safely pass values into the SQL statement
+                    cmd.Parameters.AddWithValue("@maKH", kh.maKh);
+                    cmd.Parameters.AddWithValue("@tenKH", kh.tenKh);
+                    cmd.Parameters.AddWithValue("@sdt", kh.sdtKh);
+                    cmd.Parameters.AddWithValue("@tichDiem", kh.tichDiem);
+                    cmd.Parameters.AddWithValue("@tongChi", kh.tongChi);                 
+                    // Execute the SQL UPDATE statement
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        return true;
+                }
+            }
+            catch (Exception e)
+            {
+                // Handle the exception here or log it.
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+
+            return false;
         }
 
     }

@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
     {
         DataGridView tblNv;
         NhanVienDTO nvDto;
+        TaiKhoanDTO tkDto;
+        TaiKhoanBUS tkBus = new TaiKhoanBUS();
         NhanVienBUS nvBus = new NhanVienBUS();
         NhanVienGUI nvGui;
         public ThongTinNhanVienGUI(NhanVienGUI nvGui, DataGridView tblNv)
@@ -86,11 +88,20 @@ namespace WindowsFormsApp1
                     lbGioiTinh.Text = "";
                     lbChucVu.Text = "";
                     nvDto = new NhanVienDTO(capNhatId2(), tbTenNv.Text, XuLyGioiTinh(), XuLySdt(), rtbDiaChi.Text, xuLychucVu(), xuLyNgaySinh(), true);
+                    int maSo = nvBus.getList().Count + 1;
+                    string tenDn = "nhanvien" + maSo;
+                    string mk = "nhanvien" + maSo;
                     if (nvBus.themNhanVien(nvDto))
                     {
-                        MessageBox.Show("thêm thành công");
-                        tblNv.DataSource = nvBus.getNhanVien();
-                        this.Dispose();
+                        if(taoTk(lbChucVu.Text.Trim(), nvDto.maNv, tenDn, mk))
+                        {
+                            MessageBox.Show("thêm thành công");
+                            tblNv.DataSource = nvBus.getNhanVien();
+                            this.Dispose();
+                        }
+                        else
+                            MessageBox.Show("thêm thất bại");
+
                     }
                     else
                         MessageBox.Show("thêm thất bại");
@@ -332,6 +343,26 @@ namespace WindowsFormsApp1
         {
 
             this.Dispose();
+        }
+
+        public bool taoTk(string chucVu, string maNv, string tenDn, string mk)
+        {
+            int maQuyen = 0;        
+            if (chucVu.Equals("Quản lý"))
+            {
+                maQuyen = 1;
+            }
+            else if (chucVu.Equals("NV kho"))
+            {
+                maQuyen = 3;
+            }
+            else
+            {
+                maQuyen = 2;
+            }
+
+            tkDto = new TaiKhoanDTO(maNv, maQuyen,tenDn, mk, 1);
+            return tkBus.themTaiKhoan(tkDto);
         }
     }
 }

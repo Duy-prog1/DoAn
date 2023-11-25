@@ -25,12 +25,12 @@ namespace WindowsFormsApp1
         {
             string key = textBox1.Text;
 
-            dataGridView1.DataSource = khBus.getFindKhachHang(key);
+            tblKh.DataSource = khBus.getFindKhachHang(key);
         }
 
         private void KhachhangGUI_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = this.khBus.getKhachHang();
+            tblKh.DataSource = this.khBus.getKhachHang();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -39,15 +39,15 @@ namespace WindowsFormsApp1
             Form thongTinKhGui = null;
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                dataGridView1.CurrentRow.Selected = true;
+                tblKh.CurrentRow.Selected = true;
 
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = tblKh.Rows[e.RowIndex];
                 khDto.maKh = int.Parse( row.Cells["cotMaKh"].Value.ToString());
                 khDto.tenKh = row.Cells["cotTenKh"].Value.ToString();             
                 khDto.sdtKh = row.Cells["cotSdt"].Value.ToString();
                 khDto.tichDiem = int.Parse(row.Cells["cotTichDiem"].Value.ToString());
                 khDto.tongChi = double.Parse(row.Cells["cotTongChi"].Value.ToString());
-                thongTinKhGui = new ThongTinKhachHangGUI(khDto);
+                thongTinKhGui = new ThongTinKhachHangGUI(khDto,this.tblKh);
                 thongTinKhGui.StartPosition = FormStartPosition.CenterScreen;
                 thongTinKhGui.ShowDialog();
 

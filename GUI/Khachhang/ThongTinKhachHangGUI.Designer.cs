@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbSdt = new System.Windows.Forms.TextBox();
-            this.lbTenNv = new System.Windows.Forms.Label();
+            this.lbTenKh = new System.Windows.Forms.Label();
             this.lbSdt = new System.Windows.Forms.Label();
             this.lbGioiTinh = new System.Windows.Forms.Label();
             this.lbChucVu = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel8.Controls.Add(this.tbSdt, 1, 4);
-            this.tableLayoutPanel8.Controls.Add(this.lbTenNv, 1, 3);
+            this.tableLayoutPanel8.Controls.Add(this.lbTenKh, 1, 3);
             this.tableLayoutPanel8.Controls.Add(this.lbSdt, 1, 5);
             this.tableLayoutPanel8.Controls.Add(this.lbGioiTinh, 3, 5);
             this.tableLayoutPanel8.Controls.Add(this.lbChucVu, 3, 1);
@@ -304,14 +304,14 @@
             this.tbSdt.Size = new System.Drawing.Size(117, 27);
             this.tbSdt.TabIndex = 20;
             // 
-            // lbTenNv
+            // lbTenKh
             // 
-            this.lbTenNv.AutoSize = true;
-            this.lbTenNv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTenNv.Location = new System.Drawing.Point(76, 99);
-            this.lbTenNv.Name = "lbTenNv";
-            this.lbTenNv.Size = new System.Drawing.Size(115, 33);
-            this.lbTenNv.TabIndex = 23;
+            this.lbTenKh.AutoSize = true;
+            this.lbTenKh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTenKh.Location = new System.Drawing.Point(76, 99);
+            this.lbTenKh.Name = "lbTenKh";
+            this.lbTenKh.Size = new System.Drawing.Size(115, 33);
+            this.lbTenKh.TabIndex = 23;
             // 
             // lbSdt
             // 
@@ -417,7 +417,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox tbSdt;
-        private System.Windows.Forms.Label lbTenNv;
+        private System.Windows.Forms.Label lbTenKh;
         private System.Windows.Forms.Label lbSdt;
         private System.Windows.Forms.Label lbGioiTinh;
         private System.Windows.Forms.Label lbChucVu;

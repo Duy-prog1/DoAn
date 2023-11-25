@@ -16,12 +16,13 @@ namespace DAL
             try
             {
                 _conn.Open();
-                string SQL = "INSERT INTO taiKhoan(tenDangNhap, matKhau, email,tinhTrang) VALUES (@tenDangNhap, @matKhau, @email,@tinhTrang)";
+                string SQL = "INSERT INTO taiKhoan(maNV,tenDangNhap, matKhau, maQuyen,tinhTrang) VALUES (@maNV,@tenDangNhap, @matKhau, @maQuyen,@tinhTrang)";
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Sử dụng tham số
+                cmd.Parameters.AddWithValue("@maNV", dto.maNhanVien);
                 cmd.Parameters.AddWithValue("@tenDangNhap", dto.tenDangNhap);
                 cmd.Parameters.AddWithValue("@matKhau", dto.matKhau);
-                cmd.Parameters.AddWithValue("@email", dto.email);
+                cmd.Parameters.AddWithValue("@maQuyen", dto.maQuyen);
                 cmd.Parameters.AddWithValue("@tinhTrang", 1);
                 int rowsAffected = cmd.ExecuteNonQuery();
 

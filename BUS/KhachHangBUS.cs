@@ -13,7 +13,10 @@ namespace BUS
     {
         KhachHangDAL dalKhachHang = new KhachHangDAL();
 
-       
+        public List<KhachHangDTO> getList()
+        {
+            return dalKhachHang.getList();
+        }
         public DataTable getKhachHang()
         {
             return dalKhachHang.getKhachHang();
@@ -24,6 +27,10 @@ namespace BUS
             return dalKhachHang.getFindKhachHang(key);
         }
 
-        
+        public bool suakhachHang(KhachHangDTO tv)
+        {
+            return dalKhachHang.suakhachHang(tv);
+        }
+
     }
 }
