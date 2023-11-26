@@ -10,24 +10,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
+
 {
     public partial class FormThanhToan : Form
-    {   public string MaKhachHang { get; set; }
+    {
+
+        public string MaKhachHang { get; set; }
         public string MaGiamGia { get; set; }
-        public string tenNhanVien {  get; set; }
+        public string tenKM {  get; set; }
+        public string tenNhanVien { get; set; }
         public decimal SoTienGiam { get; set; }
         public decimal ThanhTien { get; set; }
         public DateTime ngayLap { get; set; }
         public DataTable GioHang { get; set; }
-        
+        public decimal TongTien { get; set; }
         public FormThanhToan()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            richTextBox1.AllowDrop = true;
-            richTextBox1.DragEnter += richTextBox1_DragEnter;
-            richTextBox1.DragDrop += richTextBox1_DragDrop;
+       
+            float dpiX = this.CreateGraphics().DpiX;
+            float dpiY = this.CreateGraphics().DpiY;
+
+            float widthInPixels = 8.27f * dpiX / 25.4f;
+            float heightInPixels = 11.69f * dpiY / 25.4f;
+
+            this.Width = (int)Math.Round(widthInPixels);
+            this.Height = (int)Math.Round(heightInPixels);
+            this.Width = Screen.PrimaryScreen.Bounds.Width / 2;  // Chia đôi kích thước màn hình
+            this.Height = Screen.PrimaryScreen.Bounds.Height / 2;
+
         }
         private void richTextBox1_DragEnter(object sender, DragEventArgs e)
         {
@@ -36,34 +50,98 @@ namespace WindowsFormsApp1
                 e.Effect = DragDropEffects.Copy;
             }
         }
-        private void richTextBox1_DragDrop(object sender, DragEventArgs e)
+       
+        int CalculateColumnWidth(string header, IEnumerable<string> values)
         {
-            string droppedText = e.Data.GetData(DataFormats.Text).ToString();
-            richTextBox1.AppendText(droppedText);
+            int maxWidth = header.Length;
+            foreach (var value in values)
+            {
+                int valueLength = value.Length;
+                if (valueLength > maxWidth)
+                {
+                    maxWidth = valueLength;
+                }
+            }
+            return maxWidth;
         }
         private void FormThanhToan_Load(object sender, EventArgs e)
         {
-            string invoiceText = "Tên nhân viên: "+tenNhanVien+"\n";
-            invoiceText += "Ngày lập: "+ngayLap+"\n";
-            invoiceText += "Mã khách hàng: " + MaKhachHang + "\n"; 
-            invoiceText += "Số tiền giảm: " + SoTienGiam.ToString("C") + "\n\n";
-            invoiceText += "Mã SP\tTên SP\tĐơn giá\tSố lượng\tThành tiền\n";
-            invoiceText += "-----------------------------------------------------------\n";
-            foreach (DataRow item in GioHang.Rows)
-            {
-                string maSP = item["MaSP"].ToString();
-                string tenSP = item["TenSP"].ToString();
-                decimal giaBan = (decimal)item["GiaBan"];
-                int soLuong = (int)item["SoLuong"];
-                decimal thanhTienItem = (decimal)item["ThanhTien"];
-                invoiceText += $"{maSP}\t{tenSP}\t{giaBan:C}\t{soLuong}\t{thanhTienItem:C}\n";
-            }
-            invoiceText += "-----------------------------------------------------------\n";
-            invoiceText += "Tổng cộng: " + ThanhTien.ToString("C") + "\n";
-            richTextBox1.Text = invoiceText;
+            XuLyHienThiHoaDon();
         }
+
+
+        private void XuLyHienThiHoaDon()
+        {
+            DateTime now = DateTime.Now;
+            // Bắt đầu xây dựng chuỗi HTML cho hóa đơn
+            string hd = "<html><head><style>"
+                + "table { border: 1px solid; border-bottom: none; }"
+                + "tr { border-bottom: 1px solid; }"
+                + "td { padding: 20px; }"
+                + "th { font-size: 16pt; }"
+                + "</style></head><body>";
+            hd += "<h1 style='text-align:center;'>HOÁ ĐƠN THANH TOÁN</h1>";
+            hd += "Nhân viên: " + tenNhanVien + "<br/>";
+            hd += "Ngày lập: " + ngayLap + "<br/>";
+            hd += "Khách hàng: " +MaKhachHang + "<br/>";
+            hd += "<div style='text-align:center;'>==========================================</div><br/>";
+            hd += "<div style='text-align:center'>";
+            hd += "<table style='max-width:100%'>";
+            hd += "<tr>"
+                  + "<th>Mã SP</th>"
+                  + "<th>Tên SP</th>"
+                  + "<th>Số lượng</th>"
+                  + "<th>Đơn giá</th>"
+                  + "<th>Thành tiền</th>"
+                   + "<th>Mã Giảm Giá</th>"
+                  + "</tr>";
+
+            // Thêm dòng cho từng sản phẩm trong giỏ hàng
+            //DataRow item in GioHang.Rows
+            foreach (DataRow vec in GioHang.Rows)
+            {
+                hd += "<tr>";
+                hd += $"<td style='text-align:center;'>{vec[1]}</td>";
+                hd += $"<td style='text-align:left;'>{vec[2]}</td>";
+                hd += $"<td style='text-align:center;'>{vec[3]}</td>";
+                hd += $"<td style='text-align:center;'>{vec[4]}</td>";
+                hd += $"<td style='text-align:center;'>{vec[5]}</td>";
+                hd += $"<td style='text-align:center;'>{vec[6]}</td>";
+                hd += "</tr>";
+            }
+            hd += "<tr>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:left;'></td>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:center;font-weight:bold'>Tổng cộng</td>";
+            hd += $"<td style='text-align:center;'>{TongTien}</td>";
+            hd += "</tr>";
+
+            hd += "<tr>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:left;'></td>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:center;font-weight:bold'>Số Tiền Giảm</td>";
+            hd += $"<td style='text-align:center;'>-{SoTienGiam}</td>";
+            hd += "</tr>";
+
+            hd += "<tr>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:left;'></td>";
+            hd += "<td style='text-align:center;'></td>";
+            hd += "<td style='text-align:center;font-weight:bold'>Thành tiền</td>";
+            hd += $"<td style='text-align:center;'>{ThanhTien}</td>";
+            hd += "</tr>";
+
+            hd += "</table>";
+            hd += "</div>";
+            hd += "<div style='text-align:center;'>==========================================</div><br/>";
+            hd += "</body></html>";
+            webBrowser1.DocumentText = hd;
+        }
+
         // In hóa đơn
-        private void button1_Click(object sender, EventArgs e)
+       /* private void button1_Click(object sender, EventArgs e)
         {
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
@@ -73,8 +151,8 @@ namespace WindowsFormsApp1
             {
                 printDocument.Print();
             }
-        }
-        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        }*/
+       /* private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             StringReader reader = new StringReader(richTextBox1.Text);
             float yPos = 0f;
@@ -93,7 +171,7 @@ namespace WindowsFormsApp1
             else
                 e.HasMorePages = false;
             reader.Close();
-        }
+        }*/
     }
 
 

@@ -21,6 +21,7 @@ namespace DAL
             var dt = new DataTable();
 
             da.Fill(dt);
+
             return dt;
         }
         // 2 -- lấy ra danh sách sản phẩm
@@ -117,7 +118,7 @@ namespace DAL
         public DataTable getkhuyenMaiBanhang()
         {
             DataTable dtKhuyenMai = new DataTable();
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT KM.maKM, KM.tenKM, KM.ngayBD, KM.ngayKT, CTKM.donViGiam FROM khuyenMai KM JOIN CT_KhuyenMai CTKM ON KM.maKM = CTKM.maKM", _conn))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT KM.maKM, KM.tenKM, KM.ngayBD, KM.ngayKT, CTKM.donViGiam,CTKM.giaTriGiam FROM khuyenMai KM JOIN CT_KhuyenMai CTKM ON KM.maKM = CTKM.maKM", _conn))
             {
                 adapter.Fill(dtKhuyenMai);
             }
@@ -132,7 +133,7 @@ namespace DAL
             try
             {
                 _conn.Open();
-                string SQL = "SELECT KM.maKM, KM.donViGiam, kk.tenKM,KK.ngayBD,KK.ngayKT FROM sanPham SP JOIN CT_KhuyenMai KM ON SP.maSP = KM.maSP\r\nJOIN khuyenMai KK ON KM.maKM = KK.maKM WHERE SP.tenSP = @TenSanPham";
+                string SQL = "SELECT KM.maKM, KM.donViGiam,KM.giaTriGiam, kk.tenKM,KK.ngayBD,KK.ngayKT FROM sanPham SP JOIN CT_KhuyenMai KM ON SP.maSP = KM.maSP\r\nJOIN khuyenMai KK ON KM.maKM = KK.maKM WHERE SP.tenSP = @TenSanPham";
                 using (SqlCommand command = new SqlCommand(SQL, _conn))
                 {
                     command.Parameters.AddWithValue("@TenSanPham", tenSanPham);

@@ -15,41 +15,59 @@ namespace WindowsFormsApp1
 {
     public partial class MenuGUI : Form
     {
-        private BanHangGUI banHangGUI=new BanHangGUI();
-        private SanPhamGUI sanPhamGUI = new SanPhamGUI();
-        private NhanVienGUI nhanVienGUI=new NhanVienGUI();
-        private KhachhangGUI khachhangGUI=new KhachhangGUI();
-        private KhuyenMaiGUI khuyenMaiGUI=new KhuyenMaiGUI();
-        private PhieuNhapGUI phieuNhapGUI=new PhieuNhapGUI();
-        private ThongKeGUI thongKeGUI =new ThongKeGUI();
+        private BanHangGUI banHangGUI=null;
+        private SanPhamGUI sanPhamGUI = null;
+        private NhanVienGUI nhanVienGUI=null;
+        private KhachhangGUI khachhangGUI=null;
+        private KhuyenMaiGUI khuyenMaiGUI=null;
+        private PhieuNhapGUI phieuNhapGUI=null;
+        private ThongKeGUI thongKeGUI =null;
 
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
         int maQuyen; //maQuyen=1 (Quanly), maQuyen=2 (NhanVienBanHang) , maQuyen=3 (NhanVienKho)
         public MenuGUI(int maQuyen)
         {
             InitializeComponent();
-            pictureBoxes.Add(pictureBox1);
-            pictureBoxes.Add(pictureBox2);
-            pictureBoxes.Add(pictureBox3);
-            pictureBoxes.Add(pictureBox5);
-            if (maQuyen == 2)
+            if (maQuyen == 2) //ban hang
             {
+                banHangGUI = new BanHangGUI();
+                sanPhamGUI = new SanPhamGUI();
+                khachhangGUI = new KhachhangGUI();
                 tableLayoutPanel3.Controls.RemoveAt(6); //8
                 tableLayoutPanel3.Controls.RemoveAt(5); //7
                 tableLayoutPanel3.Controls.RemoveAt(4); //6
                 tableLayoutPanel3.Controls.RemoveAt(2); //4
             }
-            pictureBoxes.Add(pictureBox6);
-            pictureBoxes.Add(pictureBox7);
-            if (maQuyen == 3)
+            else if (maQuyen == 3)
             {
+                khuyenMaiGUI = new KhuyenMaiGUI();
+                phieuNhapGUI = new PhieuNhapGUI();
                 tableLayoutPanel3.Controls.RemoveAt(6); //8
                 tableLayoutPanel3.Controls.RemoveAt(3); //5
                 tableLayoutPanel3.Controls.RemoveAt(2); //4
                 tableLayoutPanel3.Controls.RemoveAt(1); //3
                 tableLayoutPanel3.Controls.RemoveAt(0); //2
-
             }
+            else
+            {
+                banHangGUI = new BanHangGUI();
+                sanPhamGUI = new SanPhamGUI();
+                nhanVienGUI = new NhanVienGUI();
+                khachhangGUI = new KhachhangGUI();
+                khuyenMaiGUI = new KhuyenMaiGUI();
+                phieuNhapGUI = new PhieuNhapGUI();
+                thongKeGUI = new ThongKeGUI();
+            }
+
+            Control temp = null;
+            int countControl = tableLayoutPanel3.Controls.Count;
+            for(int i=0;i<countControl;i++)
+            {
+                temp = tableLayoutPanel3.Controls[0];
+                tableLayoutPanel3.Controls.RemoveAt(0);
+                tableLayoutPanel3.Controls.Add(temp, 0, i);
+            }
+
             this.StartPosition = FormStartPosition.CenterScreen;
             this.maQuyen = maQuyen;
         }

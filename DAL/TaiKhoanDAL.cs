@@ -83,7 +83,6 @@ namespace DAL
             catch (Exception ex)
             {
                 Console.WriteLine("Lỗi: " + ex.Message);
-                // Xử lý ngoại lệ theo cách phù hợp, ví dụ: ghi log hoặc ném lại ngoại lệ
             }
             finally
             {
@@ -125,6 +124,80 @@ namespace DAL
             return tenNV;
         }
 
+        public TaiKhoanDTO getTk(string maNv)
+        {
+            TaiKhoanDTO tk = null;
+
+            try
+            {
+                _conn.Open();
+                string sql = "SELECT * FROM taiKhoan WHERE tinhTrang = @tinhTrang AND maNV = @maNV";
+
+                SqlCommand cmd = new SqlCommand(sql, _conn);
+                cmd.Parameters.AddWithValue("@tinhTrang", true);
+                cmd.Parameters.AddWithValue("@maNV", maNv);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    tk = new TaiKhoanDTO();
+                    tk.maNhanVien = reader["maNV"].ToString();
+                    tk.maQuyen = reader.GetInt32(reader.GetOrdinal("maQuyen"));
+                    tk.tenDangNhap = reader["tenDangNhap"].ToString();
+                    tk.matKhau = reader["matKhau"].ToString();                  
+                }
+
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (_conn.State == ConnectionState.Open)
+                    _conn.Close();
+            }
+
+            return tk;
+        }
+
+        public bool xoaNhanVien(string maNV)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                // Query string to update the "tinhTrang" column to 'False' for the specified "maNV"
+                string SQL = string.Format("UPDATE taiKhoan SET tinhTrang = 'False' WHERE maNV = @MaNV");
+
+                // Create a SqlCommand object
+                using (SqlCommand cmd = new SqlCommand(SQL, _conn))
+                {
+                    // Use parameters to safely pass values into the SQL statement
+                    cmd.Parameters.AddWithValue("@MaNV", maNV);
+
+                    // Execute the SQL UPDATE statement
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                        return true;
+                }
+            }
+            catch (Exception e)
+            {
+                // Handle the exception here or log it.
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+
+            return false;
+        }
 
 
     }

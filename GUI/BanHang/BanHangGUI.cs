@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,9 +18,6 @@ namespace WindowsFormsApp1
 {
     public partial class BanHangGUI : Form
     {
-       
-       
-       
         private int soLuongSanPham = 1;
         private DataTable gioHang;
         BanHangBUS bus = new BanHangBUS();
@@ -43,7 +41,7 @@ namespace WindowsFormsApp1
             gioHang.Columns.Add("SoLuong", typeof(int));
             gioHang.Columns.Add("ThanhTien", typeof(decimal));
             gioHang.Columns.Add("Xoa", typeof(bool)).SetOrdinal(0);
-            gioHang.Columns.Add("KhuyenMai", typeof(string));
+            gioHang.Columns.Add("KhuyenMai", typeof(int));
             gioHang.Columns.Add("TienSauGiamGia", typeof(string));
             dataGridView2.DataSource = gioHang;
 
@@ -132,26 +130,32 @@ namespace WindowsFormsApp1
                 decimal giaBan = decimal.Parse(selectedRow.Cells["Column4"].Value.ToString());
                 string maLoai = selectedRow.Cells["Column3"].Value.ToString();
                 soLuongSPTrongDB = decimal.Parse(selectedRow.Cells["Column22"].Value.ToString());
-                string anh = selectedRow.Cells["Column5"].Value.ToString();
-               // MemoryStream stream = new MemoryStream((byte[])dataGridView1.SelectedRows[0].Cells[4].Value);
-               // Image img = Image.FromStream(stream);
-
+                //byte[] img = (byte[])selectedRow.Cells["Column5"].Value;
                 textBox3.Text = maSP;
                 textBox2.Text = tenSP;
                 textBox5.Text = giaBan.ToString();
-
-                //string imagePath = "E:\\BanDienThoai\\DoAn\\GUI\\img\\rogphone6.jpg";
-                string imagePath = Path.Combine("E:\\BanDienThoai\\DoAn\\GUI", anh);
-                if (File.Exists(imagePath))
+               /* if (img != null && img.Length > 0)
                 {
-                    pictureBox1.Image = Image.FromFile(imagePath);
+                    try
+                    {
+  
+                        using (MemoryStream ms = new MemoryStream(img))
+                        {
+                            pictureBox1.Image = Image.FromStream(ms);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading image: " + ex.Message, "Image Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        pictureBox1.Image = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Image file not found: " + imagePath, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                  
+                    MessageBox.Show("Image data is missing or empty.", "Image Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     pictureBox1.Image = null;
-                }
-
+                }*/
             }
 
             dataGridView2.ClearSelection();
@@ -250,6 +254,7 @@ namespace WindowsFormsApp1
 
 
         // thành tiến sau khi giảm giá
+
         private void tienSauKhuyenMai(DataRow row)
         {
             DataRowView selectedRow = comboBox3.SelectedItem as DataRowView;
@@ -258,6 +263,12 @@ namespace WindowsFormsApp1
                 DataTable dtKhuyenMai = bus.getkhuyenMaiBanhang();
                 decimal tienKhuyenMai;
                 decimal donViGiam = Convert.ToDecimal(selectedRow["donViGiam"].ToString());
+                decimal giaTriGiam = Convert.ToDecimal(selectedRow["giaTriGiam"].ToString());
+                decimal tienThongKeGiaTriGiam = 0;
+                if (donViGiam == 0)
+                {
+                    tienThongKeGiaTriGiam = giaTriGiam;
+                }
                 if (donViGiam >0)
                 {
                         decimal giaBan = Convert.ToDecimal(row["GiaBan"]);
@@ -309,8 +320,6 @@ namespace WindowsFormsApp1
 
             decimal giaBan = decimal.Parse(textBox5.Text);
             DataRow[] existingRows = gioHang.Select("MaSP = '" + maSP + "'");
-
-
             if (existingRows.Length > 0)
             {
                 int soLuong = Convert.ToInt32(existingRows[0]["SoLuong"]);
@@ -417,8 +426,10 @@ namespace WindowsFormsApp1
             foreach (DataRow row in gioHang.Rows)
             {
                 row.SetField("Xoa", false);
+                tienSauKhuyenMai(row);
             }
            
+            TinhTongSoTienGiam();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -473,13 +484,16 @@ namespace WindowsFormsApp1
             {
                 if (decimal.TryParse(textBox4.Text, out decimal soTienGiam))
                 {
+                   
                     DateTime ngayLap = DateTime.Now;
                     FormThanhToan thanhToan = new FormThanhToan();
                     thanhToan.SoTienGiam=soTienGiam;
+                   
                     thanhToan.tenNhanVien = d.TenNhanVien;
                     thanhToan.MaKhachHang = maKhachHang;
                     thanhToan.ThanhTien = thanhTien;
                     thanhToan.GioHang = gioHang;
+                    thanhToan.TongTien = tongTien;
                     thanhToan.ngayLap = ngayLap;
                     thanhToan.ShowDialog();
                     string maKhachHangHD = comboBox2.SelectedValue.ToString();
@@ -502,11 +516,9 @@ namespace WindowsFormsApp1
                                 {
                                     string maSP = row["MaSP"].ToString();
                                     string tenSP = row["TenSP"].ToString();
-                                  //  int maKM = (row["KhuyenMai"] != DBNull.Value) ? Convert.ToInt32(row["KhuyenMai"]) : -1;
-
+                                    int maKM = (row["KhuyenMai"] == DBNull.Value) ? 1 : Convert.ToInt32(row["KhuyenMai"]);
                                     int soLuong = Convert.ToInt32(row["SoLuong"]);
                                     decimal giaBan = Convert.ToDecimal(row["GiaBan"]);
-
                                     if (!bus.CapNhatSoLuongSPTrongDB(maSP, soLuong))
                                     {
                                         MessageBox.Show("Có lỗi khi cập nhật số lượng sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -520,7 +532,7 @@ namespace WindowsFormsApp1
                                         giaBan = (float)giaBan,
                                         soLuong = soLuong,
                                         tongTien = (float)(soLuong * giaBan),
-                                       // maKM = maKM,
+                                        maKM = maKM
                                     };
 
                                     if (!chiTietHoaDonBUS.ThemChiTietHoaDon(chiTietHoaDon))

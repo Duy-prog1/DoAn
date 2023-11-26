@@ -17,7 +17,10 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuGUI(1));
+
+           // Application.Run(new MenuGUI(1));
+            Application.Run(new DangNhapGUI());
+
         }
     }
 }

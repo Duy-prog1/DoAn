@@ -26,13 +26,13 @@ namespace BUS
         {
             thongKeDAL.getPointAllTK(listSP, thoiGian, batDau, ketThuc,series1,series2);
         }
-        public String getTongThu(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
+        public String getTongThu(DateTime batDau, DateTime ketThuc)
         {
-            return thongKeDAL.getTongThu(listSP, thoiGian, batDau, ketThuc);
+            return thongKeDAL.getTongThu(batDau, ketThuc);
         }
-        public String getTongChi(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
+        public String getTongChi(string tongThu, DateTime batDau, DateTime ketThuc)
         {
-            return thongKeDAL.getTongChi(listSP, thoiGian, batDau, ketThuc);
+            return thongKeDAL.getTongChi(tongThu, batDau, ketThuc);
         }
         public String getLoiNhuan(List<String> listSP, String thoiGian, DateTime batDau, DateTime ketThuc)
         {

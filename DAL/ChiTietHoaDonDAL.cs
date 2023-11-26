@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using System.Data.SqlTypes;
 
 namespace DAL
 {
@@ -23,7 +24,7 @@ namespace DAL
         }
         public DataTable GetChiTietHoaDon(int maHD)
         {
-            var cmd = new SqlCommand("SELECT HD.maHD, CTHD.maSP, SP.tenSP, CTHD.soLuong,CTHD.giaBan, CTHD.tongTien FROM hoaDon HD JOIN CT_HoaDon CTHD ON HD.maHD = CTHD.maHD JOIN sanPham SP ON CTHD.maSP = SP.maSP WHERE HD.maHD = @maHD", _conn);
+            var cmd = new SqlCommand("SELECT HD.maHD, CTHD.maSP, SP.tenSP, CTHD.soLuong,CTHD.giaBan, CTHD.tongTien,CTHD.maKM FROM hoaDon HD JOIN CT_HoaDon CTHD ON HD.maHD = CTHD.maHD JOIN sanPham SP ON CTHD.maSP = SP.maSP WHERE HD.maHD = @maHD", _conn);
             
                 cmd.Parameters.AddWithValue("@maHD", maHD);
                 var da = new SqlDataAdapter(cmd);
@@ -39,17 +40,23 @@ namespace DAL
             try
             {
                 _conn.Open();
-
-                // Assuming your CT_HoaDon table has columns like maHD, maSP, giaBan, soLuong, tongTien, maKM
-                var cmd = new SqlCommand("INSERT INTO CT_HoaDon (maHD, maSP, giaBan, soLuong, tongTien) VALUES (@maHD, @maSP, @giaBan, @soLuong, @tongTien)", _conn);
+                var cmd = new SqlCommand("INSERT INTO CT_HoaDon (maHD, maSP, giaBan, soLuong, tongTien,maKM) VALUES (@maHD, @maSP, @giaBan, @soLuong, @tongTien,@maKM)", _conn);
 
                 cmd.Parameters.AddWithValue("@maHD", chiTietHoaDon.maHD);
                 cmd.Parameters.AddWithValue("@maSP", chiTietHoaDon.maSP);
                 cmd.Parameters.AddWithValue("@giaBan", chiTietHoaDon.giaBan);
                 cmd.Parameters.AddWithValue("@soLuong", chiTietHoaDon.soLuong);
                 cmd.Parameters.AddWithValue("@tongTien", chiTietHoaDon.tongTien);
-                
-
+            
+              /*if (chiTietHoaDon.maKM == null)
+                {
+                    cmd.Parameters.AddWithValue("@maKM", SqlInt32.Null);
+                    
+                }
+                else*/
+               // {
+                    cmd.Parameters.AddWithValue("@maKM", chiTietHoaDon.maKM);
+                //}
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 return rowsAffected > 0;
